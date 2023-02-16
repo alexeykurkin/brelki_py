@@ -1,0 +1,34 @@
+{% load static %}
+<div class="menu">
+    <a href="/"><img src="{% static 'img/breloks.png' %}" width="100" height="100" class="logo img_unselectable"></a>
+
+    <div class="user-actions">
+        <div class="user-menu">
+            <img src="{% static 'img/avatar.jpg' %}" class="img_unselectable" height="75" width="75">
+            <h3>Пользователь</h3>
+        </div>
+        <div class="user-actions_buttons">
+            <a href="/registration">
+                <div class="main_page-button">
+                    <p>Зарегистрироваться</p>
+                </div>
+            </a>
+            <a href="/login">
+                <div class="main_page-button">
+                    <p>Авторизоваться</p>
+                </div>
+            </a>
+        </div>
+
+    </div>
+</div>
+<div class="items">
+    <div class="item">
+            <img src="{% static 'img/keychain_car.jpg' %}" class="img_unselectable" width="250" height="250">
+        <div class="item_author-info">
+            <img src="{% static 'img/user.png' %}" width="25" height="25" class="img_unselectable">
+            <p>Пользователь</p>
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
