@@ -23,12 +23,18 @@
     </div>
 </div>
 <div class="items">
+    {% for keychain in keychains %}
     <div class="item">
-            <img src="{% static 'img/keychain_car.jpg' %}" class="img_unselectable" width="250" height="250">
+            {% if keychain.img == '' %}
+                <img src="{% static 'img/not_found.png' %}" class="img_unselectable" width="250" height="250">
+            {% else %}
+                <img src="{% static keychain.img %}" class="img_unselectable" width="250" height="250">
+            {% endif %}
         <div class="item_author-info">
             <img src="{% static 'img/user.png' %}" width="25" height="25" class="img_unselectable">
-            <p>Пользователь</p>
+            <p>{{ keychain.user_id }}</p>
         </div>
     </div>
+    {% endfor %}
 </div>
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
