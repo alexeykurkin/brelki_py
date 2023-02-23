@@ -43,3 +43,23 @@ class RegistrationForm(ModelForm):
     class Meta:
         model = models.User
         fields = ['login', 'email', 'password', 'telephone_number', 'user_img']
+
+
+class AuthForm(ModelForm):
+    login_errors = {
+        'required': 'Введите логин'
+    }
+
+    password_errors = {
+        'required': 'Введите пароль'
+    }
+
+    login = forms.CharField(widget=forms.TextInput(attrs={'placeholder': ' '}),
+                            error_messages=login_errors)
+
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': ' '}),
+                               error_messages=password_errors)
+
+    class Meta:
+        model = models.User
+        fields = ['login', 'password']

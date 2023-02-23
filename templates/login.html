@@ -1,0 +1,34 @@
+{% load static %}
+<a style="position: absolute; font-size: 25px;" href="/">На главную</a>
+<div class="form-content">
+    <form class="registration-form" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h1>Авторизация</h1>
+        <div class="form-items">
+            <label for="{{ reg_form.login.html_name }}" class="inp">
+                {{ auth_form.login }}
+                <span class="label">Логин</span>
+                <span class="focus-bg"></span>
+                {{ auth_form.login.errors }}
+            </label>
+            <label for="password" class="inp">
+                {{ auth_form.password }}
+                <span class="label">Пароль</span>
+                <span class="focus-bg"></span>
+                {{ auth_form.password.errors }}
+            </label>
+            <div class="login-error-messages">
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            </div>
+            <button type="submit" class="submit-button">
+                Подтвердить
+            </button>
+        </div>
+    </form>
+</div>
+
+
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">

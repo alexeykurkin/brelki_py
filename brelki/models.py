@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.exceptions import ValidationError
+from django.contrib.auth.hashers import check_password
 
 
 def validate_phone(value):
@@ -12,6 +13,12 @@ def validate_phone(value):
         )
 
 
+def existing_login(value):
+    if not User.objects.get(login=value):
+        raise ValidationError('Такого пользователя не существует',
+                              params={'value': value})
+
+
 class User(models.Model):
     id = models.IntegerField(primary_key=True)
     login = models.CharField(max_length=30)
@@ -20,6 +27,8 @@ class User(models.Model):
     reg_date = models.DateTimeField(auto_now=True)
     telephone_number = models.CharField(max_length=12, validators=[validate_phone])
     user_img = models.ImageField()
+
+    REQUIRED_FIELDS = ('id', 'login', 'email', 'password', 'reg_date')
 
     class Meta:
         db_table = 'users'
@@ -34,3 +43,8 @@ class Keychain(models.Model):
 
     class Meta:
         db_table = 'keychains'
+
+
+def correct_password(user_id, typed_password):
+    if check_password(typed_password, User.objects.get(id=user_id).password):
+        print('password cor! :)')
