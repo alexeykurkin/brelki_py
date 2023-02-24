@@ -63,3 +63,32 @@ class AuthForm(ModelForm):
     class Meta:
         model = models.User
         fields = ['login', 'password']
+
+
+class CreateKeychainForm(ModelForm):
+    title_errors = {
+        'required': 'Введите имя'
+    }
+
+    description_errors = {
+        'required': 'Введите пароль'
+    }
+
+    price_errors = {
+        'required': 'Введите цену'
+    }
+
+    title = forms.CharField(widget=forms.TextInput(attrs={'placeholder': ' '}),
+                            error_messages=title_errors)
+
+    description = forms.CharField(widget=forms.TextInput(attrs={'placeholder': ' '}),
+                                  error_messages=description_errors)
+
+    price = forms.FloatField(widget=forms.TextInput(attrs={'placeholder': ' '}),
+                             error_messages=price_errors)
+
+    img = forms.ImageField(widget=forms.FileInput(attrs={'class': 'file-load'}))
+
+    class Meta:
+        model = models.Keychain
+        fields = ['title', 'description', 'price', 'img']

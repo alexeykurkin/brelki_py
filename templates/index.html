@@ -19,16 +19,23 @@
         {% else %}
             <div class="user-menu">
                 <h3>{{ logged_user.user_login }}</h3>
-                <img src="user_images/{{ logged_user.str_user_img }}"
-                     class="img_unselectable user-avatar" height="75" width="75">
-                <div class="logout-button-block">
-                    <a href="logout">
-                        <button class="logout-button" content="logout">
-                            <span>выйти</span>
-                            <img src="{% static 'img/logout.png' %}" width="18px" height="18px">
+                <img src="{{ logged_user.str_user_img }}"
+                     class="img_unselectable user-avatar">
+                    <div class="user-actions_buttons">
+                        <div class="logout-button-block">
+                        <a href="logout">
+                            <button class="logout-button" content="logout">
+                                <span>выйти</span>
+                                <img src="{% static 'img/logout.png' %}" width="18px" height="18px">
+                            </button>
+                        </a>
+                    </div>
+                        <button class="create-keychain">
+                            <a href="create_keychain"><span>cоздать брелок</span></a>
+                            <img src="{% static 'img/add.png' %}" width="25px" height="25px">
                         </button>
-                    </a>
-                </div>
+                    </div>
+
             </div>
         {% endif %}
 
@@ -43,7 +50,7 @@
             {% if keychain.img == '' %}
                 <img src="{% static 'img/not_found.png' %}" class="img_unselectable" width="250" height="250">
             {% else %}
-                <img src="{% static keychain.img %}" class="img_unselectable" width="250" height="250">
+                <img src="{{ keychain.img }}" class="img_unselectable" width="250" height="250">
             {% endif %}
             <div class="item_author-info">
                 <img src="{% static 'img/user.png' %}" width="25" height="25" class="img_unselectable">

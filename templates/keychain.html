@@ -1,4 +1,5 @@
 {% load static %}
+<a style="position: absolute; font-size: 25px;" href="/">На главную</a>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,8 +7,30 @@
     <title>Title</title>
 </head>
 <body>
-<h1>{{ keychain.title }}</h1>
-<img src="./static/{{ keychain.img }}" width="512px" height="512px">
+<div class="keychain-container">
+    <div class="keychain-content">
+        <div class="keychain-title-image">
+            <h1>{{ keychain.title }}</h1>
+            <img src="./static/{{ keychain.img }}" width="512px" height="512px">
+        </div>
+        <div class="keychain-desc">
+            <h1>Описание</h1>
+            <p>{{ keychain.description }}</p>
+            <div class="keychain_author-info">
+                <h1>Автор</h1>
+                <div class="keychain_author-login-img">
+                    <img src="./user_images/{{ keychain.user.user_img }}" class="user-avatar">
+                    <h2>{{ keychain.user.login }}</h2>
+                </div>
+            </div>
+            <h1>Цена</h1>
+            <p class="keychain-price">{{ keychain.price }} ₽</p>
+
+        </div>
+    </div>
+    <h1>Комментарии</h1>
+</div>
+
 
 </body>
 </html>

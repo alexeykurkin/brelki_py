@@ -26,7 +26,7 @@ class User(models.Model):
     password = models.CharField(max_length=200)
     reg_date = models.DateTimeField(auto_now=True)
     telephone_number = models.CharField(max_length=12, validators=[validate_phone])
-    user_img = models.ImageField()
+    user_img = models.ImageField(upload_to='brelki/uploaded_images/user_images')
 
     REQUIRED_FIELDS = ('id', 'login', 'email', 'password', 'reg_date')
 
@@ -39,7 +39,8 @@ class Keychain(models.Model):
     title = models.CharField(max_length=30)
     description = models.CharField(max_length=100)
     user = models.ForeignKey(User, db_column='user_id', on_delete=models.CASCADE)
-    img = models.CharField(max_length=250)
+    img = models.ImageField(max_length=250, upload_to='brelki/uploaded_images/keychain_images/')
+    price = models.FloatField()
 
     class Meta:
         db_table = 'keychains'

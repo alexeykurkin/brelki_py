@@ -1,9 +1,11 @@
 from django.shortcuts import render, HttpResponse
 from brelki.models import Keychain, User
-from .forms import RegistrationForm, AuthForm
+from .forms import RegistrationForm, AuthForm, CreateKeychainForm
 from django.shortcuts import redirect
 from django.contrib.auth.hashers import check_password, make_password
 from django.contrib import messages
+import os
+from django.conf import settings
 
 
 def index(request):
@@ -49,7 +51,6 @@ def auth(request):
     if request.method == 'POST':
         form_content = AuthForm(request.POST)
         if form_content.is_valid():
-
             try:
                 check_user = User.objects.get(login=request.POST['login'])
             except:
@@ -85,5 +86,26 @@ def logout(request):
 
 def keychain(request):
     keychain_id = request.GET['id']
-    context = {"keychain": Keychain.objects.get(id=keychain_id)}
+    context = {"keychain": Keychain.objects.get(id=keychain_id), "user": User.objects.all()}
     return HttpResponse(render(request, 'keychain.html', context))
+
+
+def create_keychain(request):
+    if request.method == 'POST':
+        form_content = CreateKeychainForm(request.POST, request.FILES)
+        if form_content.is_valid():
+            new_keychain = Keychain(
+                title=request.POST['title'],
+                description=request.POST['description'],
+                user_id=request.session['user_id'],
+                img=request.FILES['img'],
+                price=request.POST['price']
+            )
+            new_keychain.save()
+            return redirect('/')
+        else:
+            return HttpResponse(render(request, 'create_keychain.html', {'create_keychain_form': form_content}))
+    else:
+        create_keychain_form = CreateKeychainForm(None)
+        return HttpResponse(render(request, 'create_keychain.html', {'create_keychain_form': create_keychain_form}))
+
