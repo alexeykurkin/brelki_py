@@ -5,20 +5,18 @@
     <div class="user-actions">
         {% if not logged_user.user_login %}
         <div class="user-actions_buttons">
-            <a href="/registration">
-                <div class="main_page-button">
-                    <p>Зарегистрироваться</p>
-                </div>
-            </a>
-            <a href="/login">
-                <div class="main_page-button">
-                    <p>Авторизоваться</p>
-                </div>
-            </a>
+            <button class="user-actions_button registration-button">
+                <a href="registration"><span>Зарегистрироваться</span></a>
+                <img src="{% static 'img/add-user.png' %}" width="20px" height="20px">
+            </button>
+            <button class="log_in_button user-actions_button">
+                <a href="login"><span>Войти</span></a>
+                <img src="{% static 'img/enter.png' %}" width="20px" height="20px">
+            </button>
         </div>
         {% else %}
             <div class="user-menu">
-                <h3>{{ logged_user.user_login }}</h3>
+                <h2>{{ logged_user.user_login }}</h2>
                 <img src="{{ logged_user.str_user_img }}"
                      class="img_unselectable user-avatar">
                     <div class="user-actions_buttons">
