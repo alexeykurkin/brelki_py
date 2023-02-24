@@ -42,22 +42,6 @@ a span {
   color: black;
 }
 
-.logout-button {
-  font-family: "Inter Medium", sans-serif;
-  color: white;
-  background-color: #dd5353;
-  border-radius: 25px;
-  border: none;
-  font-size: 20px;
-  height: 30px;
-  width: auto;
-  text-align: center;
-  text-align-all: center;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: middle;
-}
-
 .logout-button > img,
 .logout-button > span {
   vertical-align: middle;
@@ -328,19 +312,14 @@ a span {
   margin: 0;
 }
 
-.create-keychain {
-  font-family: "Inter Medium", sans-serif;
-  color: white !important;
-  height: 30px;
-  font-size: 20px;
-  background-color: #0077FF;
-  border-radius: 25px;
-  border: none;
-  text-align: center;
-  text-align-all: center;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: middle;
+.create-keychain_button {
+  background-color: #0077FF !important;
+  width: 220px;
+}
+
+.logout-button {
+  background-color: #dd5353;
+  width: 120px;
 }
 
 .registration-button {
