@@ -79,4 +79,11 @@ def auth(request):
 def logout(request):
     request.session['user_login'] = ''
     request.session['user_id'] = ''
+    request.session['user_img'] = ''
     return redirect('/')
+
+
+def keychain(request):
+    keychain_id = request.GET['id']
+    context = {"keychain": Keychain.objects.get(id=keychain_id)}
+    return HttpResponse(render(request, 'keychain.html', context))
