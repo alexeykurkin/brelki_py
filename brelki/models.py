@@ -49,3 +49,8 @@ class Keychain(models.Model):
 def correct_password(user_id, typed_password):
     if check_password(typed_password, User.objects.get(id=user_id).password):
         print('password cor! :)')
+
+
+class Comment(models.Model):
+    content = models.CharField(max_length=250)
+    user = models.ForeignKey(User, db_column='user_id', on_delete=models.CASCADE)

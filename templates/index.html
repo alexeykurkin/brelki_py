@@ -21,12 +21,10 @@
                      class="img_unselectable user-avatar">
                     <div class="user-actions_buttons">
                         <div class="logout-button-block">
-                        <a href="logout">
                             <button class="user-actions_button logout-button" content="logout">
-                                <span>выйти</span>
+                                <a href="logout"><span>выйти</span></a>
                                 <img src="{% static 'img/logout.png' %}" width="18px" height="18px">
                             </button>
-                        </a>
                     </div>
                         <button class="user-actions_button create-keychain_button">
                             <a href="create_keychain"><span>cоздать брелок</span></a>
@@ -36,8 +34,6 @@
 
             </div>
         {% endif %}
-
-
     </div>
 </div>
 <div class="items">

@@ -9,11 +9,11 @@ from django.conf import settings
 
 
 def index(request):
-    if request.session['user_login'] and request.session['user_id']:
+    try:
         user_login = request.session['user_login']
         user_id = request.session['user_id']
         str_user_img = request.session['str_user_img']
-    else:
+    except KeyError:
         user_login = ''
         user_id = ''
         str_user_img = ''
