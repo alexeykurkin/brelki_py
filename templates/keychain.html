@@ -68,8 +68,7 @@
             </div>
         <p class="comment-text">{{ comment.content }}</p>
         <p class="comment-creation-time">
-                    {{ comment.create_date.date.day }}.{{ comment.create_date.date.month }}.{{ comment.create_date.date.year }}
-            в {{ comment.create_date.time.isoformat }}
+            {{ comment.create_date|date:'d.m.Y в H:i' }}
         </p>
         </div>
         {% endfor %}
@@ -92,5 +91,5 @@
             user_image.src = '{% static 'img/user_img_not_found.png' %}';
         }
     }
-    
+
 </script>
