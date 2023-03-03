@@ -249,6 +249,10 @@ a span {
   border-radius: 25px;
 }
 
+.submit-button > img {
+  vertical-align: middle;
+}
+
 .file-load {
   margin-bottom: 30px;
 }
@@ -267,7 +271,7 @@ a span {
   gap: 45px;
   align-items: center;
   position: relative;
-  width: 100%;
+  width: auto;
   border-color: black;
   border-radius: 10px;
   background-color: #fff;
@@ -355,9 +359,40 @@ a span {
   margin-right: 30px;
 }
 
+.comments-section-title {
+  margin-bottom: 20px;
+}
+
+.create-comment-content {
+  display: flex;
+  justify-content: center;
+}
+
+.create-comment-block {
+  display: inline-flex;
+  padding: 20px;
+  border-color: black;;
+  border-radius: 15px;
+  background-color: #fff;
+  box-shadow: 0 2px 7px 0 rgba(0, 0, 0, .04);
+  width: auto;
+  max-width: 1440px;
+}
+
+.create-comment-block form {
+  margin-bottom: 0;
+}
+
+.comment-section {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
 .comment {
   display: inline-block;
-  margin-right: 20px;
   border-radius: 15px;
   padding: 20px;
   border-color: black;;
@@ -394,4 +429,23 @@ a span {
   justify-content: center;
   height: 60px;
   width: 30px;
+}
+
+.comment-input {
+  font-family: "Inter Medium", sans-serif;
+  font-size: 20px;
+  width: 1000px;
+  height: 100px;
+  border-radius: 25px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.commenting-user {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+  width: auto;
+  margin-bottom: 15px;
 }

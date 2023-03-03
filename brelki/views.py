@@ -94,7 +94,7 @@ def keychain(request):
     context = {"keychain": Keychain.objects.get(id=keychain_id),
                "user": User.objects.all(),
                "comments": Comment.objects.filter(keychain_id=keychain_id),
-               "current_user_id": current_user_id,
+               "current_user": User.objects.get(id=current_user_id),
                "create_comment_form": CreateCommentForm()}
 
     # Создание комментария

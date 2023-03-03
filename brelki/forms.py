@@ -99,7 +99,7 @@ class CreateCommentForm(ModelForm):
         'required': 'Заполните поле комментария!'
     }
 
-    content = forms.CharField(widget=forms.Textarea(), error_messages=content_errors)
+    content = forms.CharField(widget=forms.Textarea(attrs={'class': 'comment-input'}), error_messages=content_errors)
 
     class Meta:
         model = models.Comment
