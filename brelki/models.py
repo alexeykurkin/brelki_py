@@ -52,5 +52,11 @@ def correct_password(user_id, typed_password):
 
 
 class Comment(models.Model):
+    id = models.IntegerField(primary_key=True)
     content = models.CharField(max_length=250)
     user = models.ForeignKey(User, db_column='user_id', on_delete=models.CASCADE)
+    keychain = models.ForeignKey(Keychain, db_column='keychain_id', on_delete=models.CASCADE)
+    create_date = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = 'comments'

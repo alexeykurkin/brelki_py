@@ -354,3 +354,22 @@ a span {
 .user-actions_buttons {
   margin-right: 30px;
 }
+
+.comment {
+  display: inline-block;
+  border-radius: 15px;
+  padding: 10px 20px;
+  border-color: black;;
+  background-color: #fff;
+  box-shadow: 0 2px 7px 0 rgba(0, 0, 0, .04);
+  width: auto;
+  max-width: 1440px;
+}
+
+.comment h2 {
+  margin-top: 10px;
+}
+
+.comment p {
+  font-size: 18px;
+}

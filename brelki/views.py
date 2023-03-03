@@ -1,11 +1,9 @@
 from django.shortcuts import render, HttpResponse
-from brelki.models import Keychain, User
+from brelki.models import Keychain, User, Comment
 from .forms import RegistrationForm, AuthForm, CreateKeychainForm
 from django.shortcuts import redirect
 from django.contrib.auth.hashers import check_password, make_password
 from django.contrib import messages
-import os
-from django.conf import settings
 
 
 def index(request):
@@ -86,7 +84,9 @@ def logout(request):
 
 def keychain(request):
     keychain_id = request.GET['id']
-    context = {"keychain": Keychain.objects.get(id=keychain_id), "user": User.objects.all()}
+    context = {"keychain": Keychain.objects.get(id=keychain_id),
+               "user": User.objects.all(),
+               "comments": Comment.objects.all()}
     return HttpResponse(render(request, 'keychain.html', context))
 
 
@@ -109,3 +109,6 @@ def create_keychain(request):
         create_keychain_form = CreateKeychainForm(None)
         return HttpResponse(render(request, 'create_keychain.html', {'create_keychain_form': create_keychain_form}))
 
+
+def create_comment():
+    pass
