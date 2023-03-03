@@ -92,3 +92,15 @@ class CreateKeychainForm(ModelForm):
     class Meta:
         model = models.Keychain
         fields = ['title', 'description', 'price', 'img']
+
+
+class CreateCommentForm(ModelForm):
+    content_errors = {
+        'required': 'Заполните поле комментария!'
+    }
+
+    content = forms.CharField(widget=forms.Textarea(), error_messages=content_errors)
+
+    class Meta:
+        model = models.Comment
+        fields = ['content']

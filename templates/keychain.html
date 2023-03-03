@@ -30,9 +30,29 @@
         </div>
     </div>
     <h1>Комментарии</h1>
-    {% for comment in comments %}
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ create_comment_form.content }}
+        <button type="submit" class="submit-button">
+            Создать комментарий
+        </button>
+        {% for comment in comments %}
+    </form>
+
     <div class="comment">
-        <h2>{{ comment.user.login }}</h2>
+        <div class="comment-content">
+            <img src="{{ comment.user.user_img }}" id="user-avatar" class="user-avatar">
+            <h2>{{ comment.user.login }}</h2>
+            {% if current_user_id == comment.user.id %}
+            <div class="comment-actions">
+                <a href="delete_comment?comment_id={{ comment.id }}">
+                    <img src="{% static 'img/remove.png' %}" width="25px" height="25px">
+                </a>
+                <img src="{% static 'img/draw.png' %}" width="25px" height="25px">
+            </div>
+            {% endif %}
+        </div>
         <p>{{ comment.content }}</p>
     </div>
     {% endfor %}

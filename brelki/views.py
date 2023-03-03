@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse
 from brelki.models import Keychain, User, Comment
-from .forms import RegistrationForm, AuthForm, CreateKeychainForm
+from .forms import RegistrationForm, AuthForm, CreateKeychainForm, CreateCommentForm
 from django.shortcuts import redirect
 from django.contrib.auth.hashers import check_password, make_password
 from django.contrib import messages
@@ -84,9 +84,40 @@ def logout(request):
 
 def keychain(request):
     keychain_id = request.GET['id']
+    request.session['keychain_id'] = keychain_id
+
+    try:
+        current_user_id = request.session['user_id']
+    except KeyError:
+        current_user_id = 0
+
     context = {"keychain": Keychain.objects.get(id=keychain_id),
                "user": User.objects.all(),
-               "comments": Comment.objects.all()}
+               "comments": Comment.objects.filter(keychain_id=keychain_id),
+               "current_user_id": current_user_id,
+               "create_comment_form": CreateCommentForm()}
+
+    # Создание комментария
+
+    if request.method == 'POST':
+        print(1)
+        form_content = CreateCommentForm(request.POST)
+        if form_content.is_valid():
+
+            new_comment = Comment(
+                content=request.POST['content'],
+                user_id=current_user_id,
+                keychain_id=keychain_id
+            )
+            new_comment.save()
+
+        else:
+            context["create_comment_form"] = form_content
+            return HttpResponse(render(request, 'keychain.html', context))
+    else:
+        context['create_comment_form'] = CreateCommentForm(None)
+        return HttpResponse(render(request, 'keychain.html', context))
+
     return HttpResponse(render(request, 'keychain.html', context))
 
 
@@ -110,5 +141,6 @@ def create_keychain(request):
         return HttpResponse(render(request, 'create_keychain.html', {'create_keychain_form': create_keychain_form}))
 
 
-def create_comment():
-    pass
+def delete_comment(request):
+    Comment.objects.filter(id=request.GET['comment_id']).delete()
+    return redirect('/keychain?id=' + request.session['keychain_id'])
