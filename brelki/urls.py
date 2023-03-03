@@ -27,5 +27,6 @@ urlpatterns = [
     path('logout', views.logout),
     path('keychain', views.keychain),
     path('create_keychain', views.create_keychain),
-    path('delete_comment', views.delete_comment)
+    path('delete_comment', views.delete_comment),
+    path('edit_comment', views.edit_comment)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

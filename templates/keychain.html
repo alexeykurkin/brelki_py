@@ -31,8 +31,8 @@
     </div>
     <h1 class="comments-section-title">Комментарии</h1>
 
-    <div class="create-comment-content">
-        <div class="create-comment-block">
+    <div class="comment-content">
+        <div class="comment-block">
             <form method="POST" enctype="multipart/form-data">
             <div class="commenting-user">
                 <img src="{{ current_user.user_img }}" width="50px" height="50px" class="user-avatar">
@@ -40,6 +40,7 @@
             </div>
             {% csrf_token %}
             {{ create_comment_form.content }}
+                {{ create_comment_form.content.error_messages }}
             <button type="submit" class="submit-button" style="width: 220px">
                 Комментировать
                 <img src="{% static 'img/comment.png' %}" width="25px" height="25px">
@@ -59,7 +60,9 @@
                     <a href="delete_comment?comment_id={{ comment.id }}">
                         <img src="{% static 'img/remove.png' %}" width="25px" height="25px">
                     </a>
-                    <img src="{% static 'img/draw.png' %}" width="25px" height="25px">
+                    <a href="edit_comment?comment_id={{ comment.id }}">
+                        <img src="{% static 'img/draw.png' %}" width="25px" height="25px">
+                    </a>
                 </div>
                 {% endif %}
             </div>

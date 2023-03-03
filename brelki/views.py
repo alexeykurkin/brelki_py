@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse
 from brelki.models import Keychain, User, Comment
-from .forms import RegistrationForm, AuthForm, CreateKeychainForm, CreateCommentForm
+from .forms import RegistrationForm, AuthForm, CreateKeychainForm, CreateCommentForm, EditCommentForm
 from django.shortcuts import redirect
 from django.contrib.auth.hashers import check_password, make_password
 from django.contrib import messages
@@ -100,7 +100,6 @@ def keychain(request):
     # Создание комментария
 
     if request.method == 'POST':
-        print(1)
         form_content = CreateCommentForm(request.POST)
         if form_content.is_valid():
 
@@ -144,3 +143,24 @@ def create_keychain(request):
 def delete_comment(request):
     Comment.objects.filter(id=request.GET['comment_id']).delete()
     return redirect('/keychain?id=' + request.session['keychain_id'])
+
+
+def edit_comment(request):
+    current_user = User.objects.get(id=request.session['user_id'])
+    comment = Comment.objects.get(id=request.GET['comment_id'])
+    if request.method == 'POST':
+
+        form_content = EditCommentForm(request.POST, initial={'content': comment.content})
+        if form_content.is_valid():
+            edited_comment = Comment.objects.get(id=request.GET['comment_id'])
+            edited_comment.content = request.POST['content']
+            edited_comment.save()
+            return redirect('/keychain?id=' + request.session['keychain_id'])
+        else:
+            return HttpResponse(render(request, 'edit_comment.html', {"edit_comment_form": form_content,
+                                                                      "current_user": current_user}))
+    else:
+        edit_comment_form = EditCommentForm(initial={'content': comment.content})
+        return HttpResponse(render(request, 'edit_comment.html', {"edit_comment_form": edit_comment_form,
+                                                                  "current_user": current_user}))
+

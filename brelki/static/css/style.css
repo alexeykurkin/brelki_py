@@ -363,12 +363,12 @@ a span {
   margin-bottom: 20px;
 }
 
-.create-comment-content {
+.comment-content {
   display: flex;
   justify-content: center;
 }
 
-.create-comment-block {
+.comment-block {
   display: inline-flex;
   padding: 20px;
   border-color: black;;
@@ -379,7 +379,7 @@ a span {
   max-width: 1440px;
 }
 
-.create-comment-block form {
+.comment-block form {
   margin-bottom: 0;
 }
 
@@ -448,4 +448,15 @@ a span {
   gap: 15px;
   width: auto;
   margin-bottom: 15px;
+}
+
+.edit-comment-container {
+  max-width: 1050px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.edit-comment-block {
+  display: flex;
+  flex-direction: column;
 }

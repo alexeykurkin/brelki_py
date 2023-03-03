@@ -104,3 +104,19 @@ class CreateCommentForm(ModelForm):
     class Meta:
         model = models.Comment
         fields = ['content']
+
+
+class EditCommentForm(ModelForm):
+
+    content_errors = {
+        'required': 'Поле не должно быть пустым'
+    }
+
+    content = forms.CharField(widget=forms.Textarea(attrs={'class': 'comment-input'}),
+                              error_messages=content_errors,
+                              validators=[MinLengthValidator(2, 'Слишком короткий комментарий')])
+    initial = {'content': 'This is default text.'}
+
+    class Meta:
+        model = models.Comment
+        fields = ['content']
