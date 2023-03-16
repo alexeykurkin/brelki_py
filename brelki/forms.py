@@ -99,7 +99,9 @@ class CreateCommentForm(ModelForm):
         'required': 'Заполните поле комментария!'
     }
 
-    content = forms.CharField(widget=forms.Textarea(attrs={'class': 'comment-input'}), error_messages=content_errors)
+    content = forms.CharField(widget=forms.Textarea(attrs={'class': 'comment-input'}),
+                              validators=[MinLengthValidator(3, 'Слишком короткий комментарий')],
+                              error_messages=content_errors)
 
     class Meta:
         model = models.Comment
@@ -107,7 +109,6 @@ class CreateCommentForm(ModelForm):
 
 
 class EditCommentForm(ModelForm):
-
     content_errors = {
         'required': 'Поле не должно быть пустым'
     }
@@ -120,3 +121,12 @@ class EditCommentForm(ModelForm):
     class Meta:
         model = models.Comment
         fields = ['content']
+
+
+class SearchForm(forms.Form):
+    search_input_errors = {
+        'required': 'Заполните поле'
+    }
+
+    search_input = forms.CharField(widget=forms.TextInput(attrs={'class': 'search-input'}))
+

@@ -3,14 +3,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Изменение комментария</title>
+    <a style="position: absolute; font-size: 25px;" href="/">На главную</a>
     <div class="edit-comment-container">
 
     <div class="comment-content">
         <div class="comment-block">
             <form method="POST" enctype="multipart/form-data">
             <div class="commenting-user">
-                <img src="{{ current_user.user_img }}" width="50px" height="50px" class="user-avatar">
+                <img src="{{ current_user.user_img }}" width="50px" height="50px" class="user-avatar" id="user-avatar">
                 <h2>{{ current_user.login }}</h2>
             </div>
             {% csrf_token %}
@@ -30,3 +31,15 @@
 </body>
 </html>
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
+<script>
+    let user_image = document.getElementById('user-avatar')
+
+    if (!user_image.complete) {
+        user_image.src = '{% static 'img/user_img_not_found.png' %}';
+    }
+    if (user_image.naturalWidth === 0) {
+        user_image.src = '{% static 'img/user_img_not_found.png' %}';
+    }
+
+
+</script>

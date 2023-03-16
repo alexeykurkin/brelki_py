@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>{{ keychain.title }}</title>
 </head>
 <body>
 <div class="keychain-container">
@@ -40,7 +40,7 @@
             </div>
             {% csrf_token %}
             {{ create_comment_form.content }}
-                {{ create_comment_form.content.error_messages }}
+                {{ create_comment_form.content.errors }}
             <button type="submit" class="submit-button" style="width: 220px">
                 Комментировать
                 <img src="{% static 'img/comment.png' %}" width="25px" height="25px">
@@ -58,10 +58,10 @@
                 {% if current_user.id == comment.user.id %}
                 <div class="comment-actions">
                     <a href="delete_comment?comment_id={{ comment.id }}">
-                        <img src="{% static 'img/remove.png' %}" width="25px" height="25px">
+                        <img src="{% static 'img/remove.png' %}" width="25px" height="25px" title="Удалить">
                     </a>
                     <a href="edit_comment?comment_id={{ comment.id }}">
-                        <img src="{% static 'img/draw.png' %}" width="25px" height="25px">
+                        <img src="{% static 'img/draw.png' %}" width="25px" height="25px" title="Изменить">
                     </a>
                 </div>
                 {% endif %}

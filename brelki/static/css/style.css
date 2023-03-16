@@ -53,6 +53,12 @@ a span {
   height: 75px;
 }
 
+.user-avatar-min {
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+}
+
 .user-actions {
   display: flex;
   flex-direction: row;
@@ -247,6 +253,7 @@ a span {
   background-color: #0077FF;
   border: none;
   border-radius: 25px;
+  cursor: pointer;
 }
 
 .submit-button > img {
@@ -465,4 +472,34 @@ a span {
 .edit-comment-block {
   display: flex;
   flex-direction: column;
+}
+
+button {
+  cursor: pointer;
+}
+
+.search-block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.search-form {
+  margin-bottom: 0;
+}
+
+.search-input {
+  border-radius: 50px;
+  height: 30px;
+  padding-left: 15px;
+  border: 1px solid black;
+  margin-right: 5px;
+}
+
+.search-button {
+  background-color: #0077FF;
+  border: none;
+  width: 30px;
+  border-radius: 50%;
+  height: 30px;
 }

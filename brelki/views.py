@@ -1,9 +1,10 @@
 from django.shortcuts import render, HttpResponse
 from brelki.models import Keychain, User, Comment
-from .forms import RegistrationForm, AuthForm, CreateKeychainForm, CreateCommentForm, EditCommentForm
+from .forms import RegistrationForm, AuthForm, CreateKeychainForm, CreateCommentForm, EditCommentForm, SearchForm
 from django.shortcuts import redirect
 from django.contrib.auth.hashers import check_password, make_password
 from django.contrib import messages
+from django.core.exceptions import ObjectDoesNotExist
 
 
 def index(request):
@@ -21,7 +22,16 @@ def index(request):
                'logged_user':
                    {'user_login': user_login,
                     'user_id': user_id,
-                    'str_user_img': str_user_img}}
+                    'str_user_img': str_user_img},
+               "search_form": SearchForm()}
+
+    if request.GET:
+        search_content = SearchForm(request.GET)
+        if search_content.is_valid():
+            return redirect('/search?search_input=' + request.GET['search_input'])
+        else:
+            print('not ok')
+
     return HttpResponse(render(request, 'index.html', context))
 
 
@@ -91,9 +101,14 @@ def keychain(request):
     except KeyError:
         current_user_id = 0
 
+    try:
+        Keychain.objects.get(id=keychain_id)
+    except ObjectDoesNotExist:
+        return HttpResponse('Брелка с таким id не существует', status=404)
+
     context = {"keychain": Keychain.objects.get(id=keychain_id),
                "user": User.objects.all(),
-               "comments": Comment.objects.filter(keychain_id=keychain_id),
+               "comments": Comment.objects.order_by('-create_date').filter(keychain_id=keychain_id),
                "current_user": User.objects.get(id=current_user_id),
                "create_comment_form": CreateCommentForm()}
 
@@ -164,3 +179,9 @@ def edit_comment(request):
         return HttpResponse(render(request, 'edit_comment.html', {"edit_comment_form": edit_comment_form,
                                                                   "current_user": current_user}))
 
+
+def search(request):
+    search_keychains = Keychain.objects.filter(title__contains=request.GET['search_input'])
+    search_users = User.objects.filter(login__contains=request.GET['search_input'])
+    return HttpResponse(render(request, 'search.html', {'search_keychains': search_keychains,
+                                                        'search_users': search_users}))
