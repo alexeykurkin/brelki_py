@@ -128,5 +128,8 @@ class SearchForm(forms.Form):
         'required': 'Заполните поле'
     }
 
-    search_input = forms.CharField(widget=forms.TextInput(attrs={'class': 'search-input'}))
+    search_input = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Поиск',
+                                                                 'class': 'search_input',
+                                                                 'id': 'search_input'}),
+                                   error_messages=search_input_errors)
 

@@ -5,9 +5,15 @@
     <form method="get" class="search-form">
         <div class="search-block">
             {{ search_form.search_input }}
+            {{ search_form.search_input.errors }}
+            <img src="{% static 'img/remove.png' %}"
+                 onclick="document.getElementById('search_input').value = ''"
+                 height="20px" width="20px"
+                 class="clear-search-input" title="Очистить">
             <button class="search-button" type="submit">
-                <img src="{% static 'img/search.png' %}" width="15px" height="15px">
+                <img src="{% static 'img/search.png' %}" width="15px" height="15px" title="Искать">
             </button>
+
         </div>
     </form>
 
