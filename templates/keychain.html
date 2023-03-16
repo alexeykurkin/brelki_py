@@ -1,13 +1,17 @@
 {% load static %}
-
-<a style="position: absolute; font-size: 25px;" href="/">На главную</a>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>{{ keychain.title }}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
+<div class="home-button">
+    <a href="/">
+        <img src="{% static 'img/home.png' %}" height="50px" width="50px">
+    </a>
+</div>
 <div class="keychain-container">
     <div class="keychain-content">
         <div class="keychain-title-image">
@@ -68,7 +72,9 @@
             </div>
         <p class="comment-text">{{ comment.content }}</p>
         <p class="comment-creation-time">
-            {{ comment.create_date|date:'d.m.Y в H:i' }}
+            {% if comment.create_date.month == 1 %}
+            {% endif %}
+            {{ comment.create_date|date:'j E Y в H:i' }}
         </p>
         </div>
         {% endfor %}
@@ -78,7 +84,7 @@
 
 </body>
 </html>
-<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
 <script>
     let user_images = document.getElementsByClassName('user-avatar')
 

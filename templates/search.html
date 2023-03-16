@@ -1,14 +1,73 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-
+    <title>Поиск</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    {% for keychain in search_keychains %}
-        {{ keychain }}
-    {% endfor %}
-    {% for user in search_users %}
-        {{ user }}
-    {% endfor %}
+    <div class="home-button">
+        <a href="/">
+            <img src="{% static 'img/home.png' %}" height="50px" width="50px">
+        </a>
+    </div>
+
+    <div class="found-items-container">
+        <h1 class="search-request-title">Поиск по запросу <span>"{{ search_title }}"</span></h1>
+        <div class="search-category-block">
+            <h1 class="search-category-title">Брелки</h1>
+            <img src="{% static 'img/key.png' %}" height="50px" width="50px">
+        </div>
+
+        <div class="found-keychains">
+        {% if search_keychains %}
+            {% for keychain in search_keychains %}
+                <a href="keychain?id={{ keychain.id }}">
+                    <div class="item">
+                        {% if keychain.img == '' %}
+                            <img src="{% static 'img/not_found.png' %}" class="img_unselectable" width="250" height="250">
+                        {% else %}
+                            <img src="{{ keychain.img }}" class="img_unselectable" width="250" height="250">
+                        {% endif %}
+                        <div class="item_author-info">
+                            <img src="{{ keychain.user.user_img }}" width="25" height="25" class="img_unselectable user-avatar-min">
+                            <p>{{ keychain.user.login }}</p>
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
+        {% else %}
+            <h1 style="color: #dd5353">Таких брелков нету</h1>
+        {% endif %}
+        </div>
+        <div class="search-category-block">
+            <h1 class="search-category-title">Пользователи</h1>
+            <img src="{% static 'img/user.png' %}" height="50px" width="50px">
+        </div>
+        {% if search_users %}
+            {% for user in search_users %}
+                <div class="found-user-block">
+                    <img src="{{ user.user_img }}" class="user-avatar-large">
+                    <h2>{{ user.login }}</h2>
+                </div>
+            {% endfor %}
+        {% else %}
+            <h1 style="color: #dd5353">Таких пользователей нету</h1>
+        {% endif %}
+    </div>
+
 </body>
 </html>
+<script>
+    let user_images = document.getElementsByClassName('user-avatar-large')
+
+    for (let i=0; i < user_images.length; i++) {
+        let user_image = user_images[i];
+        if (!user_image.complete) {
+            user_image.src = '{% static 'img/user_img_not_found.png' %}';
+        }
+        if (user_image.naturalWidth === 0) {
+            user_image.src = '{% static 'img/user_img_not_found.png' %}';
+        }
+    }
+</script>

@@ -184,4 +184,5 @@ def search(request):
     search_keychains = Keychain.objects.filter(title__contains=request.GET['search_input'])
     search_users = User.objects.filter(login__contains=request.GET['search_input'])
     return HttpResponse(render(request, 'search.html', {'search_keychains': search_keychains,
-                                                        'search_users': search_users}))
+                                                        'search_users': search_users,
+                                                        'search_title': request.GET['search_input']}))

@@ -22,7 +22,7 @@ a span {
   position: relative;
   margin: auto;
   width: 100%;
-  padding: 25px 0 25px;
+  padding: 20px 0 20px;
   border-color: black;
   border-radius: 10px;
   background-color: #fff;
@@ -201,7 +201,7 @@ a span {
   border: 0;
   font-family: inherit;
   padding: 16px 12px 0 12px;
-  height: 56px;
+  height: 40px;
   font-size: 16px;
   font-weight: 400;
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.3);
@@ -513,9 +513,72 @@ input[id=search_input]:focus {
   height: 30px;
 }
 
+.search-button > img {
+  vertical-align: middle;
+}
+
 .clear-search-input {
   border-radius: 50%;
   margin-left: -66px;
   margin-right: 5px;
   cursor: pointer;
+}
+
+.found-items-container {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.found-keychains {
+  position: relative;
+  margin: 15px auto auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.user-avatar-large {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.found-user-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: min-content;
+  padding: 25px 35px;
+  border-color: black;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 7px 0 rgba(0, 0, 0, .04);
+  margin: 15px;
+}
+
+.found-user-block h2 {
+  margin-bottom: 0;
+}
+
+.search-category-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: min-content;
+}
+
+.search-category-title {
+  font-size: 45px;
+  margin-right: 10px;
+}
+
+.search-request-title span {
+  color: #0077FF;
+}
+
+.search-request-title > img {
+  vertical-align: middle;
 }
