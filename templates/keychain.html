@@ -35,6 +35,8 @@
     </div>
     <h1 class="comments-section-title">Комментарии</h1>
 
+    {% if current_user %}
+
     <div class="comment-content">
         <div class="comment-block">
             <form method="POST" enctype="multipart/form-data">
@@ -52,6 +54,9 @@
             </form>
         </div>
     </div>
+    {% else %}
+        <h2 style="color: #dd5353">Войдите в систему, чтобы оставлять комментарии</h2>
+    {% endif %}
 
     <div class="comment-section">
         {% for comment in comments %}
@@ -84,18 +89,3 @@
 
 </body>
 </html>
-
-<script>
-    let user_images = document.getElementsByClassName('user-avatar')
-
-    for (let i=0; i < user_images.length; i++) {
-        let user_image = user_images[i];
-        if (!user_image.complete) {
-            user_image.src = '{% static 'img/user_img_not_found.png' %}';
-        }
-        if (user_image.naturalWidth === 0) {
-            user_image.src = '{% static 'img/user_img_not_found.png' %}';
-        }
-    }
-
-</script>

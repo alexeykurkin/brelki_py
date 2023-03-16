@@ -1,6 +1,6 @@
-from django.db import models
-from django.core.exceptions import ValidationError
 from django.contrib.auth.hashers import check_password
+from django.core.exceptions import ValidationError
+from django.db import models
 
 
 def validate_phone(value):
@@ -22,7 +22,7 @@ def existing_login(value):
 class User(models.Model):
     id = models.IntegerField(primary_key=True)
     login = models.CharField(max_length=30)
-    email = models.EmailField(max_length=30, error_messages='Неверный e-mail')
+    email = models.EmailField(max_length=30)
     password = models.CharField(max_length=200)
     reg_date = models.DateTimeField(auto_now=True)
     telephone_number = models.CharField(max_length=12, validators=[validate_phone])

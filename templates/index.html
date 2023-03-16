@@ -76,25 +76,3 @@
     {% endfor %}
 </div>
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
-<script>
-    let avatar = document.getElementById('user-avatar')
-    let avatars_min = document.getElementsByClassName('user-avatar-min')
-
-    if (!avatar.complete) {
-        avatar.src = '{% static 'img/user_img_not_found.png' %}';
-    }
-    if (avatar.naturalWidth === 0) {
-        avatar.src = '{% static 'img/user_img_not_found.png' %}';
-    }
-
-    for (let i=0; i < avatars_min.length; i++) {
-        let user_image = avatars_min[i];
-        if (!user_image.complete) {
-            user_image.src = '{% static 'img/user_img_not_found.png' %}';
-        }
-        if (user_image.naturalWidth === 0) {
-            user_image.src = '{% static 'img/user_img_not_found.png' %}';
-        }
-    }
-
-</script>

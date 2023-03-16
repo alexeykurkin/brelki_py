@@ -58,16 +58,3 @@
 
 </body>
 </html>
-<script>
-    let user_images = document.getElementsByClassName('user-avatar-large')
-
-    for (let i=0; i < user_images.length; i++) {
-        let user_image = user_images[i];
-        if (!user_image.complete) {
-            user_image.src = '{% static 'img/user_img_not_found.png' %}';
-        }
-        if (user_image.naturalWidth === 0) {
-            user_image.src = '{% static 'img/user_img_not_found.png' %}';
-        }
-    }
-</script>

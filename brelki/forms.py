@@ -1,7 +1,24 @@
 from django.forms import ModelForm
 from . import models
 from django import forms
-from django.core.validators import MinLengthValidator, MaxLengthValidator
+from django.core.exceptions import ValidationError
+from django.core.validators import MinLengthValidator, MaxLengthValidator, FileExtensionValidator
+
+
+def validate_unique_login(value):
+    if models.User.objects.filter(login=value).exists():
+        raise ValidationError(
+            'Логин уже занят',
+            params={'value': value}
+        )
+
+
+def validate_unique_email(value):
+    if models.User.objects.filter(email=value).exists():
+        raise ValidationError(
+            'Почта используется в другом аккаунте',
+            params={'value': value}
+        )
 
 
 class RegistrationForm(ModelForm):
@@ -11,11 +28,11 @@ class RegistrationForm(ModelForm):
     }
 
     login_errors = {
-        'required': 'Введите логин',
+        'required': 'Введите логин'
     }
 
     password_errors = {
-        'required': 'Введите пароль',
+        'required': 'Введите пароль'
     }
 
     telephone_errors = {
@@ -26,19 +43,27 @@ class RegistrationForm(ModelForm):
     login = forms.CharField(widget=forms.TextInput(attrs={'placeholder': ' '}),
                             error_messages=login_errors,
                             validators=[MinLengthValidator(3, 'Слишком короткий логин'),
-                                        MaxLengthValidator(30, 'Слишком длинный логин')])
+                                        MaxLengthValidator(30, 'Слишком длинный логин'),
+                                        validate_unique_login])
+
     email = forms.EmailField(widget=forms.TextInput(attrs={'placeholder': ' '}),
                              error_messages=email_errors,
                              validators=[MinLengthValidator(5, 'Слишком короткий адрес эл. почты'),
-                                         MaxLengthValidator(50, 'Слишком длинный адрес эл. почты')])
+                                         MaxLengthValidator(50, 'Слишком длинный адрес эл. почты'),
+                                         validate_unique_email])
+
     password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': ' '}),
                                error_messages=password_errors,
                                validators=[MinLengthValidator(3, 'Слишком короткий пароль'),
                                            MaxLengthValidator(40, 'Слишком длинный пароль')]
                                )
+
     telephone_number = forms.CharField(widget=forms.TextInput(attrs={'placeholder': ' '}),
                                        error_messages=telephone_errors)
-    user_img = forms.ImageField(widget=forms.FileInput(attrs={'class': 'file-load'}))
+
+    user_img = forms.ImageField(widget=forms.FileInput(attrs={'class': 'file-load'}),
+                                validators=[FileExtensionValidator(allowed_extensions=['png', 'jpg', 'jpeg'],
+                                                                   message='Файл должен быть изображением')])
 
     class Meta:
         model = models.User
@@ -87,7 +112,9 @@ class CreateKeychainForm(ModelForm):
     price = forms.FloatField(widget=forms.TextInput(attrs={'placeholder': ' '}),
                              error_messages=price_errors)
 
-    img = forms.ImageField(widget=forms.FileInput(attrs={'class': 'file-load'}))
+    img = forms.ImageField(widget=forms.FileInput(attrs={'class': 'file-load'}),
+                           validators=[FileExtensionValidator(allowed_extensions=['png', 'jpg', 'jpeg'],
+                                                              message='Файл должен быть изображением')])
 
     class Meta:
         model = models.Keychain
@@ -132,4 +159,3 @@ class SearchForm(forms.Form):
                                                                  'class': 'search_input',
                                                                  'id': 'search_input'}),
                                    error_messages=search_input_errors)
-

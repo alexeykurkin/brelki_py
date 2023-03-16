@@ -33,15 +33,3 @@
     </div>
 </body>
 </html>
-<script>
-    let user_image = document.getElementById('user-avatar')
-
-    if (!user_image.complete) {
-        user_image.src = '{% static 'img/user_img_not_found.png' %}';
-    }
-    if (user_image.naturalWidth === 0) {
-        user_image.src = '{% static 'img/user_img_not_found.png' %}';
-    }
-
-
-</script>
