@@ -661,6 +661,6 @@ input[id=search_input]:focus {
   gap: 5px;
 }
 
-.user-info-keychain-actions > img {
+.user-info-keychain-actions > a > img {
   vertical-align: middle;
 }

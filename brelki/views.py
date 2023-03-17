@@ -1,10 +1,14 @@
+import django.core.exceptions
 from django.shortcuts import render, HttpResponse
 from brelki.models import Keychain, User, Comment
-from .forms import RegistrationForm, AuthForm, CreateKeychainForm, CreateCommentForm, EditCommentForm, SearchForm
+from .forms import RegistrationForm, AuthForm, CreateKeychainForm, CreateCommentForm, EditCommentForm, SearchForm, \
+    EditKeychainForm
 from django.shortcuts import redirect
 from django.contrib.auth.hashers import check_password, make_password
 from django.contrib import messages
 from django.core.exceptions import ObjectDoesNotExist
+from os import remove
+from django.utils.datastructures import MultiValueDictKeyError
 
 
 def index(request):
@@ -208,3 +212,28 @@ def user_info(request):
     context['user_comments'] = user_comments
 
     return HttpResponse(render(request, 'user_info.html', context))
+
+
+def edit_keychain(request):
+    edited_keychain = Keychain.objects.get(id=request.GET['keychain_id'])
+    current_keychain_image = edited_keychain.img
+    if request.method == 'POST':
+        form_content = EditKeychainForm(request.POST, request.FILES, instance=edited_keychain)
+        if form_content.is_valid():
+            edited_keychain.title = request.POST['title']
+            edited_keychain.description = request.POST['description']
+            edited_keychain.price = request.POST['price']
+            try:
+                uploaded_image = request.FILES['img']
+                remove(current_keychain_image.path)
+                edited_keychain.img = uploaded_image
+            except MultiValueDictKeyError:
+                pass
+
+            edited_keychain.save()
+            return redirect('/')
+        else:
+            return HttpResponse(render(request, 'edit_keychain.html', {'edit_keychain_form': form_content}))
+    else:
+        edit_keychain_form = EditKeychainForm(instance=edited_keychain)
+        return HttpResponse(render(request, 'edit_keychain.html', {'edit_keychain_form': edit_keychain_form}))

@@ -4,7 +4,7 @@
 <head>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <meta charset="UTF-8">
-    <title>Создание брелка</title>
+    <title>Редактирование брелка</title>
 </head>
 <body>
     <div class="home-button">
@@ -15,34 +15,33 @@
     <div class="form-content">
         <form class="registration-form" method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            <h1>Создание нового брелка</h1>
+            <h1>Изменение брелка</h1>
             <div class="form-items">
                 <label for="" class="inp">
-                    {{ create_keychain_form.title }}
+                    {{ edit_keychain_form.title }}
                     <span class="label">Название</span>
                     <span class="focus-bg"></span>
-                    {{ create_keychain_form.title.errors }}
+                    {{ edit_keychain_form.title.errors }}
                 </label>
                 <label for="" class="inp">
-                    {{ create_keychain_form.description }}
+                    {{ edit_keychain_form.description }}
                     <span class="label">Описание</span>
                     <span class="focus-bg"></span>
-                    {{ create_keychain_form.description.errors }}
+                    {{ edit_keychain_form.description.errors }}
                 </label>
                 <label for="" class="inp">
-                    {{ create_keychain_form.price }}
+                    {{ edit_keychain_form.price }}
                     <span class="label">Цена</span>
                     <span class="focus-bg"></span>
-                    {{ create_keychain_form.price.errors }}
+                    {{ edit_keychain_form.price.errors }}
                 </label>
                 <p>Изображение брелка</p>
-                    {{ create_keychain_form.img }}
-                    {{ create_keychain_form.img.errors }}
+                    {{ edit_keychain_form.img }}
+                    {{ edit_keychain_form.img.errors }}
                     <button type="submit" class="submit-button">
                         Подтвердить
                     </button>
             </div>
         </form>
     </div>
-
 </body>

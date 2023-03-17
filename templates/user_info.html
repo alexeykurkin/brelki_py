@@ -37,7 +37,9 @@
                             {% if logged_user_id == personal_space_user_id %}
                                 <div class="user-info-keychain-actions">
                                     <h3>Действия:</h3>
-                                    <img src="{% static 'img/draw.png' %}" width="20px" height="20px">
+                                    <a href="edit_keychain?keychain_id={{ keychain.id }}">
+                                        <img src="{% static 'img/draw.png' %}" width="20px" height="20px">
+                                    </a>
                                     <img src="{% static 'img/remove.png' %}" width="20px" height="20px">
                                 </div>
                             {% endif %}

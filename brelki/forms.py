@@ -159,3 +159,6 @@ class SearchForm(forms.Form):
                                                                  'class': 'search_input',
                                                                  'id': 'search_input'}),
                                    error_messages=search_input_errors)
+
+
+EditKeychainForm = CreateKeychainForm
