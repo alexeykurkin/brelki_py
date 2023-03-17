@@ -217,6 +217,7 @@ def user_info(request):
 def edit_keychain(request):
     edited_keychain = Keychain.objects.get(id=request.GET['keychain_id'])
     current_keychain_image = edited_keychain.img
+    current_user_id = request.session['user_id']
     if request.method == 'POST':
         form_content = EditKeychainForm(request.POST, request.FILES, instance=edited_keychain)
         if form_content.is_valid():
@@ -231,9 +232,20 @@ def edit_keychain(request):
                 pass
 
             edited_keychain.save()
-            return redirect('/')
+            return redirect('/user_info?user_id=' + str(current_user_id))
         else:
             return HttpResponse(render(request, 'edit_keychain.html', {'edit_keychain_form': form_content}))
     else:
         edit_keychain_form = EditKeychainForm(instance=edited_keychain)
         return HttpResponse(render(request, 'edit_keychain.html', {'edit_keychain_form': edit_keychain_form}))
+
+
+def delete_keychain(request):
+    if request.method == 'POST':
+        deleted_keychain = Keychain.objects.get(id=request.GET['keychain_id'])
+        deleted_keychain_image = deleted_keychain.img
+        deleted_keychain.delete()
+        remove(deleted_keychain_image.path)
+        return redirect('/user_info?user_id=' + str(request.session['user_id']))
+    else:
+        return HttpResponse(render(request, 'delete_keychain.html'))

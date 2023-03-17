@@ -31,5 +31,6 @@ urlpatterns = [
     path('edit_comment', views.edit_comment),
     path('search', views.search),
     path('user_info', views.user_info),
-    path('edit_keychain', views.edit_keychain)
+    path('edit_keychain', views.edit_keychain),
+    path('delete_keychain', views.delete_keychain)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
