@@ -241,11 +241,14 @@ def edit_keychain(request):
 
 
 def delete_keychain(request):
+    current_user_id = request.session['user_id']
+    deleted_keychain = Keychain.objects.get(id=request.GET['keychain_id'])
     if request.method == 'POST':
-        deleted_keychain = Keychain.objects.get(id=request.GET['keychain_id'])
         deleted_keychain_image = deleted_keychain.img
         deleted_keychain.delete()
         remove(deleted_keychain_image.path)
         return redirect('/user_info?user_id=' + str(request.session['user_id']))
     else:
-        return HttpResponse(render(request, 'delete_keychain.html'))
+        return HttpResponse(render(request, 'delete_keychain.html',
+                                   {"keychain": deleted_keychain,
+                                    "current_user_id": current_user_id}))

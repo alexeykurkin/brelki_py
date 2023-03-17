@@ -29,7 +29,7 @@
                     <div class="user-info-keychain">
                         <div class="user-info-keychain-image">
                             <a href="keychain?id={{ keychain.id }}">
-                                <img src="{{ keychain.img }}" width="100px" height="100px">
+                                <img src="{{ keychain.img }}" width="75px" height="75px">
                             </a>
                         </div>
                         <div class="user-info-keychain-data">
@@ -55,28 +55,30 @@
             {% if user_comments %}
             <div class="comment-section">
                 {% for comment in user_comments %}
-                    <div class="comment">
-                        <div class="comment-content">
-                            <img src="{{ comment.keychain.img }}" width="100px" height="100px">
-                            <h2>{{ comment.keychain.title }}</h2>
-                            {% if current_user.id == user.id %}
-                            <div class="comment-actions">
-                                <a href="delete_comment?comment_id={{ comment.id }}">
-                                    <img src="{% static 'img/remove.png' %}" width="25px" height="25px" title="Удалить">
-                                </a>
-                                <a href="edit_comment?comment_id={{ comment.id }}">
-                                    <img src="{% static 'img/draw.png' %}" width="25px" height="25px" title="Изменить">
-                                </a>
+                    <a href="keychain?id={{ comment.keychain_id }}#comments">
+                        <div class="comment">
+                            <div class="comment-content">
+                                <img src="{{ comment.keychain.img }}" width="50px" height="50px">
+                                <h2>{{ comment.keychain.title }}</h2>
+                                {% if current_user.id == user.id %}
+                                <div class="comment-actions">
+                                    <a href="delete_comment?comment_id={{ comment.id }}">
+                                        <img src="{% static 'img/remove.png' %}" width="25px" height="25px" title="Удалить">
+                                    </a>
+                                    <a href="edit_comment?comment_id={{ comment.id }}">
+                                        <img src="{% static 'img/draw.png' %}" width="25px" height="25px" title="Изменить">
+                                    </a>
+                                </div>
+                                {% endif %}
                             </div>
-                            {% endif %}
+                            <p class="comment-text">{{ comment.content }}</p>
+                            <p class="comment-creation-time">
+                                {% if comment.create_date.month == 1 %}
+                                {% endif %}
+                                {{ comment.create_date|date:'j E Y в H:i' }}
+                            </p>
                         </div>
-                        <p class="comment-text"><a href="keychain?id={{ comment.keychain_id }}#comments">{{ comment.content }}</a></p>
-                        <p class="comment-creation-time">
-                        {% if comment.create_date.month == 1 %}
-                        {% endif %}
-                        {{ comment.create_date|date:'j E Y в H:i' }}
-                    </p>
-                    </div>
+                    </a>
                 {% endfor %}
             </div>
         {% else %}

@@ -7,9 +7,33 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <form method="post">
+    <div class="home-button">
+        <a href="/">
+            <img src="{% static 'img/home.png' %}" height="50px" width="50px">
+        </a>
+    </div>
         {% csrf_token %}
-        <input type="submit">
-    </form>
+        <div class="delete-keychain-container">
+            <div class="delete-keychain-block">
+                <form method="post">
+                    <h1>Вы точно хотите удалить брелок?</h1>
+                    <div class="delete-keychain-showcase-block">
+                        <div class="delete-keychain-showcase">
+                            <h1>{{ keychain.title }}</h1>
+                        <img src="{{ keychain.img }}" width="80px" height="80px">
+                    </div>
+                    </div>
+                    <div class="delete-keychain-actions">
+                        <button type="submit" class="submit-button delete-button">
+                            Подтвердите удаление
+                        </button>
+                        <a href="user_info?user_id={{ current_user_id }}">
+                            <h2 style="color: #0077FF">Нет, назад</h2>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
 </body>
 </html>

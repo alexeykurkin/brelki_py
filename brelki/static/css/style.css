@@ -580,7 +580,7 @@ input[id=search_input]:focus {
   margin-right: 10px;
 }
 
-.search-request-title span {
+.title-span {
   color: #0077FF;
 }
 
@@ -663,4 +663,50 @@ input[id=search_input]:focus {
 
 .user-info-keychain-actions > a > img {
   vertical-align: middle;
+}
+
+.delete-keychain-container {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.delete-keychain-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 7px 0 rgba(0, 0, 0, .04);
+}
+
+.delete-keychain-showcase-block {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px
+}
+
+.delete-keychain-showcase {
+  display: inline-flex;
+  padding: 20px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 2px 7px 0 rgba(0, 0, 0, .04);
+  border-radius: 10px;
+  background-color: #f0f0f2;
+}
+
+.delete-keychain-actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.delete-button {
+  background-color: #dd5353;
 }
