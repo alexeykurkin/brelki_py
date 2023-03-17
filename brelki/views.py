@@ -188,3 +188,23 @@ def search(request):
     return HttpResponse(render(request, 'search.html', {'search_keychains': search_keychains,
                                                         'search_users': search_users,
                                                         'search_title': request.GET['search_input']}))
+
+
+def user_info(request):
+    context = {"logged_user_id": int(request.session['user_id']),
+               "personal_space_user_id": int(request.GET['user_id']),
+               "user": User.objects.get(id=int(request.GET['user_id'])),
+               "keychains": Keychain.objects.all()
+               }
+
+    try:
+        user_keychains = Keychain.objects.filter(user_id=request.GET['user_id'])
+        user_comments = Comment.objects.filter(user_id=request.GET['user_id'])
+    except ObjectDoesNotExist:
+        user_keychains = {}
+        user_comments = {}
+
+    context['user_keychains'] = user_keychains
+    context['user_comments'] = user_comments
+
+    return HttpResponse(render(request, 'user_info.html', context))

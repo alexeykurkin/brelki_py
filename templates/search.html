@@ -47,7 +47,7 @@
         {% if search_users %}
             {% for user in search_users %}
                 <div class="found-user-block">
-                    <img src="{{ user.user_img }}" class="user-avatar-large">
+                    <a href="user_info?user_id={{ user.id }}"><img src="{{ user.user_img }}" class="user-avatar-large"></a>
                     <h2>{{ user.login }}</h2>
                 </div>
             {% endfor %}

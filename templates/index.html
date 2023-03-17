@@ -38,7 +38,9 @@
         </div>
         {% else %}
             <div class="user-menu">
+                <a href="user_info?user_id={{ logged_user.user_id }}">
                 <h2>{{ logged_user.user_login }}</h2>
+                </a>
                 <img src="{{ logged_user.str_user_img }}"
                      class="img_unselectable user-avatar" id="user-avatar">
                     <div class="user-actions_buttons">
@@ -60,19 +62,18 @@
 </div>
 <div class="items">
     {% for keychain in keychains %}
-        <a href="keychain?id={{ keychain.id }}">
-            <div class="item">
-                {% if keychain.img == '' %}
-                    <img src="{% static 'img/not_found.png' %}" class="img_unselectable" width="250" height="250">
-                {% else %}
-                    <img src="{{ keychain.img }}" class="img_unselectable" width="250" height="250">
-                {% endif %}
-                <div class="item_author-info">
-                    <img src="{{ keychain.user.user_img }}" width="25" height="25" class="img_unselectable user-avatar-min">
-                    <p>{{ keychain.user.login }}</p>
-                </div>
+        <div class="item">
+            {% if keychain.img == '' %}
+                <img src="{% static 'img/not_found.png' %}" width="250" height="250">
+            {% else %}
+                <a href="keychain?id={{ keychain.id }}">
+                    <img src="{{ keychain.img }}" width="250" height="250" alt="{{ keychain.title }}">
+                </a>
+            {% endif %}
+            <div class="item_author-info">
+                <img src="{{ keychain.user.user_img }}" width="25" height="25" class="img_unselectable user-avatar-min">
+                <p><a href="user_info?user_id={{ keychain.user.id }}">{{ keychain.user.login }}</a></p>
             </div>
-        </a>
+        </div>
     {% endfor %}
 </div>
-<link rel="stylesheet" href="{% static 'css/style.css' %}">

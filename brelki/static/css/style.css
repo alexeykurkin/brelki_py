@@ -587,3 +587,80 @@ input[id=search_input]:focus {
 .search-request-title > img {
   vertical-align: middle;
 }
+
+.user-info-container {
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.user-info-block {
+  display: flex;
+  flex-direction: row;
+  border-color: black;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 7px 0 rgba(0, 0, 0, .04);
+  margin-bottom: 15px;
+  padding: 20px;
+}
+
+.user-info-block-data {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  align-items: start;
+  justify-content: center;
+  gap: 5px;
+}
+
+.user-info-block-data h1 {
+  text-align: start;
+  margin: 0;
+}
+
+.user-avatar-max {
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+}
+
+.user-info-reg-date {
+  color: gray;
+}
+
+.user-info-keychain {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  border-color: black;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 7px 0 rgba(0, 0, 0, .04);
+  padding: 20px;
+  margin-right: 15px;
+}
+
+.user-info-keychain-data {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.user-info-keychain-data h2, h3 {
+  margin: 0;
+}
+
+.user-info-keychain-actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+.user-info-keychain-actions > img {
+  vertical-align: middle;
+}

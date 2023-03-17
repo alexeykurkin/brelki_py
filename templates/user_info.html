@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="home-button">
+        <a href="/">
+            <img src="{% static 'img/home.png' %}" height="50px" width="50px">
+        </a>
+    </div>
+    <div class="user-info-container">
+        <div class="user-info-block">
+            <div class="user-info-block-image">
+                <img src="{{ user.user_img }}" class="user-avatar-max">
+            </div>
+            <div class="user-info-block-data">
+                <h1>{{ user.login }}</h1>
+                <p class="user-info-reg-date">Дата регистрации: {{ user.reg_date|date:'j E Y в H:i' }}</p>
+            </div>
+        </div>
+        <h1 class="user-info-category-title">Брелки пользователя</h1>
+
+            {% if user_keychains %}
+                {% for keychain in user_keychains %}
+                    <div class="user-info-keychain">
+                        <div class="user-info-keychain-image">
+                            <a href="keychain?id={{ keychain.id }}">
+                                <img src="{{ keychain.img }}" width="100px" height="100px">
+                            </a>
+                        </div>
+                        <div class="user-info-keychain-data">
+                            <h2>{{ keychain.title }}</h2>
+                            {% if logged_user_id == personal_space_user_id %}
+                                <div class="user-info-keychain-actions">
+                                    <h3>Действия:</h3>
+                                    <img src="{% static 'img/draw.png' %}" width="20px" height="20px">
+                                    <img src="{% static 'img/remove.png' %}" width="20px" height="20px">
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <h1 style="color: #dd5353">Нету брелков на продажу</h1>
+            {% endif %}
+            <h1 class="user-info-category-title">Комментарии пользователя</h1>
+            {% if user_comments %}
+            <div class="comment-section">
+                {% for comment in user_comments %}
+                    <div class="comment">
+                        <div class="comment-content">
+                            <img src="{{ comment.keychain.img }}" width="100px" height="100px">
+                            <h2>{{ comment.keychain.title }}</h2>
+                            {% if current_user.id == user.id %}
+                            <div class="comment-actions">
+                                <a href="delete_comment?comment_id={{ comment.id }}">
+                                    <img src="{% static 'img/remove.png' %}" width="25px" height="25px" title="Удалить">
+                                </a>
+                                <a href="edit_comment?comment_id={{ comment.id }}">
+                                    <img src="{% static 'img/draw.png' %}" width="25px" height="25px" title="Изменить">
+                                </a>
+                            </div>
+                            {% endif %}
+                        </div>
+                        <p class="comment-text"><a href="keychain?id={{ comment.keychain_id }}#comments">{{ comment.content }}</a></p>
+                        <p class="comment-creation-time">
+                        {% if comment.create_date.month == 1 %}
+                        {% endif %}
+                        {{ comment.create_date|date:'j E Y в H:i' }}
+                    </p>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+                <h1 style="color: #dd5353">У пользователя нету комментариев</h1>
+        {% endif %}
+    </div>
+</body>
+</html>
