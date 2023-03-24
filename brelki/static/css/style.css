@@ -710,3 +710,9 @@ input[id=search_input]:focus {
 .delete-button {
   background-color: #dd5353;
 }
+
+.history-button {
+  background-color: #52b788;
+  padding-left: 15px;
+  padding-right: 15px;
+}

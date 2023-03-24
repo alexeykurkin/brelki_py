@@ -23,7 +23,6 @@
 
         </div>
     </form>
-
     <div class="user-actions">
         {% if not logged_user.user_login %}
         <div class="user-actions_buttons">
@@ -42,7 +41,14 @@
                 <h2>{{ logged_user.user_login }}</h2>
                 </a>
                 <img src="{{ logged_user.str_user_img }}"
-                     class="img_unselectable user-avatar" id="user-avatar">
+                     class="img_unselectable user-avatar"
+                     id="user-avatar">
+                <div class="history-block">
+                    <button class="user-actions_button history-button">
+                        <img src="{% static 'img/history.png' %}" width="25px" height="25px">
+                        <a href="history"><span>история</span></a>
+                    </button>
+                </div>
                     <div class="user-actions_buttons">
                         <div class="logout-button-block">
                             <button class="user-actions_button logout-button" content="logout">
@@ -55,11 +61,11 @@
                             <img src="{% static 'img/add.png' %}" width="25px" height="25px">
                         </button>
                     </div>
-
             </div>
-        {% endif %}
     </div>
+        {% endif %}
 </div>
+
 <div class="items">
     {% for keychain in keychains %}
         <div class="item">
@@ -77,3 +83,4 @@
         </div>
     {% endfor %}
 </div>
+</html>

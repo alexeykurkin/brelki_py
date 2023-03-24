@@ -252,3 +252,7 @@ def delete_keychain(request):
         return HttpResponse(render(request, 'delete_keychain.html',
                                    {"keychain": deleted_keychain,
                                     "current_user_id": current_user_id}))
+
+
+def history(request):
+    return HttpResponse(render(request, 'history.html'))

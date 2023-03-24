@@ -32,5 +32,6 @@ urlpatterns = [
     path('search', views.search),
     path('user_info', views.user_info),
     path('edit_keychain', views.edit_keychain),
-    path('delete_keychain', views.delete_keychain)
+    path('delete_keychain', views.delete_keychain),
+    path('history', views.history)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
