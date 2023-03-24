@@ -28,6 +28,10 @@
                         <img src="{{ keychain.user.user_img }}" class="user-avatar" id="user-avatar">
                         <h2>{{ keychain.user.login }}</h2>
                     </div>
+                    <button class="user-actions_button send-email-button-min">
+                        Отправить сообщение на почту
+                        <img src="{% static 'img/email.png' %}" width="25px" height="25px">
+                    </button>
                 </a>
             </div>
             <h1>Цена</h1>
@@ -38,53 +42,57 @@
     <h1 class="comments-section-title" id="comments">Комментарии</h1>
 
     {% if current_user %}
-
-    <div class="comment-content">
-        <div class="comment-block">
+    <div class="comment-block-container">
+        <div class="create-comment-section">
             <form method="POST" enctype="multipart/form-data">
-            <div class="commenting-user">
-                <img src="{{ current_user.user_img }}" width="50px" height="50px" class="user-avatar">
-                <h2>{{ current_user.login }}</h2>
-            </div>
-            {% csrf_token %}
-            {{ create_comment_form.content }}
-                {{ create_comment_form.content.errors }}
-            <button type="submit" class="submit-button" style="width: 220px">
-                Комментировать
-                <img src="{% static 'img/comment.png' %}" width="25px" height="25px">
-            </button>
+                <div class="comment-block">
+                    <div class="commenting-user">
+                        <img src="{{ current_user.user_img }}" width="50px" height="50px" class="user-avatar">
+                        <h2>{{ current_user.login }}</h2>
+                    </div>
+                    {% csrf_token %}
+                    {{ create_comment_form.content }}
+                        {{ create_comment_form.content.errors }}
+                    <button type="submit" class="submit-button" style="width: 220px">
+                        Комментировать
+                        <img src="{% static 'img/comment.png' %}" width="25px" height="25px">
+                    </button>
+
+                </div>
             </form>
         </div>
-    </div>
-    {% else %}
-        <h2 style="color: #dd5353">Войдите в систему, чтобы оставлять комментарии</h2>
-    {% endif %}
 
-    <div class="comment-section">
-        {% for comment in comments %}
-        <div class="comment">
-            <div class="comment-content">
-                <img src="{{ comment.user.user_img }}" id="user-avatar" class="user-avatar">
-                <h2>{{ comment.user.login }}</h2>
-                {% if current_user.id == comment.user.id %}
-                <div class="comment-actions">
-                    <a href="delete_comment?comment_id={{ comment.id }}">
-                        <img src="{% static 'img/remove.png' %}" width="25px" height="25px" title="Удалить">
-                    </a>
-                    <a href="edit_comment?comment_id={{ comment.id }}">
-                        <img src="{% static 'img/draw.png' %}" width="25px" height="25px" title="Изменить">
-                    </a>
+
+        {% else %}
+            <h2 style="color: #dd5353">Войдите в систему, чтобы оставлять комментарии</h2>
+        {% endif %}
+
+        <div class="comment-section">
+            {% for comment in comments %}
+            <div class="comment">
+                <div class="comment-content">
+                    <img src="{{ comment.user.user_img }}" id="user-avatar" class="user-avatar">
+                    <h2>{{ comment.user.login }}</h2>
+                    {% if current_user.id == comment.user.id %}
+                    <div class="comment-actions">
+                        <a href="delete_comment?comment_id={{ comment.id }}">
+                            <img src="{% static 'img/remove.png' %}" width="25px" height="25px" title="Удалить">
+                        </a>
+                        <a href="edit_comment?comment_id={{ comment.id }}">
+                            <img src="{% static 'img/draw.png' %}" width="25px" height="25px" title="Изменить">
+                        </a>
+                    </div>
+                    {% endif %}
                 </div>
+            <p class="comment-text">{{ comment.content }}</p>
+            <p class="comment-creation-time">
+                {% if comment.create_date.month == 1 %}
                 {% endif %}
+                {{ comment.create_date|date:'j E Y в H:i' }}
+            </p>
             </div>
-        <p class="comment-text">{{ comment.content }}</p>
-        <p class="comment-creation-time">
-            {% if comment.create_date.month == 1 %}
-            {% endif %}
-            {{ comment.create_date|date:'j E Y в H:i' }}
-        </p>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
 </div>
 

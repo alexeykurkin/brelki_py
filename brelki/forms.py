@@ -126,7 +126,7 @@ class CreateCommentForm(ModelForm):
         'required': 'Заполните поле комментария!'
     }
 
-    content = forms.CharField(widget=forms.Textarea(attrs={'class': 'comment-input'}),
+    content = forms.CharField(widget=forms.Textarea(attrs={'class': 'textarea-input'}),
                               validators=[MinLengthValidator(3, 'Слишком короткий комментарий')],
                               error_messages=content_errors)
 
@@ -140,7 +140,7 @@ class EditCommentForm(ModelForm):
         'required': 'Поле не должно быть пустым'
     }
 
-    content = forms.CharField(widget=forms.Textarea(attrs={'class': 'comment-input'}),
+    content = forms.CharField(widget=forms.Textarea(attrs={'class': 'textarea-input'}),
                               error_messages=content_errors,
                               validators=[MinLengthValidator(2, 'Слишком короткий комментарий')])
     initial = {'content': 'This is default text.'}
@@ -162,3 +162,11 @@ class SearchForm(forms.Form):
 
 
 EditKeychainForm = CreateKeychainForm
+EditUserForm = RegistrationForm
+
+
+class SendEmailForm(forms.Form):
+
+    email_text_errors = {'required': 'Заполните поле'}
+
+    email_text = forms.CharField(widget=forms.Textarea(attrs={'class': 'textarea-input'}))

@@ -270,7 +270,7 @@ a span {
 }
 
 .keychain-container {
-  max-width: 1170px;
+  max-width: 1250px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 16px;
@@ -288,7 +288,7 @@ a span {
   border-radius: 10px;
   background-color: #fff;
   box-shadow: 0 2px 7px 0 rgba(0, 0, 0, .04);
-  padding: 0px 30px 30px;
+  padding: 0 45px 45px;
   margin-top: 30px;
 }
 
@@ -317,6 +317,7 @@ a span {
   display: flex;
   flex-direction: row;
   gap: 20px;
+  margin-bottom: 20px;
 }
 
 .keychain-container h1 {
@@ -375,20 +376,21 @@ a span {
   margin-bottom: 20px;
 }
 
-.comment-content {
-  display: flex;
-  justify-content: center;
-}
-
 .comment-block {
-  display: inline-flex;
+  display: flex;
+  flex-direction: column;
   padding: 20px;
-  border-color: black;;
+  border-color: black;
   border-radius: 15px;
   background-color: #fff;
   box-shadow: 0 2px 7px 0 rgba(0, 0, 0, .04);
-  width: auto;
   max-width: 1440px;
+}
+
+.comment-block-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .comment-block form {
@@ -418,7 +420,7 @@ a span {
 .comment-content {
   display: flex;
   flex-direction: row;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
   gap: 15px;
 }
@@ -449,7 +451,7 @@ a span {
   width: 30px;
 }
 
-.comment-input {
+.textarea-input {
   font-family: "Inter Medium", sans-serif;
   font-size: 20px;
   width: 1000px;
@@ -720,4 +722,47 @@ input[id=search_input]:focus {
   background-color: #52b788;
   padding-left: 15px;
   padding-right: 15px;
+}
+
+.send-email-button {
+  background-color: #0077FF;
+  font-size: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 25px;
+  height: 50px;
+}
+
+.send-email-button-min {
+  font-size: 20px;
+  background-color: #0077FF;
+  width: max-content;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.email-send-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 7px 0 rgba(0, 0, 0, .04);
+  gap: 20px;
+}
+
+.email-send-container {
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.send-email-receiver {
+  display: flex;
+  flex-direction: row;
+  background-color: #f0f0f2;
+  border-radius: 10px;
+  gap: 15px;
+  padding: 10px 25px;
 }

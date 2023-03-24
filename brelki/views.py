@@ -1,14 +1,15 @@
-import django.core.exceptions
 from django.shortcuts import render, HttpResponse
 from brelki.models import Keychain, User, Comment
 from .forms import RegistrationForm, AuthForm, CreateKeychainForm, CreateCommentForm, EditCommentForm, SearchForm, \
-    EditKeychainForm
+    EditKeychainForm, SendEmailForm
 from django.shortcuts import redirect
 from django.contrib.auth.hashers import check_password, make_password
 from django.contrib import messages
 from django.core.exceptions import ObjectDoesNotExist
+from django.core.mail import send_mail
 from os import remove
 from django.utils.datastructures import MultiValueDictKeyError
+from django.conf import settings
 
 
 def index(request):
@@ -270,3 +271,32 @@ def history(request):
         history_keychains.append(Keychain.objects.get(id=history_keychain_id))
 
     return HttpResponse(render(request, 'history.html', {'history_keychains': history_keychains}))
+
+
+def send_email(request):
+    receiver = User.objects.get(id=request.GET['to'])
+    if request.method == 'POST':
+        try:
+            current_user_id = request.session['user_id']
+            if current_user_id == '' or current_user_id == 0:
+                return redirect('/')
+        except KeyError:
+            return redirect('/')
+
+        current_user_login = User.objects.get(id=current_user_id).login
+        receiver = User.objects.get(id=request.GET['to'])
+
+        form_content = SendEmailForm(request.POST)
+        if form_content.is_valid():
+            send_mail(
+                subject='Сообщение от пользователя ' + current_user_login,
+                message=request.POST['email_text'],
+                from_email=settings.EMAIL_HOST_USER,
+                recipient_list=[receiver.email],
+                fail_silently=False
+            )
+            return redirect('/keychain?id=' + request.session['keychain_id'])
+    else:
+        send_email_form = SendEmailForm(None)
+        return HttpResponse(render(request, 'send_email.html', {'send_email_form': send_email_form,
+                                                                'receiver': receiver}))
