@@ -12,14 +12,14 @@
         </a>
     </div>
 
-    <div class="found-items-container">
+    <div class="listed-items-container">
         <h1 class="search-request-title">Поиск по запросу <span class="title-span">"{{ search_title }}"</span></h1>
         <div class="search-category-block">
             <h1 class="search-category-title">Брелки</h1>
             <img src="{% static 'img/key.png' %}" height="50px" width="50px">
         </div>
 
-        <div class="found-keychains">
+        <div class="listed-keychains">
         {% if search_keychains %}
             {% for keychain in search_keychains %}
                 <a href="keychain?id={{ keychain.id }}">
@@ -45,12 +45,14 @@
             <img src="{% static 'img/user.png' %}" height="50px" width="50px">
         </div>
         {% if search_users %}
-            {% for user in search_users %}
-                <div class="found-user-block">
-                    <a href="user_info?user_id={{ user.id }}"><img src="{{ user.user_img }}" class="user-avatar-large"></a>
-                    <h2>{{ user.login }}</h2>
-                </div>
-            {% endfor %}
+            <div class="found-users">
+                {% for user in search_users %}
+                    <div class="found-user-block">
+                        <a href="user_info?user_id={{ user.id }}"><img src="{{ user.user_img }}" class="user-avatar-large"></a>
+                        <h2>{{ user.login }}</h2>
+                    </div>
+                {% endfor %}
+            </div>
         {% else %}
             <h1 style="color: #dd5353">Таких пользователей нету</h1>
         {% endif %}
