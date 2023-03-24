@@ -93,6 +93,7 @@ def logout(request):
     request.session['user_login'] = ''
     request.session['user_id'] = ''
     request.session['user_img'] = ''
+    request.session['history'] = []
     return redirect('/')
 
 
@@ -103,7 +104,14 @@ def keychain(request):
     try:
         current_user_id = request.session['user_id']
     except KeyError:
-        current_user_id = 0
+        current_user_id = ''
+
+    try:
+        history_list = request.session['history']
+        if keychain_id not in history_list and current_user_id:
+            history_list.append(keychain_id)
+    except KeyError:
+        request.session['history'] = []
 
     try:
         Keychain.objects.get(id=keychain_id)
@@ -255,4 +263,10 @@ def delete_keychain(request):
 
 
 def history(request):
-    return HttpResponse(render(request, 'history.html'))
+    history_list = request.session['history']
+
+    history_keychains = []
+    for history_keychain_id in history_list:
+        history_keychains.append(Keychain.objects.get(id=history_keychain_id))
+
+    return HttpResponse(render(request, 'history.html', {'history_keychains': history_keychains}))
