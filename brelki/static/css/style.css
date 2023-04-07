@@ -317,7 +317,6 @@ a span {
   display: flex;
   flex-direction: row;
   gap: 20px;
-  margin-bottom: 20px;
 }
 
 .keychain-container h1 {
@@ -420,7 +419,7 @@ a span {
 .comment-content {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   gap: 15px;
 }

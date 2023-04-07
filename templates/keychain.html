@@ -28,11 +28,16 @@
                         <img src="{{ keychain.user.user_img }}" class="user-avatar" id="user-avatar">
                         <h2>{{ keychain.user.login }}</h2>
                     </div>
+                </a>
+                    {% if current_user %}
+                        <a href="/send_email?to={{ keychain.user.id }}">
                     <button class="user-actions_button send-email-button-min">
                         Отправить сообщение на почту
                         <img src="{% static 'img/email.png' %}" width="25px" height="25px">
                     </button>
-                </a>
+                        </a>
+                    {% endif %}
+
             </div>
             <h1>Цена</h1>
             <p class="keychain-price">{{ keychain.price }} ₽</p>
@@ -52,7 +57,7 @@
                     </div>
                     {% csrf_token %}
                     {{ create_comment_form.content }}
-                        {{ create_comment_form.content.errors }}
+                    {{ create_comment_form.content.errors }}
                     <button type="submit" class="submit-button" style="width: 220px">
                         Комментировать
                         <img src="{% static 'img/comment.png' %}" width="25px" height="25px">
@@ -95,7 +100,8 @@
         </div>
     </div>
 </div>
+<script type="module" src="{% static 'script.js' %}">
 
-
+</script>
 </body>
 </html>
