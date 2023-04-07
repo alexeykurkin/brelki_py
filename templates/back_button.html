@@ -1,0 +1,14 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <button onclick="window.history.go(-1); return false;" type="submit" class="user-actions_button back-button">
+        <img src="{% static '/img/back.png' %}" alt="кнопка назад" width="25px" height="25px">
+        <span>назад</span>
+    </button>
+</body>
+</html>

@@ -7,11 +7,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <div class="home-button">
-        <a href="/">
-            <img src="{% static 'img/home.png' %}" height="50px" width="50px">
-        </a>
-    </div>
+    {% include 'back_button.html' %}
         {% csrf_token %}
         <div class="delete-keychain-container">
             <div class="delete-keychain-block">

@@ -7,11 +7,8 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-<div class="home-button">
-    <a href="/">
-        <img src="{% static 'img/home.png' %}" height="50px" width="50px">
-    </a>
-</div>
+
+{% include 'menu_header.html' %}
 <div class="keychain-container">
     <div class="keychain-content">
         <div class="keychain-title-image">
@@ -45,15 +42,14 @@
         </div>
     </div>
     <h1 class="comments-section-title" id="comments">Комментарии</h1>
-
-    {% if current_user %}
+    {% if logged_user.logged_user_id %}
     <div class="comment-block-container">
         <div class="create-comment-section">
             <form method="POST" enctype="multipart/form-data">
                 <div class="comment-block">
                     <div class="commenting-user">
-                        <img src="{{ current_user.user_img }}" width="50px" height="50px" class="user-avatar">
-                        <h2>{{ current_user.login }}</h2>
+                        <img src="{{ logged_user.logged_user_img }}" width="50px" height="50px" class="user-avatar">
+                        <h2>{{ logged_user.logged_user_login }}</h2>
                     </div>
                     {% csrf_token %}
                     {{ create_comment_form.content }}
@@ -76,9 +72,11 @@
             {% for comment in comments %}
             <div class="comment">
                 <div class="comment-content">
-                    <img src="{{ comment.user.user_img }}" id="user-avatar" class="user-avatar">
+                    <a href="/user_info?user_id={{ comment.user.id }}">
+                        <img src="{{ comment.user.user_img }}" id="user-avatar" class="user-avatar">
+                    </a>
                     <h2>{{ comment.user.login }}</h2>
-                    {% if current_user.id == comment.user.id %}
+                    {% if logged_user.logged_user_id == comment.user.id %}
                     <div class="comment-actions">
                         <a href="delete_comment?comment_id={{ comment.id }}">
                             <img src="{% static 'img/remove.png' %}" width="25px" height="25px" title="Удалить">

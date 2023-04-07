@@ -7,12 +7,9 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <div class="home-button">
-        <a href="/">
-            <img src="{% static 'img/home.png' %}" height="50px" width="50px">
-        </a>
-    </div>
+    {% include 'menu_header.html' %}
     <div class="user-info-container">
+        <div style="margin-bottom: 20px; margin-top: 20px"> {% include 'back_button.html' %} </div>
         <div class="user-info-block">
             <div class="user-info-block-image">
                 <img src="{{ user.user_img }}" class="user-avatar-max">
@@ -34,7 +31,7 @@
                         </div>
                         <div class="user-info-keychain-data">
                             <h2>{{ keychain.title }}</h2>
-                            {% if logged_user_id == personal_space_user_id %}
+                            {% if logged_user.logged_user_id == personal_space_user_id %}
                                 <div class="user-info-keychain-actions">
                                     <h3>Действия:</h3>
                                     <a href="edit_keychain?keychain_id={{ keychain.id }}">
@@ -60,7 +57,7 @@
                             <div class="comment-content">
                                 <img src="{{ comment.keychain.img }}" width="50px" height="50px">
                                 <h2>{{ comment.keychain.title }}</h2>
-                                {% if current_user.id == user.id %}
+                                {% if logged_user.id == user.id %}
                                 <div class="comment-actions">
                                     <a href="delete_comment?comment_id={{ comment.id }}">
                                         <img src="{% static 'img/remove.png' %}" width="25px" height="25px" title="Удалить">

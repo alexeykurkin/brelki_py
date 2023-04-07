@@ -49,12 +49,14 @@ a span {
 
 .user-avatar {
   border-radius: 50%;
+  object-fit: cover;
   width: 75px;
   height: 75px;
 }
 
 .user-avatar-min {
   border-radius: 50%;
+  object-fit: cover;
   width: 25px;
   height: 25px;
 }
@@ -627,6 +629,7 @@ input[id=search_input]:focus {
 
 .user-avatar-max {
   border-radius: 50%;
+  object-fit: cover;
   height: 200px;
   width: 200px;
 }
@@ -764,4 +767,14 @@ input[id=search_input]:focus {
   border-radius: 10px;
   gap: 15px;
   padding: 10px 25px;
+}
+
+.back-button {
+  background-color: #0077FF;
+  width: 120px;
+}
+
+.back-button > img,
+.back-button > span {
+  vertical-align: middle;
 }

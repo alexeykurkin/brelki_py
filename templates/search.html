@@ -6,11 +6,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <div class="home-button">
-        <a href="/">
-            <img src="{% static 'img/home.png' %}" height="50px" width="50px">
-        </a>
-    </div>
+    {% include 'back_button.html' %}
 
     <div class="listed-items-container">
         <h1 class="search-request-title">Поиск по запросу <span class="title-span">"{{ search_title }}"</span></h1>
@@ -27,7 +23,7 @@
                         {% if keychain.img == '' %}
                             <img src="{% static 'img/not_found.png' %}" class="img_unselectable" width="250" height="250">
                         {% else %}
-                            <img src="{{ keychain.img }}" class="img_unselectable" width="250" height="250">
+                            <img src="{{ keychain.img }}" class="img_unselectable" height="250">
                         {% endif %}
                         <div class="item_author-info">
                             <img src="{{ keychain.user.user_img }}" width="25" height="25" class="img_unselectable user-avatar-min">

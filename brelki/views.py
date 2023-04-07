@@ -14,20 +14,20 @@ from django.conf import settings
 
 def index(request):
     try:
-        user_login = request.session['user_login']
-        user_id = request.session['user_id']
-        str_user_img = request.session['str_user_img']
+        logged_user_login = request.session['logged_user_login']
+        logged_user_id = request.session['logged_user_id']
+        logged_user_img = request.session['logged_user_img']
     except KeyError:
-        user_login = ''
-        user_id = ''
-        str_user_img = ''
+        logged_user_login = ''
+        logged_user_id = ''
+        logged_user_img = ''
 
     context = {'keychains': Keychain.objects.all(),
                'users': User.objects.all(),
                'logged_user':
-                   {'user_login': user_login,
-                    'user_id': user_id,
-                    'str_user_img': str_user_img},
+                   {'logged_user_login': logged_user_login,
+                    'logged_user_id': logged_user_id,
+                    'logged_user_img': logged_user_img},
                "search_form": SearchForm()}
 
     if request.GET:
@@ -72,9 +72,9 @@ def auth(request):
 
             if check_user:
                 if check_password(request.POST['password'], check_user.password):
-                    request.session['user_login'] = request.POST['login']
-                    request.session['user_id'] = check_user.id
-                    request.session['str_user_img'] = str(check_user.user_img)
+                    request.session['logged_user_login'] = request.POST['login']
+                    request.session['logged_user_id'] = check_user.id
+                    request.session['logged_user_img'] = str(check_user.user_img)
                     return redirect('/')
                 else:
                     messages.add_message(request, messages.INFO, 'Неверный логин или пароль')
@@ -91,25 +91,28 @@ def auth(request):
 
 
 def logout(request):
-    request.session['user_login'] = ''
-    request.session['user_id'] = ''
-    request.session['user_img'] = ''
+    request.session['logged_user_login'] = ''
+    request.session['logged_user_id'] = ''
+    request.session['logged_user_img'] = ''
     request.session['history'] = []
     return redirect('/')
 
 
 def keychain(request):
+    try:
+        logged_user_login = request.session['logged_user_login']
+        logged_user_id = request.session['logged_user_id']
+        logged_user_img = request.session['logged_user_img']
+    except KeyError:
+        logged_user_login = ''
+        logged_user_id = ''
+        logged_user_img = ''
     keychain_id = request.GET['id']
     request.session['keychain_id'] = keychain_id
 
     try:
-        current_user_id = request.session['user_id']
-    except KeyError:
-        current_user_id = ''
-
-    try:
         history_list = request.session['history']
-        if keychain_id not in history_list and current_user_id:
+        if keychain_id not in history_list and logged_user_id:
             history_list.append(keychain_id)
     except KeyError:
         request.session['history'] = []
@@ -122,10 +125,18 @@ def keychain(request):
     context = {"keychain": Keychain.objects.get(id=keychain_id),
                "user": User.objects.all(),
                "comments": Comment.objects.order_by('-create_date').filter(keychain_id=keychain_id),
-               "create_comment_form": CreateCommentForm()}
+               "create_comment_form": CreateCommentForm(),
+               'logged_user':
+                   {'logged_user_login': logged_user_login,
+                    'logged_user_id': logged_user_id,
+                    'logged_user_img': logged_user_img},
+               "search_form": SearchForm()
+               }
 
-    if current_user_id != 0 and current_user_id != '':
-        context['current_user'] = User.objects.get(id=current_user_id)
+    if logged_user_id != 0 and logged_user_id != '':
+        context['logged_user'] = {'logged_user_login': logged_user_login,
+                                  'logged_user_id': logged_user_id,
+                                  'logged_user_img': logged_user_img}
 
     # Создание комментария
 
@@ -135,7 +146,7 @@ def keychain(request):
 
             new_comment = Comment(
                 content=request.POST['content'],
-                user_id=current_user_id,
+                user_id=logged_user_id,
                 keychain_id=keychain_id
             )
             new_comment.save()
@@ -172,11 +183,11 @@ def create_keychain(request):
 
 def delete_comment(request):
     Comment.objects.filter(id=request.GET['comment_id']).delete()
-    return redirect('/keychain?id=' + request.session['keychain_id'])
+    return redirect('/keychain?id=' + request.session['keychain_id'] + '#comments')
 
 
 def edit_comment(request):
-    current_user = User.objects.get(id=request.session['user_id'])
+    logged_user = User.objects.get(id=request.session['logged_user_id'])
     comment = Comment.objects.get(id=request.GET['comment_id'])
     if request.method == 'POST':
 
@@ -185,14 +196,14 @@ def edit_comment(request):
             edited_comment = Comment.objects.get(id=request.GET['comment_id'])
             edited_comment.content = request.POST['content']
             edited_comment.save()
-            return redirect('/keychain?id=' + request.session['keychain_id'])
+            return redirect('/keychain?id=' + request.session['keychain_id'] + '#comments')
         else:
             return HttpResponse(render(request, 'edit_comment.html', {"edit_comment_form": form_content,
-                                                                      "current_user": current_user}))
+                                                                      "logged_user": logged_user}))
     else:
         edit_comment_form = EditCommentForm(initial={'content': comment.content})
         return HttpResponse(render(request, 'edit_comment.html', {"edit_comment_form": edit_comment_form,
-                                                                  "current_user": current_user}))
+                                                                  "logged_user": logged_user}))
 
 
 def search(request):
@@ -204,10 +215,22 @@ def search(request):
 
 
 def user_info(request):
-    context = {"logged_user_id": int(request.session['user_id']),
+    try:
+        logged_user_login = request.session['logged_user_login']
+        logged_user_id = request.session['logged_user_id']
+        logged_user_img = request.session['logged_user_img']
+    except KeyError:
+        logged_user_login = ''
+        logged_user_id = ''
+        logged_user_img = ''
+
+    context = {"logged_user": {"logged_user_login": logged_user_login,
+                               "logged_user_img": logged_user_img,
+                               "logged_user_id": logged_user_id},
                "personal_space_user_id": int(request.GET['user_id']),
                "user": User.objects.get(id=int(request.GET['user_id'])),
-               "keychains": Keychain.objects.all()
+               "keychains": Keychain.objects.all(),
+               "search_form": SearchForm()
                }
 
     try:
@@ -226,7 +249,7 @@ def user_info(request):
 def edit_keychain(request):
     edited_keychain = Keychain.objects.get(id=request.GET['keychain_id'])
     current_keychain_image = edited_keychain.img
-    current_user_id = request.session['user_id']
+    logged_user_id = request.session['logged_user_id']
     if request.method == 'POST':
         form_content = EditKeychainForm(request.POST, request.FILES, instance=edited_keychain)
         if form_content.is_valid():
@@ -241,7 +264,7 @@ def edit_keychain(request):
                 pass
 
             edited_keychain.save()
-            return redirect('/user_info?user_id=' + str(current_user_id))
+            return redirect('/user_info?user_id=' + str(logged_user_id))
         else:
             return HttpResponse(render(request, 'edit_keychain.html', {'edit_keychain_form': form_content}))
     else:
@@ -250,17 +273,17 @@ def edit_keychain(request):
 
 
 def delete_keychain(request):
-    current_user_id = request.session['user_id']
+    logged_user_id = request.session['logged_user_id']
     deleted_keychain = Keychain.objects.get(id=request.GET['keychain_id'])
     if request.method == 'POST':
         deleted_keychain_image = deleted_keychain.img
         deleted_keychain.delete()
         remove(deleted_keychain_image.path)
-        return redirect('/user_info?user_id=' + str(request.session['user_id']))
+        return redirect('/user_info?user_id=' + str(request.session['logged_user_id']))
     else:
         return HttpResponse(render(request, 'delete_keychain.html',
                                    {"keychain": deleted_keychain,
-                                    "current_user_id": current_user_id}))
+                                    "logged_user_id": logged_user_id}))
 
 
 def history(request):
@@ -277,19 +300,19 @@ def send_email(request):
     receiver = User.objects.get(id=request.GET['to'])
     if request.method == 'POST':
         try:
-            current_user_id = request.session['user_id']
-            if current_user_id == '' or current_user_id == 0:
+            logged_user_id = request.session['user_id']
+            if logged_user_id == '' or logged_user_id == 0:
                 return redirect('/')
         except KeyError:
             return redirect('/')
 
-        current_user_login = User.objects.get(id=current_user_id).login
+        logged_user_login = User.objects.get(id=logged_user_id).login
         receiver = User.objects.get(id=request.GET['to'])
 
         form_content = SendEmailForm(request.POST)
         if form_content.is_valid():
             send_mail(
-                subject='Сообщение от пользователя ' + current_user_login,
+                subject='Сообщение от пользователя ' + logged_user_login,
                 message=request.POST['email_text'],
                 from_email=settings.EMAIL_HOST_USER,
                 recipient_list=[receiver.email],

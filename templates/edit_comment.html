@@ -7,18 +7,14 @@
     <title>Изменение комментария</title>
 </head>
 <body>
-    <div class="home-button">
-        <a href="/">
-            <img src="{% static 'img/home.png' %}" height="50px" width="50px">
-        </a>
-    </div>
+    {% include 'back_button.html' %}
     <div class="edit-comment-container">
         <div class="comment-content">
             <div class="comment-block">
                 <form method="POST" enctype="multipart/form-data">
                 <div class="commenting-user">
-                    <img src="{{ current_user.user_img }}" width="50px" height="50px" class="user-avatar" id="user-avatar">
-                    <h2>{{ current_user.login }}</h2>
+                    <img src="{{ logged_user.user_img }}" width="50px" height="50px" class="user-avatar" id="user-avatar">
+                    <h2>{{ logged_user.login }}</h2>
                 </div>
                 {% csrf_token %}
                 {{ edit_comment_form.content }}

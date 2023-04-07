@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<div class="menu">
+    <a href="/"><img src="{% static 'img/breloks.png' %}" width="100" height="100" class="logo img_unselectable"></a>
+    <form method="get" class="search-form">
+        <div class="search-block">
+            {{ search_form.search_input }}
+            {{ search_form.search_input.errors }}
+            <img src="{% static 'img/remove.png' %}"
+                 onclick="document.getElementById('search_input').value = ''"
+                 height="20px" width="20px"
+                 class="clear-search-input" title="Очистить">
+            <button class="search-button" type="submit">
+                <img src="{% static 'img/search.png' %}" width="15px" height="15px" title="Искать">
+            </button>
+
+        </div>
+    </form>
+    <div class="user-actions">
+        {% if not logged_user.logged_user_login %}
+        <div class="user-actions_buttons">
+            <button class="user-actions_button registration-button">
+                <a href="registration"><span>Зарегистрироваться</span></a>
+                <img src="{% static 'img/add-user.png' %}" width="20px" height="20px">
+            </button>
+            <button class="log_in_button user-actions_button">
+                <a href="login"><span>Войти</span></a>
+                <img src="{% static 'img/enter.png' %}" width="20px" height="20px">
+            </button>
+        </div>
+        {% else %}
+            <div class="user-menu">
+                <a href="user_info?user_id={{ logged_user.logged_user_id }}">
+                    <h2>{{ logged_user.logged_user_login }}</h2>
+                </a>
+                <img src="{{ logged_user.logged_user_img }}"
+                     class="img_unselectable user-avatar"
+                     id="user-avatar">
+                <div class="history-block">
+                    <button class="user-actions_button history-button">
+                        <img src="{% static 'img/history.png' %}" width="25px" height="25px">
+                        <a href="history"><span>история</span></a>
+                    </button>
+                </div>
+                    <div class="user-actions_buttons">
+                        <button class="user-actions_button logout-button" content="logout">
+                            <a href="logout"><span>выйти</span></a>
+                            <img src="{% static 'img/logout.png' %}" width="18px" height="18px">
+                        </button>
+                        <button class="user-actions_button create-keychain_button">
+                            <a href="create_keychain"><span>cоздать брелок</span></a>
+                            <img src="{% static 'img/add.png' %}" width="25px" height="25px">
+                        </button>
+                    </div>
+            </div>
+        {% endif %}
+    </div>
+</div>
