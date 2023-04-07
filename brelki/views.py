@@ -103,10 +103,12 @@ def keychain(request):
         logged_user_login = request.session['logged_user_login']
         logged_user_id = request.session['logged_user_id']
         logged_user_img = request.session['logged_user_img']
+
     except KeyError:
         logged_user_login = ''
         logged_user_id = ''
         logged_user_img = ''
+
     keychain_id = request.GET['id']
     request.session['keychain_id'] = keychain_id
 

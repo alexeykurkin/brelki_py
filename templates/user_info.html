@@ -26,7 +26,7 @@
                     <div class="user-info-keychain">
                         <div class="user-info-keychain-image">
                             <a href="keychain?id={{ keychain.id }}">
-                                <img src="{{ keychain.img }}" width="75px" height="75px">
+                                <img src="{{ keychain.img }}" height="75px">
                             </a>
                         </div>
                         <div class="user-info-keychain-data">
@@ -55,7 +55,7 @@
                     <a href="keychain?id={{ comment.keychain_id }}#comments">
                         <div class="comment">
                             <div class="comment-content">
-                                <img src="{{ comment.keychain.img }}" width="50px" height="50px">
+                                <img src="{{ comment.keychain.img }}" height="50px">
                                 <h2>{{ comment.keychain.title }}</h2>
                                 {% if logged_user.id == user.id %}
                                 <div class="comment-actions">

@@ -8,7 +8,7 @@
 </head>
 <div class="menu">
     <a href="/"><img src="{% static 'img/breloks.png' %}" width="100" height="100" class="logo img_unselectable"></a>
-    <form method="get" class="search-form">
+    <form method="get" class="search-form" action="search">
         <div class="search-block">
             {{ search_form.search_input }}
             {{ search_form.search_input.errors }}
