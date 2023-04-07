@@ -104,9 +104,13 @@ class CreateKeychainForm(ModelForm):
     }
 
     title = forms.CharField(widget=forms.TextInput(attrs={'placeholder': ' '}),
+                            validators=[MinLengthValidator(2, 'Слишком короткое название'),
+                                        MaxLengthValidator(30, 'Слишком длинное название')],
                             error_messages=title_errors)
 
     description = forms.CharField(widget=forms.TextInput(attrs={'placeholder': ' '}),
+                                  validators=[MinLengthValidator(3, 'Слишком короткое описание'),
+                                              MaxLengthValidator(100, 'Слишком длинное описание')],
                                   error_messages=description_errors)
 
     price = forms.FloatField(widget=forms.TextInput(attrs={'placeholder': ' '}),
@@ -127,7 +131,8 @@ class CreateCommentForm(ModelForm):
     }
 
     content = forms.CharField(widget=forms.Textarea(attrs={'class': 'textarea-input'}),
-                              validators=[MinLengthValidator(3, 'Слишком короткий комментарий')],
+                              validators=[MinLengthValidator(3, 'Слишком короткий комментарий'),
+                                          MaxLengthValidator(250, 'Слишком длинный комментарий')],
                               error_messages=content_errors)
 
     class Meta:
@@ -142,8 +147,8 @@ class EditCommentForm(ModelForm):
 
     content = forms.CharField(widget=forms.Textarea(attrs={'class': 'textarea-input'}),
                               error_messages=content_errors,
-                              validators=[MinLengthValidator(2, 'Слишком короткий комментарий')])
-    initial = {'content': 'This is default text.'}
+                              validators=[MinLengthValidator(2, 'Слишком короткий комментарий'),
+                                          MaxLengthValidator(250, 'Слишком длинный комментарий')])
 
     class Meta:
         model = models.Comment
@@ -166,7 +171,5 @@ EditUserForm = RegistrationForm
 
 
 class SendEmailForm(forms.Form):
-
     email_text_errors = {'required': 'Заполните поле'}
-
     email_text = forms.CharField(widget=forms.Textarea(attrs={'class': 'textarea-input'}))
