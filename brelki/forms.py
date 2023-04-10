@@ -191,10 +191,6 @@ class EditUserForm(ModelForm):
         'required': 'Введите логин'
     }
 
-    password_errors = {
-        'required': 'Введите пароль'
-    }
-
     telephone_errors = {
         'required': 'Введите телефон',
         'invalid': 'Некорректный номер телефона, формат: +79999999999'
@@ -211,7 +207,6 @@ class EditUserForm(ModelForm):
                                          MaxLengthValidator(50, 'Слишком длинный адрес эл. почты')])
 
     password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': ' '}),
-                               error_messages=password_errors,
                                validators=[MinLengthValidator(3, 'Слишком короткий пароль'),
                                            MaxLengthValidator(40, 'Слишком длинный пароль')]
                                )

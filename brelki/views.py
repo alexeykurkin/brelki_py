@@ -14,10 +14,10 @@ from django.conf import settings
 
 def index(request):
     try:
-        logged_user_login = request.session['logged_user_login']
         logged_user_id = request.session['logged_user_id']
-        logged_user_img = request.session['logged_user_img']
-    except KeyError:
+        logged_user_login = User.objects.get(id=logged_user_id).login
+        logged_user_img = User.objects.get(id=logged_user_id).user_img
+    except:
         logged_user_login = ''
         logged_user_id = ''
         logged_user_img = ''
@@ -36,7 +36,8 @@ def index(request):
             return redirect('/search?search_input=' + request.GET['search_input'])
         else:
             print('not ok')
-
+    HttpResponse(render(request, 'menu_header.html', context))
+    print(User.objects.get(id=5).user_img)
     return HttpResponse(render(request, 'index.html', context))
 
 
@@ -72,9 +73,7 @@ def auth(request):
 
             if check_user:
                 if check_password(request.POST['password'], check_user.password):
-                    request.session['logged_user_login'] = request.POST['login']
                     request.session['logged_user_id'] = check_user.id
-                    request.session['logged_user_img'] = str(check_user.user_img)
                     return redirect('/')
                 else:
                     messages.add_message(request, messages.INFO, 'Неверный логин или пароль')
@@ -91,22 +90,20 @@ def auth(request):
 
 
 def logout(request):
-    request.session['logged_user_login'] = ''
     request.session['logged_user_id'] = ''
-    request.session['logged_user_img'] = ''
     request.session['history'] = []
     return redirect('/')
 
 
 def keychain(request):
     try:
-        logged_user_login = request.session['logged_user_login']
         logged_user_id = request.session['logged_user_id']
-        logged_user_img = request.session['logged_user_img']
+        logged_user_login = User.objects.get(id=logged_user_id).login
+        logged_user_img = User.objects.get(id=logged_user_id).user_img
 
-    except KeyError:
-        logged_user_login = ''
+    except:
         logged_user_id = ''
+        logged_user_login = ''
         logged_user_img = ''
 
     keychain_id = request.GET['id']
@@ -218,10 +215,10 @@ def search(request):
 
 def user_info(request):
     try:
-        logged_user_login = request.session['logged_user_login']
         logged_user_id = request.session['logged_user_id']
-        logged_user_img = request.session['logged_user_img']
-    except KeyError:
+        logged_user_login = User.objects.get(id=logged_user_id).login
+        logged_user_img = User.objects.get(id=logged_user_id).user_img
+    except:
         logged_user_login = ''
         logged_user_id = ''
         logged_user_img = ''
@@ -330,7 +327,7 @@ def send_email(request):
 def edit_user(request):
     edited_user = User.objects.get(id=request.GET['edited_user'])
     logged_user_id = request.session['logged_user_id']
-    logged_user_login = request.session['logged_user_login']
+    logged_user_login = User.objects.get(id=logged_user_id).login
     logged_user_email = User.objects.get(id=logged_user_id).email
     current_user_image = edited_user.user_img
 
@@ -341,15 +338,27 @@ def edit_user(request):
         if request.method == 'POST':
             form_content = EditUserForm(request.POST, request.FILES, instance=edited_user)
             if form_content.is_valid():
-                edited_user.email = request.POST['email']
 
                 # Проверка того, что пользователь не указал чужой логин или почту, а именно свои
-                if (User.objects.filter(login=request.POST['login']) and request.POST['login'] != logged_user_login) or \
-                        (User.objects.filter(email=request.POST['email']) and request.POST['email'] != logged_user_email):
+
+                foreign_login_used = (User.objects.filter(login=request.POST['login']).exists()) and (
+                            request.POST['login'] != logged_user_login)
+                foreign_email_used = (User.objects.filter(email=request.POST['email']).exists()) and (
+                            request.POST['email'] != logged_user_email)
+
+                print(foreign_login_used)
+                print(foreign_email_used)
+
+                if foreign_login_used:
                     form_content.add_error('login', 'Запрещено использовать чужие данные')
+                if foreign_email_used:
                     form_content.add_error('email', 'Запрещено использовать чужие данные')
+
+                if foreign_email_used or foreign_login_used:
                     return HttpResponse(render(request, 'edit_user.html', {'edit_user_form': form_content}))
-                else:
+
+                if foreign_email_used is False and foreign_login_used is False:
+                    edited_user.email = request.POST['email']
                     edited_user.login = request.POST['login']
 
                 try:
