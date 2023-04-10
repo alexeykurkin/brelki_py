@@ -18,7 +18,21 @@
                 <h1>{{ user.login }}</h1>
                 <p class="user-info-reg-date">Дата регистрации: {{ user.reg_date|date:'j E Y в H:i' }}</p>
             </div>
+            {% if logged_user.logged_user_id == personal_space_user_id %}
+                <div class="extra-user-info">
+                    <h2 style="margin-top: 0">Контактный телефон</h2>
+                    <p>{{ user.telephone_number }}</p>
+                    <h2>Почтовый адрес</h2>
+                    <p>{{ user.email }}</p>
+                </div>
+            {% endif %}
         </div>
+        {% if logged_user.logged_user_id == personal_space_user_id %}
+            <button class="user-actions_button edit-user-info">
+                <span>Изменить информацию пользователя</span>
+                <img src="{% static 'img/edit_user.png' %}" width="25px" height="25px">
+            </button>
+        {% endif %}
         <h1 class="user-info-category-title">Брелки пользователя</h1>
 
             {% if user_keychains %}

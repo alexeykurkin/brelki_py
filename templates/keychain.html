@@ -26,7 +26,7 @@
                         <h2>{{ keychain.user.login }}</h2>
                     </div>
                 </a>
-                    {% if current_user %}
+                    {% if logged_user %}
                         <a href="/send_email?to={{ keychain.user.id }}">
                     <button class="user-actions_button send-email-button-min">
                         Отправить сообщение на почту

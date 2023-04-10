@@ -294,12 +294,8 @@ a span {
   margin-top: 30px;
 }
 
-.keychain-desc {
-  margin-top: 75px;
-}
-
 .keychain-desc p:not(.keychain-price) {
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .keychain_author-info {
@@ -426,6 +422,7 @@ a span {
   gap: 15px;
 }
 
+
 .comment h2 {
   margin: 0;
 }
@@ -444,12 +441,23 @@ a span {
 .comment-actions {
   display: flex;
   gap: 10px;
-  flex-direction: column;
-  margin-left: 20px;
+  flex-direction: row;
+  margin-left: 15px;
   align-items: center;
   justify-content: center;
-  height: 60px;
-  width: 30px;
+  height: 40px;
+  background-color: #f0f0f2;
+  border-radius: 50px;
+  width: 80px;
+}
+
+.comment-actions a {
+  width: 25px;
+  height: 25px;
+}
+
+.comment-actions >img {
+  vertical-align: center;
 }
 
 .textarea-input {
@@ -605,6 +613,7 @@ input[id=search_input]:focus {
 .user-info-block {
   display: flex;
   flex-direction: row;
+  align-items: center;
   border-color: black;
   border-radius: 10px;
   background-color: #fff;
@@ -777,4 +786,23 @@ input[id=search_input]:focus {
 .back-button > img,
 .back-button > span {
   vertical-align: middle;
+}
+
+.edit-user-info {
+  background-color: #0077FF;
+  width: 440px;
+}
+
+.edit-user-info > img,
+.edit-user-info > span {
+  vertical-align: middle;
+}
+
+.extra-user-info {
+  margin-left: 40px;
+}
+
+.extra-user-info p {
+  font-size: 20px;
+  margin: 0;
 }
