@@ -115,7 +115,7 @@ class CreateKeychainForm(ModelForm):
                                         MaxLengthValidator(30, 'Слишком длинное название')],
                             error_messages=title_errors)
 
-    description = forms.CharField(widget=forms.TextInput(attrs={'placeholder': ' '}),
+    description = forms.CharField(widget=forms.Textarea(attrs={'class': 'create-keychain-description'}),
                                   validators=[MinLengthValidator(3, 'Слишком короткое описание'),
                                               MaxLengthValidator(100, 'Слишком длинное описание')],
                                   error_messages=description_errors)

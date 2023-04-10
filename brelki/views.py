@@ -346,9 +346,6 @@ def edit_user(request):
                 foreign_email_used = (User.objects.filter(email=request.POST['email']).exists()) and (
                             request.POST['email'] != logged_user_email)
 
-                print(foreign_login_used)
-                print(foreign_email_used)
-
                 if foreign_login_used:
                     form_content.add_error('login', 'Запрещено использовать чужие данные')
                 if foreign_email_used:

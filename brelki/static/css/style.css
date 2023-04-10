@@ -168,7 +168,6 @@ a span {
   position: relative;
   margin: auto;
   width: 100%;
-  max-width: 280px;
   border-radius: 3px;
   overflow: hidden;
 }
@@ -251,6 +250,15 @@ a span {
   word-break: break-word;
 }
 
+.create-keychain-description {
+  font-family: "Inter Medium", sans-serif;
+  font-size: 15px;
+  width: min-content;
+  border-radius: 15px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
 .submit-button {
   font-size: 20px;
   font-family: "Inter Medium", sans-serif;
@@ -283,7 +291,7 @@ a span {
   display: flex;
   flex-direction: row;
   gap: 45px;
-  align-items: center;
+  align-items: start;
   position: relative;
   width: auto;
   border-color: black;
@@ -294,35 +302,75 @@ a span {
   margin-top: 30px;
 }
 
-.keychain-desc p:not(.keychain-price) {
+.keychain-description-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.keychain-description-block h2 {
+  font-size: 30px;
+}
+
+.keychain-description-block p {
+  word-break: break-word;
+}
+
+.keychain-description-block p:not(.keychain-price) {
   font-size: 20px;
 }
 
-.keychain_author-info {
+.keychain-author-info {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 210px;
-  gap: 30px;
+  gap: 20px;
   vertical-align: center;
 }
 
-.keychain_author-info h1 {
+.keychain-author-login-img-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.keychain-author-info h1 {
   margin: 0;
 }
 
-.keychain_author-login-img {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
+.keychain-author-login-img > img {
+  vertical-align: center;
 }
 
 .keychain-container h1 {
   font-size: 40px;
 }
 
+.keychain-price-title {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+}
+
+.keychain-price-block {
+  margin-top: 20px;
+  background-color: #f0f0f2;
+  border-radius: 25px;
+  gap: 10px;
+  display: inline-flex;
+  padding: 15px;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  height: 35px;
+  width: max-content;
+}
+
 .keychain-price {
-  font-size: 50px;
+  font-size: 40px;
   margin: 0;
 }
 

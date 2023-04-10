@@ -15,18 +15,20 @@
             <h1>{{ keychain.title }}</h1>
             <img src="{{ keychain.img }}" height="512px">
         </div>
-        <div class="keychain-desc">
-            <h1>Описание</h1>
+        <div class="keychain-description-block">
+            <h1>Дополнительная информация</h1>
+            <h2 style="margin: 0">Описание</h2>
             <p>{{ keychain.description }}</p>
-            <div class="keychain_author-info">
-                <h1>Автор</h1>
+            <div class="keychain-author-info">
+                <h2 style="margin: 0">Автор</h2>
                 <a href="/user_info?user_id={{ keychain.user.id }}">
-                    <div class="keychain_author-login-img">
-                        <img src="{{ keychain.user.user_img }}" class="user-avatar" id="user-avatar">
-                        <h2>{{ keychain.user.login }}</h2>
-                    </div>
+                <div class="keychain-author-login-img-block">
+                    <img src="{{ keychain.user.user_img }}" class="user-avatar" id="user-avatar">
+                    <h2>{{ keychain.user.login }}</h2>
+                </div>
                 </a>
                     {% if logged_user %}
+                        <h2 style="margin: 0">Коммуникация</h2>
                         <a href="/send_email?to={{ keychain.user.id }}">
                             <button class="user-actions_button send-email-button-min">
                                 Отправить сообщение на почту
@@ -35,8 +37,15 @@
                         </a>
                     {% endif %}
             </div>
-            <h1>Цена</h1>
-            <p class="keychain-price">{{ keychain.price }} ₽</p>
+
+            <div class="keychain-price-title">
+                <h2>Цена</h2>
+                <img src="{% static 'img/price.png' %}" width="25px" height="25px">
+            </div>
+            <div class="keychain-price-block">
+                <p class="keychain-price">{{ keychain.price }} ₽</p>
+            </div>
+
 
         </div>
     </div>
