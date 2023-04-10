@@ -21,6 +21,13 @@ def validate_unique_email(value):
         )
 
 
+def validate_foreign_login(value):
+    user = models.User.objects.get(login=value)
+
+    if user:
+        raise ValidationError('Логин уже занят другим пользователем', params={'value': value})
+
+
 class RegistrationForm(ModelForm):
     email_errors = {
         'required': 'Введите адрес электронной почты',
@@ -167,9 +174,55 @@ class SearchForm(forms.Form):
 
 
 EditKeychainForm = CreateKeychainForm
-EditUserForm = RegistrationForm
 
 
 class SendEmailForm(forms.Form):
     email_text_errors = {'required': 'Заполните поле'}
     email_text = forms.CharField(widget=forms.Textarea(attrs={'class': 'textarea-input'}))
+
+
+class EditUserForm(ModelForm):
+    email_errors = {
+        'required': 'Введите адрес электронной почты',
+        'invalid': 'Некорректный адрес электронной почты, пример: example@mail.ru'
+    }
+
+    login_errors = {
+        'required': 'Введите логин'
+    }
+
+    password_errors = {
+        'required': 'Введите пароль'
+    }
+
+    telephone_errors = {
+        'required': 'Введите телефон',
+        'invalid': 'Некорректный номер телефона, формат: +79999999999'
+    }
+
+    login = forms.CharField(widget=forms.TextInput(attrs={'placeholder': ' '}),
+                            error_messages=login_errors,
+                            validators=[MinLengthValidator(3, 'Слишком короткий логин'),
+                                        MaxLengthValidator(30, 'Слишком длинный логин')])
+
+    email = forms.EmailField(widget=forms.TextInput(attrs={'placeholder': ' '}),
+                             error_messages=email_errors,
+                             validators=[MinLengthValidator(5, 'Слишком короткий адрес эл. почты'),
+                                         MaxLengthValidator(50, 'Слишком длинный адрес эл. почты')])
+
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': ' '}),
+                               error_messages=password_errors,
+                               validators=[MinLengthValidator(3, 'Слишком короткий пароль'),
+                                           MaxLengthValidator(40, 'Слишком длинный пароль')]
+                               )
+
+    telephone_number = forms.CharField(widget=forms.TextInput(attrs={'placeholder': ' '}),
+                                       error_messages=telephone_errors)
+
+    user_img = forms.ImageField(widget=forms.FileInput(attrs={'class': 'file-load'}),
+                                validators=[FileExtensionValidator(allowed_extensions=['png', 'jpg', 'jpeg'],
+                                                                   message='Файл должен быть изображением')])
+
+    class Meta:
+        model = models.User
+        fields = ['login', 'email', 'password', 'telephone_number', 'user_img']

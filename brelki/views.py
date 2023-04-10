@@ -1,11 +1,11 @@
 from django.shortcuts import render, HttpResponse
 from brelki.models import Keychain, User, Comment
 from .forms import RegistrationForm, AuthForm, CreateKeychainForm, CreateCommentForm, EditCommentForm, SearchForm, \
-    EditKeychainForm, SendEmailForm
+    EditKeychainForm, SendEmailForm, EditUserForm
 from django.shortcuts import redirect
 from django.contrib.auth.hashers import check_password, make_password
 from django.contrib import messages
-from django.core.exceptions import ObjectDoesNotExist
+from django.core.exceptions import ObjectDoesNotExist, PermissionDenied
 from django.core.mail import send_mail
 from os import remove
 from django.utils.datastructures import MultiValueDictKeyError
@@ -325,3 +325,54 @@ def send_email(request):
         send_email_form = SendEmailForm(None)
         return HttpResponse(render(request, 'send_email.html', {'send_email_form': send_email_form,
                                                                 'receiver': receiver}))
+
+
+def edit_user(request):
+    edited_user = User.objects.get(id=request.GET['edited_user'])
+    logged_user_id = request.session['logged_user_id']
+    logged_user_login = request.session['logged_user_login']
+    logged_user_email = User.objects.get(id=logged_user_id).email
+    current_user_image = edited_user.user_img
+
+    if int(edited_user.id) != logged_user_id:
+        raise PermissionDenied()
+    else:
+
+        if request.method == 'POST':
+            form_content = EditUserForm(request.POST, request.FILES, instance=edited_user)
+            if form_content.is_valid():
+                edited_user.email = request.POST['email']
+
+                # Проверка того, что пользователь не указал чужой логин или почту, а именно свои
+                if (User.objects.filter(login=request.POST['login']) and request.POST['login'] != logged_user_login) or \
+                        (User.objects.filter(email=request.POST['email']) and request.POST['email'] != logged_user_email):
+                    form_content.add_error('login', 'Запрещено использовать чужие данные')
+                    form_content.add_error('email', 'Запрещено использовать чужие данные')
+                    return HttpResponse(render(request, 'edit_user.html', {'edit_user_form': form_content}))
+                else:
+                    edited_user.login = request.POST['login']
+
+                try:
+                    uploaded_image = request.FILES['user_img']
+                    remove(current_user_image.path)
+                    edited_user.img = uploaded_image
+                except MultiValueDictKeyError:
+                    pass
+
+                if request.POST['password'] != '':
+                    edited_user.password = make_password(request.POST['password'])
+
+                edited_user.save()
+                render(request, 'user_info.html', context={
+                    'logged_user': {'logged_user_login': edited_user.login,
+                                    'logged_user_id': edited_user.id,
+                                    'logged_user_img': edited_user.user_img}
+                })
+
+                return redirect('/user_info?user_id=' + str(logged_user_id))
+            else:
+                return HttpResponse(render(request, 'edit_user.html', {'edit_user_form': form_content}))
+
+        else:
+            edit_user_form = EditUserForm(instance=edited_user)
+            return HttpResponse(render(request, 'edit_user.html', {'edit_user_form': edit_user_form}))

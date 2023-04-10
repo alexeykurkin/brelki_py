@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Изменение информации пользователя</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    {% include 'back_button.html' %}
+    <div class="form-content">
+        <form class="registration-form" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h1>Изменение информации о пользователе</h1>
+            <div class="form-items">
+                <label for="" class="inp">
+                    {{ edit_user_form.email }}
+                    <span class="label">Почта</span>
+                    <span class="focus-bg"></span>
+                    {{ edit_user_form.email.errors }}
+                </label>
+
+                <label for="{{ edit_user_form.login.html_name }}" class="inp">
+                    {{ edit_user_form.login }}
+                    <span class="label">Логин</span>
+                    <span class="focus-bg"></span>
+                    {{ edit_user_form.login.errors }}
+                </label>
+                <label for="password" class="inp">
+                    {{ edit_user_form.password }}
+                    <span class="label">Пароль</span>
+                    <span class="focus-bg"></span>
+                    {{ edit_user_form.password.errors }}
+                </label>
+                <label for="telephone_number" class="inp">
+                    {{ edit_user_form.telephone_number }}
+                    <span class="label">Номер телефона</span>
+                    <span class="focus-bg"></span>
+                    {{ edit_user_form.telephone_number.errors }}
+                </label>
+                    <p>Изображение пользователя</p>
+                    {{ edit_user_form.user_img.errors }}
+                    {{ edit_user_form.user_img }}
+
+                    <button type="submit" class="submit-button">
+                    Подтвердить
+                </button>
+            </div>
+        </form>
+    </div>
+</body>

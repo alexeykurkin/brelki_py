@@ -28,13 +28,12 @@
                 </a>
                     {% if logged_user %}
                         <a href="/send_email?to={{ keychain.user.id }}">
-                    <button class="user-actions_button send-email-button-min">
-                        Отправить сообщение на почту
-                        <img src="{% static 'img/email.png' %}" width="25px" height="25px">
-                    </button>
+                            <button class="user-actions_button send-email-button-min">
+                                Отправить сообщение на почту
+                                <img src="{% static 'img/email.png' %}" width="25px" height="25px">
+                            </button>
                         </a>
                     {% endif %}
-
             </div>
             <h1>Цена</h1>
             <p class="keychain-price">{{ keychain.price }} ₽</p>

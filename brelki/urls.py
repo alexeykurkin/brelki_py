@@ -34,5 +34,6 @@ urlpatterns = [
     path('edit_keychain', views.edit_keychain),
     path('delete_keychain', views.delete_keychain),
     path('history', views.history),
-    path('send_email', views.send_email)
+    path('send_email', views.send_email),
+    path('edit_user', views.edit_user)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
