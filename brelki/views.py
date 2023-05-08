@@ -306,7 +306,7 @@ def send_email(request):
     receiver = User.objects.get(id=request.GET['to'])
     if request.method == 'POST':
         try:
-            logged_user_id = request.session['user_id']
+            logged_user_id = request.session['logged_user_id']
             if logged_user_id == '' or logged_user_id == 0:
                 return redirect('/')
         except KeyError:
