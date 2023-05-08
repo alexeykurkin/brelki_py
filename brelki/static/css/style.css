@@ -54,6 +54,13 @@ a span {
   height: 75px;
 }
 
+.user-avatar-keychain-author {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
 .user-avatar-min {
   border-radius: 50%;
   object-fit: cover;
@@ -280,7 +287,7 @@ a span {
 }
 
 .keychain-container {
-  max-width: 1250px;
+  max-width: min-content;
   margin-left: auto;
   margin-right: auto;
   padding-left: 16px;
@@ -490,7 +497,6 @@ a span {
   display: flex;
   gap: 10px;
   flex-direction: row;
-  margin-left: 15px;
   align-items: center;
   justify-content: center;
   height: 40px;
@@ -853,4 +859,23 @@ input[id=search_input]:focus {
 .extra-user-info p {
   font-size: 20px;
   margin: 0;
+}
+
+.paginator {
+  width: 100%;
+  gap: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.paginator-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 7px 0 rgba(0, 0, 0, .04);
+  border-radius: 10px;
+  width: 35px;
+  height: 35px;
+  background-color: #ffffff;
 }

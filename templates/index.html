@@ -24,4 +24,22 @@
         </div>
     {% endfor %}
 </div>
+<div class="paginator">
+    {% for page_number in keychains.paginator.page_range %}
+        {% if page_number == keychains.number %}
+            <div class="paginator-page">
+                <a href="/?page={{ page_number }}">
+                    <h2 style="color: #0077FF">{{ page_number }}</h2>
+                </a>
+            </div>
+        {% else %}
+            <div class="paginator-page">
+                <a href="/?page={{ page_number }}">
+                    <h2 style="color: black">{{ page_number }}</h2>
+                </a>
+            </div>
+        {% endif %}
+
+    {% endfor %}
+</div>
 </html>

@@ -7,6 +7,7 @@ from django.contrib.auth.hashers import check_password, make_password
 from django.contrib import messages
 from django.core.exceptions import ObjectDoesNotExist, PermissionDenied
 from django.core.mail import send_mail
+from django.core.paginator import Paginator
 from os import remove
 from django.utils.datastructures import MultiValueDictKeyError
 from django.conf import settings
@@ -22,7 +23,16 @@ def index(request):
         logged_user_id = ''
         logged_user_img = ''
 
-    context = {'keychains': Keychain.objects.all(),
+    keychains_list = Keychain.objects.all()
+    paginator = Paginator(keychains_list, per_page=6)
+    try:
+        current_page = request.GET['page']
+    except KeyError:
+        return redirect('/?page=1')
+
+    keychains = paginator.get_page(current_page)
+
+    context = {'keychains': keychains,
                'users': User.objects.all(),
                'logged_user':
                    {'logged_user_login': logged_user_login,
@@ -34,10 +44,7 @@ def index(request):
         search_content = SearchForm(request.GET)
         if search_content.is_valid():
             return redirect('/search?search_input=' + request.GET['search_input'])
-        else:
-            print('not ok')
     HttpResponse(render(request, 'menu_header.html', context))
-    print(User.objects.get(id=5).user_img)
     return HttpResponse(render(request, 'index.html', context))
 
 
@@ -167,7 +174,7 @@ def create_keychain(request):
             new_keychain = Keychain(
                 title=request.POST['title'],
                 description=request.POST['description'],
-                user_id=request.session['user_id'],
+                user_id=request.session['logged_user_id'],
                 img=request.FILES['img'],
                 price=request.POST['price']
             )
