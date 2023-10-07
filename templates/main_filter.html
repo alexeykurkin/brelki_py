@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Фильтр</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="menu filter-block">
+        <div class="filter-options-block">
+            <h2>Сортировать по:</h2>
+            <div class="filter-option">
+                <h3 id="h3-price" onclick="showFilterOptions('price-options')">стоимости</h3>
+                <div class="price-options" id="price-options" style="background-color: aquamarine">
+                    <div>
+                        <p><a href="/?filter=price&page=1">по возрастанию</a></p>
+                        <p>по убыванию</p>
+                    </div>
+                </div>
+            </div>
+            <div class="filter-option">
+                <div class="filter-option">
+                    <h3 id="h3-popularity" onclick="showFilterOptions('popularity-options')">популярности</h3>
+                    <div class="price-options" id="popularity-options">
+                        <div>
+                            <p>по возрастанию</p>
+                            <p>по убыванию</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="filter-option">
+                <div class="filter-option">
+                    <h3 id="h3-category" onclick="showFilterOptions('category-options')">категории</h3>
+                    <div class="price-options" id="category-options">
+                        <div>
+                            <p>по возрастанию</p>
+                            <p>по убыванию</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="filter-button user-actions_button filter-button-min button-green">
+            <img src="{% static 'img/up_arrow.png' %}" class="filter-icon">
+        </button>
+        <button class="filter-button user-actions_button filter-button-min button-red">
+            <img src="{% static 'img/down_arrow.png' %}" class="filter-icon">
+        </button>
+    </div>
+</body>
+
+</html>
+
+<script src="{% static 'filter.js' %}"></script>

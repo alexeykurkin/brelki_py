@@ -19,7 +19,12 @@
                     <span class="focus-bg"></span>
                     {{ create_keychain_form.title.errors }}
                 </label>
-
+                <label for="" class="inp">
+                    {{ create_keychain_form.category }}
+                    <span class="label">Категория</span>
+                    <span class="focus-bg"></span>
+                    {{ create_keychain_form.category.errors }}
+                </label>
                 <p>Описание брелка</p>
                 {{ create_keychain_form.description }}
                 {{ create_keychain_form.description.errors }}
@@ -31,11 +36,11 @@
                     {{ create_keychain_form.price.errors }}
                 </label>
                 <p>Изображение брелка</p>
-                    {{ create_keychain_form.img }}
-                    {{ create_keychain_form.img.errors }}
-                    <button type="submit" class="submit-button">
-                        Подтвердить
-                    </button>
+                {{ create_keychain_form.img }}
+                {{ create_keychain_form.img.errors }}
+                <button type="submit" class="submit-button">
+                    Подтвердить
+                </button>
             </div>
         </form>
     </div>

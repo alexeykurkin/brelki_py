@@ -461,7 +461,7 @@ a span {
   display: inline-block;
   border-radius: 15px;
   padding: 20px;
-  border-color: black;;
+  border-color: black;
   background-color: #fff;
   box-shadow: 0 2px 7px 0 rgba(0, 0, 0, .04);
   width: auto;
@@ -664,6 +664,10 @@ input[id=search_input]:focus {
   margin-right: auto;
 }
 
+.user-info-category-title {
+  margin: 12px;
+}
+
 .user-info-block {
   display: flex;
   flex-direction: row;
@@ -713,6 +717,7 @@ input[id=search_input]:focus {
   box-shadow: 0 2px 7px 0 rgba(0, 0, 0, .04);
   padding: 20px;
   margin-right: 15px;
+  margin-bottom: 15px;
 }
 
 .user-info-keychain-data {
@@ -878,4 +883,72 @@ input[id=search_input]:focus {
   width: 35px;
   height: 35px;
   background-color: #ffffff;
+}
+
+.filter-block {
+  display: flex;
+  margin-top: 30px;
+  align-items: center;
+  justify-content: start;
+}
+
+.filter-block h2 {
+  margin: 0;
+}
+
+.filter-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+}
+
+.filter-button {
+  height: 30px;
+}
+
+.filter-button-min {
+  width: 30px;
+}
+
+.filter-options-block {
+  display: flex;
+  flex-direction: row;
+  margin-left: 25px;
+  gap: 30px;
+}
+
+.button-green {
+  background-color: #52b788;
+}
+
+.button-red {
+  background-color: #dd5353;
+}
+
+.button-blue {
+  background-color: #0077FF;
+}
+
+.button-padding {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.filter-button > img {
+  vertical-align: center;
+}
+
+.filter-icon {
+  height: 11px;
+}
+
+.price-options {
+    display: none;
+    flex-direction: column;
+}
+
+.options-list {
+    display: flex;
+    flex-direction: column;
 }

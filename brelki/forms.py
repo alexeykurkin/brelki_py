@@ -1,9 +1,10 @@
+from calendar import c
+from pyexpat import model
 from django.forms import ModelForm
 from . import models
 from django import forms
 from django.core.exceptions import ValidationError
 from django.core.validators import MinLengthValidator, MaxLengthValidator, FileExtensionValidator
-
 
 def validate_unique_login(value):
     if models.User.objects.filter(login=value).exists():
@@ -101,6 +102,10 @@ class CreateKeychainForm(ModelForm):
     title_errors = {
         'required': 'Введите имя'
     }
+    
+    category_errors = {
+        'required': 'Введите название категории'
+    }
 
     description_errors = {
         'required': 'Введите пароль'
@@ -114,7 +119,13 @@ class CreateKeychainForm(ModelForm):
                             validators=[MinLengthValidator(2, 'Слишком короткое название'),
                                         MaxLengthValidator(30, 'Слишком длинное название')],
                             error_messages=title_errors)
+    
+    categories = []
+    for value in models.Category.objects.values_list():
+        categories.append((str(value[0]), str(value[0])))
 
+    category=forms.ChoiceField(choices=categories)
+   
     description = forms.CharField(widget=forms.Textarea(attrs={'class': 'create-keychain-description'}),
                                   validators=[MinLengthValidator(3, 'Слишком короткое описание'),
                                               MaxLengthValidator(100, 'Слишком длинное описание')],

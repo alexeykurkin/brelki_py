@@ -7,6 +7,51 @@
     <title>Главная</title>
 </head>
 {% include 'menu_header.html' %}
+<div class="menu filter-block">
+    <div class="filter-options-block">
+        <h2>Сортировать по:</h2>
+        <div class="filter-option">
+            <h3 id="h3-price" onclick="showFilterOptions('price-options')">стоимости</h3>
+            <div class="price-options" id="price-options" style="background-color: aquamarine">
+                <div>
+                    <p><a href="/?filter=price_asc&page=1">по возрастанию</a></p>
+                    <p><a href="/?filter=price_desc&page=1">по убыванию</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="filter-option">
+            <div class="filter-option">
+                <h3 id="h3-popularity" onclick="showFilterOptions('popularity-options')">популярности</h3>
+                <div class="price-options" id="popularity-options">
+                    <div>
+                        <p><a href="/?filter=popularity_asc&page=1">по возрастанию</a></p>
+                        <p><a href="/?filter=popularity_desc&page=1">по убыванию</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="filter-option">
+            <div class="filter-option">
+                <h3 id="h3-category" onclick="showFilterOptions('category-options')">категории</h3>
+                <div class="price-options" id="category-options">
+                    <div class="options-list">
+                        {% for category in categories %}
+                            <a href="/?filter=category_{{ category.category }}&page=1">{{ category.category }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button><a href="/">Сбросить</a></button>
+    </div>
+    <button class="filter-button user-actions_button filter-button-min button-green">
+        <img src="{% static 'img/up_arrow.png' %}" class="filter-icon">
+    </button>
+    <button class="filter-button user-actions_button filter-button-min button-red">
+        <img src="{% static 'img/down_arrow.png' %}" class="filter-icon">
+    </button>
+</div>
 <div class="items">
     {% for keychain in keychains %}
         <div class="item">
@@ -28,13 +73,13 @@
     {% for page_number in keychains.paginator.page_range %}
         {% if page_number == keychains.number %}
             <div class="paginator-page">
-                <a href="/?page={{ page_number }}">
+                <a href="/?page={{ page_number }}&filter={{ filter_option }}">
                     <h2 style="color: #0077FF">{{ page_number }}</h2>
                 </a>
             </div>
         {% else %}
             <div class="paginator-page">
-                <a href="/?page={{ page_number }}">
+                <a href="/?page={{ page_number }}&filter={{ filter_option }}">
                     <h2 style="color: black">{{ page_number }}</h2>
                 </a>
             </div>
@@ -43,3 +88,4 @@
     {% endfor %}
 </div>
 </html>
+<script src="{% static 'filter.js' %}"></script>

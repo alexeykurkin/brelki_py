@@ -33,10 +33,17 @@ class User(models.Model):
     class Meta:
         db_table = 'users'
 
+class Category(models.Model):
+    category = models.CharField(primary_key=True, max_length=15)
+    REQUIRED_FIELDS = ('category')
+
+    class Meta:
+        db_table = 'categories'
 
 class Keychain(models.Model):
     id = models.IntegerField(primary_key=True)
     title = models.CharField(max_length=30)
+    category = models.CharField(max_length=15)
     description = models.CharField(max_length=100)
     user = models.ForeignKey(User, db_column='user_id', on_delete=models.CASCADE)
     img = models.ImageField(max_length=250, upload_to='brelki/uploaded_images/keychain_images/')
@@ -60,3 +67,5 @@ class Comment(models.Model):
 
     class Meta:
         db_table = 'comments'
+        
+

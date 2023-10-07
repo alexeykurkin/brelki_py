@@ -1,5 +1,6 @@
+from ssl import SSLSession
 from django.shortcuts import render, HttpResponse
-from brelki.models import Keychain, User, Comment
+from brelki.models import Category, Keychain, User, Comment
 from .forms import RegistrationForm, AuthForm, CreateKeychainForm, CreateCommentForm, EditCommentForm, SearchForm, \
     EditKeychainForm, SendEmailForm, EditUserForm
 from django.shortcuts import redirect
@@ -12,8 +13,8 @@ from os import remove
 from django.utils.datastructures import MultiValueDictKeyError
 from django.conf import settings
 
-
 def index(request):
+    
     try:
         logged_user_id = request.session['logged_user_id']
         logged_user_login = User.objects.get(id=logged_user_id).login
@@ -23,17 +24,49 @@ def index(request):
         logged_user_id = ''
         logged_user_img = ''
 
-    keychains_list = Keychain.objects.all()
+    try:
+        filter_option = request.GET['filter']
+        
+        if filter_option == 'price_asc':
+            keychains_list = Keychain.objects.all().order_by('price')
+        elif filter_option == 'price_desc':
+            keychains_list = Keychain.objects.all().order_by('-price')
+                
+        if 'popularity' in filter_option:
+            keychains_list = Keychain.objects.all()
+            keychains_popularity = request.session['user_views']
+            for keychain in keychains_list:
+                if str(keychain.id) in keychains_popularity:
+                    keychain.popularity = len(keychains_popularity[str(keychain.id)])
+                else:
+                    keychain.popularity = 0
+            import operator
+            if filter_option == 'popularity_asc':          
+                keychains_list = sorted(keychains_list, key=operator.attrgetter('popularity'))  
+            else:
+                keychains_list = sorted(keychains_list, key=operator.attrgetter('popularity'), reverse=True)
+
+        if 'category' in filter_option:
+            keychains_list = Keychain.objects.all().filter(category=filter_option[filter_option.find('_')+1:])
+            
+        if filter_option == '':
+            keychains_list = Keychain.objects.all()
+    except:
+        filter_option = ''
+        keychains_list = Keychain.objects.all()
+
     paginator = Paginator(keychains_list, per_page=6)
     try:
         current_page = request.GET['page']
     except KeyError:
-        return redirect('/?page=1')
+        return redirect(f'/?page=1&filter={filter_option}')
 
     keychains = paginator.get_page(current_page)
 
     context = {'keychains': keychains,
+               'categories': Category.objects.all(),
                'users': User.objects.all(),
+               'filter_option': filter_option,
                'logged_user':
                    {'logged_user_login': logged_user_login,
                     'logged_user_id': logged_user_id,
@@ -114,6 +147,24 @@ def keychain(request):
         logged_user_img = ''
 
     keychain_id = request.GET['id']
+
+    try:
+        request.session['user_views']
+    except:
+        request.session['user_views'] = {}
+           
+    if logged_user_id:
+        keychain_views_dict = request.session['user_views']
+        if keychain_id in keychain_views_dict:
+            if logged_user_id not in keychain_views_dict[keychain_id]:
+                keychain_views_dict[keychain_id].append(logged_user_id)
+            else:
+                pass
+        else:
+            keychain_views_dict[keychain_id] = []
+            keychain_views_dict[keychain_id].append(logged_user_id)
+        request.session['user_views'] = keychain_views_dict
+
     request.session['keychain_id'] = keychain_id
 
     try:
@@ -173,6 +224,7 @@ def create_keychain(request):
         if form_content.is_valid():
             new_keychain = Keychain(
                 title=request.POST['title'],
+                category=request.POST['category'],
                 description=request.POST['description'],
                 user_id=request.session['logged_user_id'],
                 img=request.FILES['img'],
