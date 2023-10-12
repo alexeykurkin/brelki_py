@@ -1,0 +1,752 @@
+<mxfile host="app.diagrams.net" modified="2023-10-08T11:18:06.315Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/118.0" etag="tPojxRlPz5SakMisERkk" version="22.0.3" type="device" pages="3">
+  <diagram name="Страница — 1" id="QatceDEhL1Ng7EyQntH5">
+    <mxGraphModel dx="1220" dy="628" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-8" value="" style="endArrow=none;html=1;rounded=0;strokeWidth=5;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint y="399.66" as="sourcePoint" />
+            <mxPoint x="650" y="399.66" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-17" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=5;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="670" y="400.07000000000005" as="sourcePoint" />
+            <mxPoint x="710" y="400.07000000000005" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="640" y="399.66" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-18" value="Проблемы выполнения проекта интернет-магазина брелок" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="707" y="370" width="143" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-19" value="Люди " style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="80" y="100" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-20" value="Процессы" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="320" y="100" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-21" value="Технология" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="610.02" y="50" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-22" value="Материалы" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="40" y="530" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-23" value="Структура" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="430" y="530" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-25" value="" style="endArrow=none;html=1;rounded=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" parent="1" target="hoYyZOqW6vXkRuBxGZmY-21" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="440" y="400" as="sourcePoint" />
+            <mxPoint x="600" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-26" value="" style="endArrow=none;html=1;rounded=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" parent="1" target="hoYyZOqW6vXkRuBxGZmY-20" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="200" y="400" as="sourcePoint" />
+            <mxPoint x="360" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-27" value="" style="endArrow=none;html=1;rounded=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" parent="1" target="hoYyZOqW6vXkRuBxGZmY-19" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint y="400" as="sourcePoint" />
+            <mxPoint x="160" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-29" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=0;exitDx=0;exitDy=0;" parent="1" source="hoYyZOqW6vXkRuBxGZmY-22" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="160" y="530" as="sourcePoint" />
+            <mxPoint y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-30" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="430" y="530" as="sourcePoint" />
+            <mxPoint x="360" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-36" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint y="200" as="sourcePoint" />
+            <mxPoint x="165" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-38" value="&lt;p class=&quot;MsoNormal&quot; style=&quot;font-size: 11px;&quot;&gt;&lt;span style=&quot;font-size: 11px; line-height: 107%;&quot;&gt;Недостаточно опыта в веб-разработке&lt;/span&gt;&lt;/p&gt;" style="text;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry y="150" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-40" value="" style="endArrow=none;html=1;rounded=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" parent="1" target="hoYyZOqW6vXkRuBxGZmY-42" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-72.5" y="280" as="sourcePoint" />
+            <mxPoint x="92.5" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-42" value="&lt;span style=&quot;font-size: 11px; line-height: 107%;&quot;&gt;Отсутствие лидера проекта и организатора&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="-120" y="260" width="220" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-43" value="&lt;span style=&quot;font-size: 11px; line-height: 107%;&quot;&gt;Привлечь опытных веб-разработчиков&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="150" y="210" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-44" value="" style="endArrow=none;html=1;rounded=0;entryX=1.017;entryY=0.654;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="hoYyZOqW6vXkRuBxGZmY-43" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="230" as="sourcePoint" />
+            <mxPoint x="240" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-45" value="&lt;p class=&quot;MsoNormal&quot; style=&quot;font-size: 11px;&quot;&gt;Назначьте ответственного руководителя для координации проекта.&lt;/p&gt;" style="text;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="80" y="280" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-47" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="50" y="340" as="sourcePoint" />
+            <mxPoint x="215" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-48" value="&lt;span style=&quot;font-size: 11px; line-height: 107%;&quot;&gt;Отсутствие четкого плана разработки&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="240" y="160" width="180" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-49" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="255" y="180" as="sourcePoint" />
+            <mxPoint x="420" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-50" value="&lt;p class=&quot;MsoNormal&quot; style=&quot;font-size: 11px;&quot;&gt;Разработать детальный план с сроками выполнения&lt;/p&gt;" style="text;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="410" y="170" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-51" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="380" y="220" as="sourcePoint" />
+            <mxPoint x="545" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-52" value="&lt;span style=&quot;font-size: 11px; line-height: 107%;&quot;&gt;Затягивание сроков выполнения проекта&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="130" y="260" width="200" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-53" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="155" y="279.31" as="sourcePoint" />
+            <mxPoint x="320" y="279.31" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-54" value="&lt;span style=&quot;font-size: 11px; line-height: 107%;&quot;&gt;Определите ресурсы и распределите задачи&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="310" y="280" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-55" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="280" y="320" as="sourcePoint" />
+            <mxPoint x="445" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-56" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="560" y="280" as="sourcePoint" />
+            <mxPoint x="440" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-57" value="&lt;span style=&quot;font-size: 11px; line-height: 107%;&quot;&gt;Проблемы с безопасностью и защитой данных&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="440" y="240" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-58" value="&lt;span style=&quot;font-size: 11px; line-height: 107%;&quot;&gt;Разработайте политику безопасности &lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=11;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="530" y="300" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-59" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="520" y="320" as="sourcePoint" />
+            <mxPoint x="720" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-62" value="" style="endArrow=none;html=1;rounded=0;entryX=0.857;entryY=0.333;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="680.02" y="159.32" as="sourcePoint" />
+            <mxPoint x="550" y="159.31" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-63" value="&lt;span style=&quot;font-size: 11px; line-height: 107%;&quot;&gt;Недостаточная подготовка по технологиям&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="480" y="130" width="210" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-64" value="&lt;p class=&quot;MsoNormal&quot; style=&quot;font-size: 11px;&quot;&gt;Обучите сотрудников или наймите специалистов&lt;br&gt;&lt;/p&gt;" style="text;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="660" y="155" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-65" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="650" y="190" as="sourcePoint" />
+            <mxPoint x="900" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-66" value="&lt;span style=&quot;font-size: 11px; line-height: 107%;&quot;&gt;Отсутствие изображений и описаний&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="-180" y="420" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-67" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="15" y="450" as="sourcePoint" />
+            <mxPoint x="-160" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-68" value="&lt;span style=&quot;font-size: 11px; line-height: 107%;&quot;&gt;Недостаток товарного ассортимента&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="-180" y="470" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-69" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="30" y="500" as="sourcePoint" />
+            <mxPoint x="-160" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-72" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="35" y="510" as="sourcePoint" />
+            <mxPoint x="130" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-73" value="&lt;span style=&quot;font-size: 11px; line-height: 107%;&quot;&gt;Расширьте ассортимент&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="40" y="480" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-75" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="20" y="460" as="sourcePoint" />
+            <mxPoint x="120" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-76" value="Добавить изображение и описание" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Times New Roman;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="25" y="430" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-77" value="&lt;span style=&quot;font-size: 11px;&quot;&gt;&lt;span style=&quot;font-size: 11px; line-height: 107%;&quot;&gt;Недостаточное управление &lt;/span&gt;&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=11;fontStyle=0" parent="1" vertex="1">
+          <mxGeometry x="240" y="420" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-78" value="&lt;span style=&quot;font-size: 11px;&quot;&gt;&lt;span style=&quot;font-size: 11px; line-height: 107%;&quot;&gt;Отсутствие обратной связи&lt;/span&gt;&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontStyle=0;fontFamily=Times New Roman;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="250" y="450" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-79" value="&lt;span style=&quot;font-size: 11px;&quot;&gt;&lt;span style=&quot;font-size: 11px; line-height: 107%;&quot;&gt;Неясная иерархия и роли&lt;/span&gt;&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=11;fontStyle=0" parent="1" vertex="1">
+          <mxGeometry x="280" y="480" width="130" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-83" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="414" y="500" as="sourcePoint" />
+            <mxPoint x="250" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-84" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="470" as="sourcePoint" />
+            <mxPoint x="240" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hoYyZOqW6vXkRuBxGZmY-85" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="380" y="440" as="sourcePoint" />
+            <mxPoint x="230" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="FCSHKysKBmObm5S_atrD" name="Страница — 2">
+    <mxGraphModel dx="2261" dy="754" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="M0vfmU_q2eGw704mJbId-1" value="&lt;strong&gt;Требования к интернет-магазину брелков&lt;/strong&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="240" width="320" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="M0vfmU_q2eGw704mJbId-2" value="&lt;strong&gt;Требования к функциональности&lt;/strong&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="160" y="200" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="M0vfmU_q2eGw704mJbId-3" value="Регистрацияи аутентификация пользователей" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="180" y="280" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="M0vfmU_q2eGw704mJbId-4" value="Управление учетной записью пользователей" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="180" y="360" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="M0vfmU_q2eGw704mJbId-5" value="Просмотр товаров и их описаний" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="180" y="440" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="M0vfmU_q2eGw704mJbId-6" value="Корзина и оформление заказа" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="180" y="520" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="M0vfmU_q2eGw704mJbId-7" value="Доставка и отслеживание заказов" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="180" y="600" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="M0vfmU_q2eGw704mJbId-9" value="&lt;strong&gt;Требования к не функциональным характеристикам&lt;/strong&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="440" y="200" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="M0vfmU_q2eGw704mJbId-10" value="Производительность и масштабируемость системы" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="455" y="280" width="170" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="M0vfmU_q2eGw704mJbId-11" value="Безопасность данных и транзакций" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="480" y="360" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="M0vfmU_q2eGw704mJbId-12" value="Аналитика и мониторинг производительности" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="480" y="440" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="M0vfmU_q2eGw704mJbId-13" value="Техническая поддержка и обслуживание" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="480" y="520" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="QNwk-WvC-MwG9ho3ThIV-7" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="120" as="sourcePoint" />
+            <mxPoint x="400" y="80" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QNwk-WvC-MwG9ho3ThIV-8" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="M0vfmU_q2eGw704mJbId-2" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="350" y="170" as="sourcePoint" />
+            <mxPoint x="400" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QNwk-WvC-MwG9ho3ThIV-9" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="M0vfmU_q2eGw704mJbId-9" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="350" y="170" as="sourcePoint" />
+            <mxPoint x="400" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QNwk-WvC-MwG9ho3ThIV-10" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="M0vfmU_q2eGw704mJbId-3" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="190" y="290" as="sourcePoint" />
+            <mxPoint x="240" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QNwk-WvC-MwG9ho3ThIV-12" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="239.57999999999998" y="360" as="sourcePoint" />
+            <mxPoint x="239.57999999999998" y="320" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="239.57999999999998" y="350" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QNwk-WvC-MwG9ho3ThIV-13" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="239.57999999999998" y="440" as="sourcePoint" />
+            <mxPoint x="239.57999999999998" y="400" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="239.57999999999998" y="430" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QNwk-WvC-MwG9ho3ThIV-14" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="240" y="520" as="sourcePoint" />
+            <mxPoint x="240" y="480" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="240" y="510" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QNwk-WvC-MwG9ho3ThIV-15" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="539.5799999999999" y="440" as="sourcePoint" />
+            <mxPoint x="539.5799999999999" y="400" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="539.5799999999999" y="430" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QNwk-WvC-MwG9ho3ThIV-16" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="539.5799999999999" y="360" as="sourcePoint" />
+            <mxPoint x="539.5799999999999" y="320" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="539.5799999999999" y="350" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QNwk-WvC-MwG9ho3ThIV-17" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="240" y="600" as="sourcePoint" />
+            <mxPoint x="240" y="560" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="240" y="590" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QNwk-WvC-MwG9ho3ThIV-18" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="539.58" y="520" as="sourcePoint" />
+            <mxPoint x="539.58" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QNwk-WvC-MwG9ho3ThIV-19" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="539.5799999999999" y="280" as="sourcePoint" />
+            <mxPoint x="540" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7fcrfOZdg8zzk4urxyE7-1" value="&lt;b&gt;&lt;font color=&quot;#330066&quot;&gt;Какие данные нужны для регистрации? Какие для аутентификации? Как система реагирует на неверно введённые данные?&amp;nbsp;Какие требования к логину? Какие к паролю? Какие к остальным данным (напр. возраст и тд) Какие предупреждения показывает в случае неверного логина/пароля?&amp;nbsp;&lt;/font&gt;&lt;/b&gt;&lt;font color=&quot;#330066&quot;&gt;&lt;span style=&quot;caret-color: rgb(51, 0, 102);&quot;&gt;&lt;b&gt;Рекомендация - разбить данный пункт на 2 - отдельно регистрация и аутентификация.&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="-450" y="272.5" width="590" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="7fcrfOZdg8zzk4urxyE7-2" value="&lt;font color=&quot;#330066&quot;&gt;&lt;b&gt;Что видит в своей записи пользователь? Что видит в чужих учётных записях? Есть ли функция восстановления пароля и каков её алгоритм? Какие данные можно изменить? Какие функции доступны для учётной записи (редактировать, удалить и тд)&lt;/b&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="-420" y="352.5" width="580" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="7fcrfOZdg8zzk4urxyE7-3" value="&lt;font color=&quot;#330066&quot;&gt;&lt;span style=&quot;caret-color: rgb(51, 0, 102);&quot;&gt;&lt;b&gt;На какой странице находятся все товары? Что включает в себя карточка товара в общем списке? Что включает подробная карточка товара? Какие действия в карточке доступны владельцу? Какие действия доступны остальным пользователям? Сохраняется ли история просмотров? Если да, то в каком виде. Рекомендация - разбить данный пункт на просмотр карточки товара, историю просмотров (при наличии), создать отдельный пункт для добавления своего товара.&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="-740" y="427.5" width="910" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="7fcrfOZdg8zzk4urxyE7-4" value="&lt;b&gt;&lt;font color=&quot;#330066&quot;&gt;Максимальное количество товаров в корзине? Есть ли закладка Избранное и каков алгоритм её работы? Необходимые данные для подтверждения заказа? Способ коммуникации с пользователем? Рекомендация - ограничиться только корзиной, так как для оформления заказа необходимо будет подключать платёжную систему, а это невозможно на данном этапе разработки&lt;/font&gt;&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="-590" y="510" width="760" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7fcrfOZdg8zzk4urxyE7-6" value="&lt;b&gt;&lt;font color=&quot;#330066&quot;&gt;Рекомендация - отказаться от этого пункта в связи с рекомендацией к пункту Корзина и оформление заказа&lt;/font&gt;&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="-250" y="605" width="390" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7fcrfOZdg8zzk4urxyE7-7" value="&lt;b&gt;&lt;font color=&quot;#330066&quot;&gt;В каких браузерах работает сайт? На каких устройствах возможна работа сайта (ПК, смартфон и тд) Максимальное количество&amp;nbsp;зарегистрированных пользователей? Максимальное количество товаров на сайте? Максимальное время выполнения операции на сайте? Максимальная скорость открытия сайта?&lt;/font&gt;&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="640" y="268.75" width="580" height="62.5" as="geometry" />
+        </mxCell>
+        <mxCell id="7fcrfOZdg8zzk4urxyE7-8" value="&lt;b&gt;&lt;font color=&quot;#330066&quot;&gt;Требования к паролям пользователям? Какие системы используются для защиты персональных данных? Требуется ли от пользователя согласие на обработку персональных данных? Присутствует ли резервное копирование данных или хранение на локальном устройстве?&lt;/font&gt;&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="651" y="347.5" width="590" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="7fcrfOZdg8zzk4urxyE7-9" value="&lt;b&gt;&lt;font color=&quot;#330066&quot;&gt;Производится ли анализ и мониторинг производительности? Если да, то кем? Какие действия возможны на основе&amp;nbsp;полученных данных и кто их будет выполнять? Нужно ли это на данном этапе разработки?&lt;/font&gt;&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="660" y="437.5" width="520" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="7fcrfOZdg8zzk4urxyE7-11" value="&lt;b&gt;&lt;font color=&quot;#330066&quot;&gt;На какой странице сайта организована связь с технической&amp;nbsp;&lt;/font&gt;&lt;/b&gt;&lt;font color=&quot;#330066&quot;&gt;&lt;span style=&quot;caret-color: rgb(51, 0, 102);&quot;&gt;&lt;b&gt;поддержкой? Диалог происходит на самом сайте или через сторонние средства связи? В какое время доступна связь с технической поддержкой? Максимальное время ожидания ответа? Кто осуществляет диалог с пользователями?&lt;br&gt;&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="620" y="507.5" width="630" height="65" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="Cg_-KyymKGuCJHAiAD3m" name="Страница — 3">
+    <mxGraphModel dx="5751" dy="2154" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="7Ity7t2QB3I02j4V_Y---1" value="&lt;strong&gt;Требования к интернет-магазину брелков&lt;/strong&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="476" y="20" width="320" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="7Ity7t2QB3I02j4V_Y---2" value="&lt;strong&gt;Требования к функциональности&lt;/strong&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="396" y="220" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WYPEmog__xa4zF9BEUN3-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="7Ity7t2QB3I02j4V_Y---3" target="kgcQI4xxdGUeHrzKHdYK-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7Ity7t2QB3I02j4V_Y---3" value="Регистрацияи аутентификация пользователей" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=15;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="1">
+          <mxGeometry x="276" y="300" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="7Ity7t2QB3I02j4V_Y---8" value="&lt;strong&gt;Требования к не функциональным характеристикам&lt;/strong&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="676" y="220" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="zuXTqbGsji-iiCEuX3Kz-49" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="7Ity7t2QB3I02j4V_Y---9" target="sg3GoLStBY67JeyqPgCd-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7Ity7t2QB3I02j4V_Y---9" value="Производительность и масштабируемость системы" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="1">
+          <mxGeometry x="721" y="290" width="170" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="zuXTqbGsji-iiCEuX3Kz-40" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="7Ity7t2QB3I02j4V_Y---10" target="DZ4LrQbpi5a4y2zU4R64-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7Ity7t2QB3I02j4V_Y---10" value="Безопасность данных и транзакций" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="1">
+          <mxGeometry x="1071" y="290" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ppxsLbKxOSihD4xcijE2-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="7Ity7t2QB3I02j4V_Y---11" target="zuXTqbGsji-iiCEuX3Kz-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7Ity7t2QB3I02j4V_Y---11" value="Аналитика и мониторинг производительности" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="1">
+          <mxGeometry x="1826.25" y="300" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="zuXTqbGsji-iiCEuX3Kz-30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="7Ity7t2QB3I02j4V_Y---12" target="zuXTqbGsji-iiCEuX3Kz-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7Ity7t2QB3I02j4V_Y---12" value="Техническая поддержка и обслуживание" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="1">
+          <mxGeometry x="2400.31" y="260" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="7Ity7t2QB3I02j4V_Y---13" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="636" y="140" as="sourcePoint" />
+            <mxPoint x="636" y="100" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7Ity7t2QB3I02j4V_Y---14" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="7Ity7t2QB3I02j4V_Y---2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="586" y="190" as="sourcePoint" />
+            <mxPoint x="636" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7Ity7t2QB3I02j4V_Y---15" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="7Ity7t2QB3I02j4V_Y---8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="586" y="190" as="sourcePoint" />
+            <mxPoint x="636" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7Ity7t2QB3I02j4V_Y---16" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" target="7Ity7t2QB3I02j4V_Y---2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="396" y="300" as="sourcePoint" />
+            <mxPoint x="476" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0hMq60AvEp9MrkorG7aU-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="kgcQI4xxdGUeHrzKHdYK-1" target="0hMq60AvEp9MrkorG7aU-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kgcQI4xxdGUeHrzKHdYK-1" value="&lt;div align=&quot;left&quot; style=&quot;font-size: 14px;&quot;&gt;&lt;font face=&quot;Times New Roman&quot; style=&quot;font-size: 14px;&quot;&gt;Для регистрации&lt;/font&gt;&lt;/div&gt;&lt;p align=&quot;left&quot; style=&quot;font-size: 14px;&quot;&gt;&lt;font face=&quot;Times New Roman&quot; style=&quot;font-size: 14px;&quot;&gt;требуют следующие данные:&lt;/font&gt;&lt;/p&gt;&lt;div align=&quot;left&quot; style=&quot;font-size: 14px;&quot;&gt;&lt;ul style=&quot;font-size: 14px;&quot;&gt;&lt;li style=&quot;font-size: 14px;&quot;&gt;&lt;font face=&quot;Times New Roman&quot; style=&quot;font-size: 14px;&quot;&gt;Имя и фамилия пользователя.&lt;/font&gt;&lt;/li&gt;&lt;li style=&quot;font-size: 14px;&quot;&gt;&lt;font face=&quot;Times New Roman&quot; style=&quot;font-size: 14px;&quot;&gt;Адрес электронной почты (email).&lt;/font&gt;&lt;/li&gt;&lt;li style=&quot;font-size: 14px;&quot;&gt;&lt;font face=&quot;Times New Roman&quot; style=&quot;font-size: 14px;&quot;&gt;Пароль для учетной записи.&lt;/font&gt;&lt;/li&gt;&lt;li style=&quot;font-size: 14px;&quot;&gt;&lt;font face=&quot;Times New Roman&quot; style=&quot;font-size: 14px;&quot;&gt;Номер телефона (возможно, необязательно).&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="276" y="360" width="240" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="0hMq60AvEp9MrkorG7aU-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="0hMq60AvEp9MrkorG7aU-3" target="0hMq60AvEp9MrkorG7aU-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0hMq60AvEp9MrkorG7aU-3" value="&lt;div style=&quot;font-size: 14px;&quot; align=&quot;left&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot; face=&quot;Times New Roman&quot;&gt;Для аутентификации&lt;/font&gt;&lt;ul style=&quot;font-size: 14px;&quot;&gt;&lt;li style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot; face=&quot;Times New Roman&quot;&gt;Логин (чаще всего это адрес электронной почты).&lt;/font&gt;&lt;/li&gt;&lt;li style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot; face=&quot;Times New Roman&quot;&gt;Пароль, который был указан при регистрации.&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="276" y="580" width="240" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="0hMq60AvEp9MrkorG7aU-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="0hMq60AvEp9MrkorG7aU-5" target="0hMq60AvEp9MrkorG7aU-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0hMq60AvEp9MrkorG7aU-5" value="Когда пользователь вводит неверные данные система выводит:&lt;br style=&quot;font-size: 14px;&quot;&gt;&lt;ul style=&quot;font-size: 14px;&quot;&gt;&lt;li style=&quot;font-size: 14px;&quot;&gt;Показать сообщение об ошибке и предложить повторно ввести данные.&lt;/li&gt;&lt;li style=&quot;font-size: 14px;&quot;&gt;Ограничить количество попыток входа и заблокировать аккаунт временно после нескольких неудачных попыток.&lt;/li&gt;&lt;li style=&quot;font-size: 14px;&quot;&gt;Предложить сбросить пароль, если пользователь забыл его.&lt;/li&gt;&lt;/ul&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontFamily=Times New Roman;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="256" y="740" width="280" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="0hMq60AvEp9MrkorG7aU-7" value="&lt;br&gt;Требования к логину и паролю:&lt;ul style=&quot;font-size: 14px;&quot;&gt;&lt;li style=&quot;font-size: 14px;&quot;&gt;Логин - это адрес электронной почты.&lt;/li&gt;&lt;li style=&quot;font-size: 14px;&quot;&gt;Пароль должен быть длинным и сложным, содержать как минимум буквы (в верхнем и нижнем регистрах), цифры и специальные символы.&lt;/li&gt;&lt;li style=&quot;font-size: 14px;&quot;&gt;Пароль обычно должен быть не менее 8 символов.&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontFamily=Times New Roman;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="231" y="970" width="330" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="zuXTqbGsji-iiCEuX3Kz-53" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="60ciZOrSqm6Dj1cpIExJ-2" target="60ciZOrSqm6Dj1cpIExJ-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="60ciZOrSqm6Dj1cpIExJ-2" value="Управление учетной записью пользователей" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=15;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="1">
+          <mxGeometry x="-139" y="310" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="60ciZOrSqm6Dj1cpIExJ-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="60ciZOrSqm6Dj1cpIExJ-2" target="60ciZOrSqm6Dj1cpIExJ-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zuXTqbGsji-iiCEuX3Kz-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="60ciZOrSqm6Dj1cpIExJ-5" target="60ciZOrSqm6Dj1cpIExJ-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="60ciZOrSqm6Dj1cpIExJ-5" value="Пользовательзарегистрированный видит в своей учетной записи следующую информацию:&lt;ul&gt;&lt;li&gt;Свое имя и фамилию.&lt;/li&gt;&lt;li&gt;Адрес электронной почты (обычно, но не всегда).&lt;/li&gt;&lt;li&gt;Адрес доставки (если был указан).&lt;/li&gt;&lt;li&gt;Сведения о предыдущих заказах, включая статус заказов и историю покупок.&lt;/li&gt;&lt;li&gt;Возможность изменить личные данные, в том числе пароль.&lt;/li&gt;&lt;/ul&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-194" y="390" width="350" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="zuXTqbGsji-iiCEuX3Kz-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="60ciZOrSqm6Dj1cpIExJ-6" target="60ciZOrSqm6Dj1cpIExJ-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="60ciZOrSqm6Dj1cpIExJ-6" value="Пользователь не видит информацию в чужих учетных записях. Доступ к чужим&lt;br/&gt; учетным записям без разрешения является нарушением конфиденциальности и&lt;br/&gt; незаконным действием." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-159" y="610" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="zuXTqbGsji-iiCEuX3Kz-15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="60ciZOrSqm6Dj1cpIExJ-7" target="60ciZOrSqm6Dj1cpIExJ-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="60ciZOrSqm6Dj1cpIExJ-7" value="Алгоритм восстановления пароля обычно следующий:&lt;ul&gt;&lt;li&gt;Пользователь переходит на страницу входа и нажимает на ссылку &quot;Забыли пароль?&quot;.&lt;/li&gt;&lt;li&gt;Система запрашивает адрес электронной почты, связанный с учетной записью пользователя.&lt;/li&gt;&lt;li&gt;Пользователю отправляется письмо на этот адрес с инструкциями по сбросу пароля.&lt;/li&gt;&lt;li&gt;В письме пользователь получает ссылку, по которой можно установить новый пароль.&lt;/li&gt;&lt;li&gt;После сброса пароля пользователь может войти в свою учетную запись с новым паролем.&lt;/li&gt;&lt;/ul&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-204" y="740" width="370" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="60ciZOrSqm6Dj1cpIExJ-8" value="Пользователя обычно доступны следующие функции:&lt;ul&gt;&lt;li&gt;Редактирование личных данных, таких как имя, фамилия, адрес электронной почты и адрес доставки.&lt;/li&gt;&lt;li&gt;Просмотр истории заказов и их статуса.&lt;/li&gt;&lt;li&gt;Добавление или удаление товаров из корзины.&lt;/li&gt;&lt;li&gt;Изменение пароля.&lt;/li&gt;&lt;li&gt;Возможно, подписка на информационные рассылки или управление настройками уведомлений.&lt;/li&gt;&lt;li&gt;Возможно, сохранение адресов для быстрой доставки (если поддерживается).&lt;/li&gt;&lt;/ul&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-224" y="1030" width="410" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="zuXTqbGsji-iiCEuX3Kz-55" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="J0U73FdajLzJOJ0tGW9s-2" target="J0U73FdajLzJOJ0tGW9s-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="J0U73FdajLzJOJ0tGW9s-2" value="Просмотр товаров и их описаний" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="-514" y="330" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="zuXTqbGsji-iiCEuX3Kz-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="J0U73FdajLzJOJ0tGW9s-3" target="J0U73FdajLzJOJ0tGW9s-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="J0U73FdajLzJOJ0tGW9s-3" value="Все товары обычно находятся на странице, которая может называться &lt;br&gt;&quot;Каталог&quot;, &quot;Магазин&quot; или по аналогичному названию. На этой странице &lt;br&gt;пользователь может просматривать все доступные товары." style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="-574" y="390" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="zuXTqbGsji-iiCEuX3Kz-19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="J0U73FdajLzJOJ0tGW9s-4" target="K16kLogwu5jQDFQQhJj--1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="J0U73FdajLzJOJ0tGW9s-4" value="&lt;br&gt;Карточка товара включает в себя следующую информацию:&lt;ul&gt;&lt;li&gt;Название товара.&lt;/li&gt;&lt;li&gt;Краткое описание или изображение товара.&lt;/li&gt;&lt;li&gt;Цену товара.&lt;/li&gt;&lt;li&gt;Возможность добавления товара в корзину.&lt;/li&gt;&lt;li&gt;Краткое описание характеристик товара (например, бренд, материал, размер).&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="-644" y="530" width="420" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="zuXTqbGsji-iiCEuX3Kz-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="K16kLogwu5jQDFQQhJj--1" target="K16kLogwu5jQDFQQhJj--2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="K16kLogwu5jQDFQQhJj--1" value="Подробная карточка товара, на которую можно перейти из общего списка, обычно включает в себя более подробную информацию:&lt;ul&gt;&lt;li&gt;Более детальное описание товара.&lt;/li&gt;&lt;li&gt;Фотографии товара в высоком разрешении.&lt;/li&gt;&lt;li&gt;Подробные характеристики товара (например, вес, размеры, цвета).&lt;/li&gt;&lt;li&gt;Отзывы покупателей (если есть).&lt;/li&gt;&lt;li&gt;Дополнительные варианты товара (если применимо, например, разные цвета или модели).&lt;/li&gt;&lt;/ul&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="-614" y="710" width="360" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="zuXTqbGsji-iiCEuX3Kz-21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="K16kLogwu5jQDFQQhJj--2" target="K16kLogwu5jQDFQQhJj--4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="K16kLogwu5jQDFQQhJj--2" value="Действия доступные владельцу товара (продавцу), могут включать в себя:&lt;ul&gt;&lt;li&gt;Редактирование информации о товаре.&lt;/li&gt;&lt;li&gt;Управление количеством и наличием товара.&lt;/li&gt;&lt;li&gt;Ответ на вопросы покупателей.&lt;/li&gt;&lt;li&gt;Модерация отзывов и комментариев.&lt;/li&gt;&lt;/ul&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="-594" y="950" width="320" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="zuXTqbGsji-iiCEuX3Kz-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="K16kLogwu5jQDFQQhJj--4" target="K16kLogwu5jQDFQQhJj--5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="K16kLogwu5jQDFQQhJj--4" value="Действия доступные остальным пользователям, могут включать в себя:&lt;ul&gt;&lt;li&gt;Просмотр подробной информации о товаре.&lt;/li&gt;&lt;li&gt;Добавление товара в корзину для последующей покупки.&lt;/li&gt;&lt;li&gt;Оставление отзывов и комментариев о товаре (если разрешено).&lt;/li&gt;&lt;li&gt;Поделиться информацией о товаре в социальных сетях или по электронной почте (если предусмотрено).&lt;/li&gt;&lt;/ul&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="-579" y="1110" width="290" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="zuXTqbGsji-iiCEuX3Kz-23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="K16kLogwu5jQDFQQhJj--5" target="K16kLogwu5jQDFQQhJj--6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="K16kLogwu5jQDFQQhJj--5" value="Обычно интернет-магазины сохраняют историю просмотров для &lt;br&gt;зарегистрированных пользователей. Это позволяет пользователям легко &lt;br&gt;вернуться к товарам, которые они ранее просматривали. История просмотров&lt;br&gt; может быть доступна на странице пользователя или в личном кабинете" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="-559" y="1340" width="250" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="K16kLogwu5jQDFQQhJj--6" value="История просмотров обычно представляется в виде списка или галереи &lt;br&gt;товаров, которые пользователь недавно просматривал. Пользователь может &lt;br&gt;выбрать товар из этого списка и перейти к его подробной карточке для &lt;br&gt;более детального ознакомления или покупки." style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="-569" y="1530" width="270" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="zuXTqbGsji-iiCEuX3Kz-58" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="VDQlRtCL1bSQNZVOcLJR-1" target="t-6-W30Di37MbkWGLZ2T-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VDQlRtCL1bSQNZVOcLJR-1" value="Корзина и оформление заказа" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;fontFamily=Times New Roman;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="-964.5" y="320" width="170" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="zuXTqbGsji-iiCEuX3Kz-25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="t-6-W30Di37MbkWGLZ2T-1" target="t-6-W30Di37MbkWGLZ2T-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t-6-W30Di37MbkWGLZ2T-1" value="Максимальное количество товаров в корзине может варьироваться в &lt;br&gt;зависимости от политики интернет-магазина, но обычно оно составляет от &lt;br&gt;20 до 100 товаров." style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="-1007.5" y="380" width="220" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="zuXTqbGsji-iiCEuX3Kz-26" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="t-6-W30Di37MbkWGLZ2T-2" target="t-6-W30Di37MbkWGLZ2T-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t-6-W30Di37MbkWGLZ2T-2" value=" Интернет-магазины имеют функцию &quot;Избранное&quot; или &quot;Список желаний&quot;. Алгоритм работы обычно следующий:&lt;ul&gt;&lt;li&gt;Пользователь может добавить товары в список &quot;Избранное&quot; при просмотре карточки товара.&lt;/li&gt;&lt;li&gt;Список &quot;Избранное&quot; сохраняется в учетной записи пользователя.&lt;/li&gt;&lt;li&gt;Пользователь может просматривать и управлять товарами в списке &quot;Избранное&quot;.&lt;/li&gt;&lt;li&gt;Эта функция помогает пользователям отслеживать товары, которые им интересны, но они не готовы их сразу покупать.&lt;/li&gt;&lt;/ul&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="-1085" y="513" width="375" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="zuXTqbGsji-iiCEuX3Kz-27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="t-6-W30Di37MbkWGLZ2T-3" target="t-6-W30Di37MbkWGLZ2T-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t-6-W30Di37MbkWGLZ2T-3" value="Для подтверждения заказа обычно необходимы следующие данные:&lt;ul&gt;&lt;li&gt;Адрес доставки, включая улицу, город и индекс.&lt;/li&gt;&lt;li&gt;Способ оплаты (например, кредитная карта, PayPal, банковский перевод).&lt;/li&gt;&lt;li&gt;Контактная информация, такая как номер телефона и адрес электронной почты.&lt;/li&gt;&lt;li&gt;Иногда может потребоваться информация для выставления счета или налоговых целей (например, ИНН для юридических лиц).&lt;/li&gt;&lt;/ul&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="-1090" y="753" width="385" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="zuXTqbGsji-iiCEuX3Kz-28" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="t-6-W30Di37MbkWGLZ2T-4" target="t-6-W30Di37MbkWGLZ2T-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t-6-W30Di37MbkWGLZ2T-4" value="Способ коммуникации с пользователем может включать в себя следующие методы:&lt;ul&gt;&lt;li&gt;Электронная почта: отправка уведомлений о статусе заказа, подтверждение заказа, и другие сообщения.&lt;/li&gt;&lt;li&gt;SMS-сообщения: отправка SMS-уведомлений о статусе заказа или акциях.&lt;/li&gt;&lt;li&gt;Чаты или онлайн-консультанты на сайте: для оперативного общения с клиентами.&lt;/li&gt;&lt;li&gt;Телефон: в случае необходимости связи с клиентом по вопросам заказа.&lt;/li&gt;&lt;/ul&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="-1062.5" y="962" width="330" height="208" as="geometry" />
+        </mxCell>
+        <mxCell id="t-6-W30Di37MbkWGLZ2T-5" value="Рекомендация ограничиться только корзиной, не подключая платежную &lt;br&gt;систему, может быть разумной, если вы находитесь на этапе разработки и &lt;br&gt;тестируете функциональность интернет-магазина. Однако, на рабочем сайте &lt;br&gt;для полноценной покупки необходимо будет подключить соответствующую &lt;br&gt;платежную систему, чтобы пользователи могли оплачивать заказы." style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="-1037.5" y="1220" width="280" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="zuXTqbGsji-iiCEuX3Kz-48" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="sg3GoLStBY67JeyqPgCd-5" target="sg3GoLStBY67JeyqPgCd-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sg3GoLStBY67JeyqPgCd-5" value="Сайт интернет-магазина обычно разрабатывается и тестируется на различных браузерах, чтобы обеспечить максимальную совместимость. Обычно, сайты могут работать в следующих популярных браузерах:&lt;ul&gt;&lt;li&gt;Google Chrome&lt;/li&gt;&lt;li&gt;Mozilla Firefox&lt;/li&gt;&lt;li&gt;Apple Safari&lt;/li&gt;&lt;li&gt;Microsoft Edge&lt;/li&gt;&lt;li&gt;Opera&lt;/li&gt;&lt;li&gt;Другие популярные браузеры&lt;/li&gt;&lt;/ul&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="691" y="350" width="230" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="zuXTqbGsji-iiCEuX3Kz-47" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="sg3GoLStBY67JeyqPgCd-6" target="sg3GoLStBY67JeyqPgCd-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sg3GoLStBY67JeyqPgCd-6" value="Сайт интернет-магазина должен быть адаптирован для работы на разных устройствах, включая:&lt;ul&gt;&lt;li&gt;Персональные компьютеры (ПК) и ноутбуки.&lt;/li&gt;&lt;li&gt;Смартфоны.&lt;/li&gt;&lt;li&gt;Планшеты.&lt;/li&gt;&lt;li&gt;Другие мобильные устройства.&lt;/li&gt;&lt;/ul&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="686" y="604" width="240" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="zuXTqbGsji-iiCEuX3Kz-46" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="sg3GoLStBY67JeyqPgCd-7" target="sg3GoLStBY67JeyqPgCd-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sg3GoLStBY67JeyqPgCd-7" value="Максимальное количество зарегистрированных пользователей зависит от &lt;br&gt;инфраструктуры сайта, серверных ресурсов и бизнес-потребностей. Это &lt;br&gt;число может быть очень велико, и оно может расти по мере необходимости. &lt;br&gt;Крупные интернет-магазины могут иметь миллионы зарегистрированных &lt;br&gt;пользователей." style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="656" y="810" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="zuXTqbGsji-iiCEuX3Kz-45" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="sg3GoLStBY67JeyqPgCd-8" target="sg3GoLStBY67JeyqPgCd-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sg3GoLStBY67JeyqPgCd-8" value="Максимальное количество товаров на сайте также зависит от ресурсов и &lt;br/&gt;технических возможностей. Крупные интернет-магазины могут предлагать &lt;br/&gt;сотни тысяч и даже миллионы товаров." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="688.5" y="1000" width="235" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="zuXTqbGsji-iiCEuX3Kz-44" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="sg3GoLStBY67JeyqPgCd-9" target="sg3GoLStBY67JeyqPgCd-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sg3GoLStBY67JeyqPgCd-9" value="Максимальное время выполнения операции на сайте зависит от разных &lt;br/&gt;факторов, включая сложность операции, скорость серверов, нагрузку на &lt;br/&gt;сайт и другие. В идеале, операции на сайте должны выполняться &lt;br/&gt;максимально быстро, чтобы обеспечить хороший пользовательский опыт." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="671" y="1120" width="270" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="sg3GoLStBY67JeyqPgCd-10" value="Максимальная скорость открытия сайта также зависит от разных факторов, &lt;br/&gt;включая хостинг, оптимизацию сайта и размер страницы. Сайт должен быть &lt;br/&gt;настроен так, чтобы загружаться как можно быстрее, чтобы удовлетворить &lt;br/&gt;потребности пользователей и улучшить его поисковую оптимизацию. Обычно, &lt;br/&gt;сайты стремятся к быстрой загрузке, и это может быть одним из ключевых &lt;br/&gt;показателей качества." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="671" y="1280" width="270" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="zuXTqbGsji-iiCEuX3Kz-38" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="DZ4LrQbpi5a4y2zU4R64-1" target="DZ4LrQbpi5a4y2zU4R64-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DZ4LrQbpi5a4y2zU4R64-1" value="Для защиты персональных данных пользователей интернет-магазины могут использовать различные системы и методы, включая:&lt;ul&gt;&lt;li&gt;Шифрование данных с использованием протокола HTTPS при передаче данных между браузером пользователя и сервером магазина.&lt;/li&gt;&lt;li&gt;Защиту серверов и баз данных от несанкционированного доступа с помощью брандмауэров, системы обнаружения вторжений и других методов.&lt;/li&gt;&lt;li&gt;Хранение паролей пользователей в хэшированном и соленом виде, чтобы предотвратить их утечку в случае взлома.&lt;/li&gt;&lt;li&gt;Обучение сотрудников и пользователей мерам безопасности для снижения риска фишинга и атак социальной инженерии&lt;/li&gt;&lt;/ul&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1068.5" y="700" width="470" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="zuXTqbGsji-iiCEuX3Kz-39" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="DZ4LrQbpi5a4y2zU4R64-2" target="DZ4LrQbpi5a4y2zU4R64-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DZ4LrQbpi5a4y2zU4R64-2" value="Требования к паролям пользователям в интернет-магазине обычно включают в себя следующие аспекты:&lt;ul&gt;&lt;li&gt;Минимальная длина пароля (например, не менее 8 символов).&lt;/li&gt;&lt;li&gt;Использование разных типов символов (буквы в верхнем и нижнем регистрах, цифры, специальные символы).&lt;/li&gt;&lt;li&gt;Запрет на использование очень простых паролей (например, &quot;123456&quot; или &quot;password&quot;).&lt;/li&gt;&lt;li&gt;Рекомендация о регулярной смене пароля.&lt;/li&gt;&lt;li&gt;Блокировка учетной записи после нескольких неудачных попыток ввода пароля для предотвращения подбора пароля.&lt;/li&gt;&lt;/ul&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1103.5" y="430" width="400" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="zuXTqbGsji-iiCEuX3Kz-37" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="DZ4LrQbpi5a4y2zU4R64-3" target="DZ4LrQbpi5a4y2zU4R64-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DZ4LrQbpi5a4y2zU4R64-3" value="Да, обычно требуется согласие пользователя на обработку его персональных&lt;br&gt; данных, чтобы соблюсти законы о защите данных (например, GDPR в &lt;br&gt;Европе). Это может быть выражено через &quot;Согласие на обработку &lt;br&gt;персональных данных&quot; при регистрации или оформлении заказа. Пользователь&lt;br&gt; должен быть проинформирован о том, какие данные собираются и как они &lt;br&gt;будут использованы, и иметь возможность отозвать свое согласие в любое &lt;br&gt;время." style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1091" y="930" width="425" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="DZ4LrQbpi5a4y2zU4R64-6" value="Интернет-магазины обычно применяют резервное копирование данных, чтобы &lt;br&gt;обеспечить их сохранность и восстановление в случае сбоев или утраты &lt;br&gt;данных. Резервные копии могут храниться на удаленных серверах или &lt;br&gt;локальных носителях. Это важная мера для обеспечения безопасности и &lt;br&gt;доступности данных. Хранение данных на локальных устройствах не &lt;br&gt;рекомендуется, так как это может представлять риск для их безопасности и&lt;br&gt; надежности." style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1123.5" y="1170" width="360" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="ppxsLbKxOSihD4xcijE2-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="zuXTqbGsji-iiCEuX3Kz-1" target="zuXTqbGsji-iiCEuX3Kz-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zuXTqbGsji-iiCEuX3Kz-1" value="Да, анализ и мониторинг производительности интернет-магазина обычно &lt;br/&gt;проводятся для обеспечения его эффективной работы и выявления проблем в &lt;br/&gt;работе сайта." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1751.25" y="470" width="270" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="zuXTqbGsji-iiCEuX3Kz-32" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="zuXTqbGsji-iiCEuX3Kz-2" target="zuXTqbGsji-iiCEuX3Kz-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zuXTqbGsji-iiCEuX3Kz-2" value="Мониторинг производительности может выполняться специалистами по &lt;br&gt;информационным технологиям или DevOps-инженерами, которые отвечают за &lt;br&gt;инфраструктуру и обслуживание серверов сайта. Также маркетологи и &lt;br&gt;аналитики могут участвовать в анализе данных о производительности." style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1716.25" y="633" width="340" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="zuXTqbGsji-iiCEuX3Kz-31" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="zuXTqbGsji-iiCEuX3Kz-3" target="zuXTqbGsji-iiCEuX3Kz-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zuXTqbGsji-iiCEuX3Kz-3" value="На основе данных о производительности можно проводить следующие действия:&lt;ul&gt;&lt;li&gt;Идентификация и устранение узких мест и проблем, которые могут замедлять работу сайта.&lt;/li&gt;&lt;li&gt;Оптимизация кода и базы данных для улучшения скорости загрузки страниц.&lt;/li&gt;&lt;li&gt;Планирование масштабирования серверной инфраструктуры при росте нагрузки.&lt;/li&gt;&lt;li&gt;Мониторинг доступности сайта и оперативное реагирование на сбои.&lt;/li&gt;&lt;li&gt;Анализ поведения пользователей для оптимизации интерфейса и повышения удовлетворенности клиентов.&lt;/li&gt;&lt;/ul&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1668.75" y="830" width="435" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="zuXTqbGsji-iiCEuX3Kz-4" value="Да, анализ и мониторинг производительности полезны на всех этапах &lt;br&gt;разработки и эксплуатации интернет-магазина. Они позволяют выявить и &lt;br&gt;устранить проблемы с производительностью, улучшить пользовательский опыт&lt;br&gt; и обеспечить надежную работу сайта. Регулярный мониторинг и анализ &lt;br&gt;производительности также позволяют эффективно масштабировать ресурсы, &lt;br&gt;когда сайт растет и привлекает больше пользователей." style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1715" y="1169" width="342.5" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="zuXTqbGsji-iiCEuX3Kz-61" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="zuXTqbGsji-iiCEuX3Kz-5" target="zuXTqbGsji-iiCEuX3Kz-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zuXTqbGsji-iiCEuX3Kz-5" value="Страница сайта, на которой организована связь с технической поддержкой, &lt;br&gt;часто называется &quot;Контакты&quot; или &quot;Поддержка&quot;. На этой странице &lt;br&gt;пользователи могут найти информацию о том, как связаться с технической &lt;br&gt;поддержкой." style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="2275.31" y="330" width="370" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="zuXTqbGsji-iiCEuX3Kz-29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="zuXTqbGsji-iiCEuX3Kz-6" target="zuXTqbGsji-iiCEuX3Kz-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zuXTqbGsji-iiCEuX3Kz-6" value="Максимальное время ожидания ответа также зависит от магазина и способа &lt;br/&gt;связи. В случае онлайн-чата ответ может приходить практически мгновенно,&lt;br/&gt; в то время как ответ на электронное письмо может потребовать несколько &lt;br/&gt;часов или более. Максимальное время ожидания обычно указывается на &lt;br/&gt;странице поддержки или в уведомлениях для пользователей." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="2307.18" y="743" width="306.25" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="zuXTqbGsji-iiCEuX3Kz-60" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="zuXTqbGsji-iiCEuX3Kz-7" target="zuXTqbGsji-iiCEuX3Kz-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zuXTqbGsji-iiCEuX3Kz-7" value="Диалог с технической поддержкой может происходить как на самом сайте, &lt;br&gt;так и через сторонние средства связи. Это может включать в себя &lt;br&gt;онлайн-чат на сайте, электронную почту, телефонный номер поддержки, &lt;br&gt;форму обратной связи и даже социальные сети." style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="2270" y="470" width="380.62" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="ppxsLbKxOSihD4xcijE2-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="zuXTqbGsji-iiCEuX3Kz-8" target="zuXTqbGsji-iiCEuX3Kz-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zuXTqbGsji-iiCEuX3Kz-8" value="Время доступа к связи с технической поддержкой может варьироваться в &lt;br&gt;зависимости от политики магазина. Обычно организации стараются &lt;br&gt;обеспечить доступность поддержки в рабочее время, но некоторые магазины &lt;br&gt;предоставляют круглосуточную поддержку." style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="2286.25" y="607" width="350" height="103" as="geometry" />
+        </mxCell>
+        <mxCell id="zuXTqbGsji-iiCEuX3Kz-11" value="Диалог с пользователями технической поддержки может осуществляться &lt;br&gt;сотрудниками магазина, обученными и компетентными в вопросах продукции и&lt;br&gt; обслуживания. Это могут быть специалисты по клиентскому обслуживанию, &lt;br&gt;технические эксперты или другие сотрудники, ответственные за поддержку &lt;br&gt;пользователей." style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="2302.81" y="1009" width="315" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="zuXTqbGsji-iiCEuX3Kz-51" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="7Ity7t2QB3I02j4V_Y---9" target="7Ity7t2QB3I02j4V_Y---8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="736" y="310" as="sourcePoint" />
+            <mxPoint x="786" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zuXTqbGsji-iiCEuX3Kz-67" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="VDQlRtCL1bSQNZVOcLJR-1" target="7Ity7t2QB3I02j4V_Y---2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-760" y="300" as="sourcePoint" />
+            <mxPoint x="-710" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zuXTqbGsji-iiCEuX3Kz-68" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="J0U73FdajLzJOJ0tGW9s-2" target="7Ity7t2QB3I02j4V_Y---2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-360" y="240" as="sourcePoint" />
+            <mxPoint x="-310" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zuXTqbGsji-iiCEuX3Kz-69" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="60ciZOrSqm6Dj1cpIExJ-2" target="7Ity7t2QB3I02j4V_Y---2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="101" y="200" as="sourcePoint" />
+            <mxPoint x="151" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ppxsLbKxOSihD4xcijE2-1" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="7Ity7t2QB3I02j4V_Y---8" target="7Ity7t2QB3I02j4V_Y---10">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1000" y="240" as="sourcePoint" />
+            <mxPoint x="1050" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ppxsLbKxOSihD4xcijE2-2" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="7Ity7t2QB3I02j4V_Y---8" target="7Ity7t2QB3I02j4V_Y---11">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1070" y="250" as="sourcePoint" />
+            <mxPoint x="1120" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ppxsLbKxOSihD4xcijE2-3" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="7Ity7t2QB3I02j4V_Y---8" target="7Ity7t2QB3I02j4V_Y---12">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1180" y="230" as="sourcePoint" />
+            <mxPoint x="1230" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ppxsLbKxOSihD4xcijE2-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="K16kLogwu5jQDFQQhJj--2" target="K16kLogwu5jQDFQQhJj--2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
