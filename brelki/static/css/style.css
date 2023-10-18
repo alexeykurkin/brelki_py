@@ -896,13 +896,6 @@ input[id=search_input]:focus {
   margin: 0;
 }
 
-.filter-option {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 7px;
-}
-
 .filter-button {
   height: 30px;
 }
@@ -913,6 +906,7 @@ input[id=search_input]:focus {
 
 .filter-options-block {
   display: flex;
+  align-items: center;
   flex-direction: row;
   margin-left: 25px;
   gap: 30px;
@@ -930,6 +924,18 @@ input[id=search_input]:focus {
   background-color: #0077FF;
 }
 
+.text-green {
+  color: #52b788;
+}
+
+.text-red {
+  color: #dd5353;
+}
+
+.text-blue {
+  color: #0077FF;
+}
+
 .button-padding {
   padding-right: 15px;
   padding-left: 15px;
@@ -944,11 +950,58 @@ input[id=search_input]:focus {
 }
 
 .price-options {
-    display: none;
     flex-direction: column;
 }
 
 .options-list {
     display: flex;
     flex-direction: column;
+}
+
+.d-none {
+  display: none;
+}
+
+.filter-price, .filter-popularity, .filter-category {
+  width: max-content;
+  background-color: #f0f0f2;
+  border-radius: 15px;
+  height: min-content;
+  padding: 7px 0;
+}
+
+p[id^='h3'] {
+  margin: 0;
+}
+
+.price-options p, .popularity-options p, .category-options p {
+  margin: 0;
+  padding: 0 10px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.filter-option-title {
+  display: flex; 
+  flex-direction: row; 
+  align-items: center; 
+  gap: 5px; 
+  padding: 0 10px;
+}
+
+.filter-arrow {
+  transition: all 0.3s linear;
+}
+
+.rotated {
+  transform: rotate(180deg);
+}
+
+.turned-active {
+  color: #0077FF;
+  fill: #0077FF;
+}
+
+.slider {
+    background-color: white;
 }

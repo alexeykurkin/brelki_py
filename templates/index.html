@@ -4,53 +4,80 @@
 <head>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=980px, initial-scale=1.0">
     <title>Главная</title>
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/filter.js' %}"></script>
 </head>
 {% include 'menu_header.html' %}
 <div class="menu filter-block">
     <div class="filter-options-block">
         <h2>Сортировать по:</h2>
-        <div class="filter-option">
-            <h3 id="h3-price" onclick="showFilterOptions('price-options')">стоимости</h3>
-            <div class="price-options" id="price-options" style="background-color: aquamarine">
-                <div>
-                    <p><a href="/?filter=price_asc&page=1">по возрастанию</a></p>
-                    <p><a href="/?filter=price_desc&page=1">по убыванию</a></p>
-                </div>
+        <div class="filter-option filter-price" style="height: min-content;">
+            <div class="filter-option-title">
+                <h3 id="h3-price" class="h3-price">стоимости</h3>
+                <img src="{% static 'img/down_arrow.svg' %}" id="price-arrow" width="35px" height="35px" class="filter-arrow">
             </div>
-        </div>
-        <div class="filter-option">
-            <div class="filter-option">
-                <h3 id="h3-popularity" onclick="showFilterOptions('popularity-options')">популярности</h3>
-                <div class="price-options" id="popularity-options">
-                    <div>
-                        <p><a href="/?filter=popularity_asc&page=1">по возрастанию</a></p>
-                        <p><a href="/?filter=popularity_desc&page=1">по убыванию</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
+            <div class="price-options" id="price-options">
 
-        <div class="filter-option">
-            <div class="filter-option">
-                <h3 id="h3-category" onclick="showFilterOptions('category-options')">категории</h3>
-                <div class="price-options" id="category-options">
-                    <div class="options-list">
-                        {% for category in categories %}
-                            <a href="/?filter=category_{{ category.category }}&page=1">{{ category.category }}</a>
-                        {% endfor %}
-                    </div>
+                <div>
+                    <p><a href="/?filter=price_asc&page=1" class="text-green">
+                        по возр.
+                        <img src="{% static 'img/down_arrow_green.png' %}" width="15px" height="12px" style="transform: rotate(180deg);">
+                    </a>
+                    </p>
+                    <p class="text-red">
+                        <a href="/?filter=price_desc&page=1" class="text-red">
+                            по убыв.
+                            <img src="{% static 'img/down_arrow_red.png' %}" width="15px" height="12px">
+                        </a>
+                    </p>
                 </div>
             </div>
         </div>
-        <button><a href="/">Сбросить</a></button>
+        <div class="filter-option filter-popularity">
+            <div class="filter-option-title">
+                <h3 id="h3-popularity">популярности</h3>
+                <img src="{% static 'img/down_arrow.svg' %}" id="popularity-arrow" width="35px" height="35px" class="filter-arrow">
+            </div>
+            <div class="popularity-options" id="popularity-options">
+                <div class="filter-option-items">
+                    <p>
+                        <a href="/?filter=popularity_asc&page=1" class="text-green">
+                            по возр.
+                            <img src="{% static 'img/down_arrow_green.png' %}" width="15px" height="12px" style="transform: rotate(180deg);">
+                        </a>
+                    </p>
+                    <p>
+                        <a href="/?filter=popularity_desc&page=1" class="text-red">
+                            по убыв.
+                            <img src="{% static 'img/down_arrow_red.png' %}" width="15px" height="12px">
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="filter-option filter-category">
+            <div class="filter-option-title">
+                <h3 id="h3-category">категории</h3>
+                <img src="{% static 'img/down_arrow.svg' %}" id="category-arrow" width="35px" height="35px" class="filter-arrow">
+            </div>
+            <div class="category-options" id="category-options">
+                <div class="options-list">
+                    {% for category in categories %}
+                        <p><a href="/?filter=category_{{ category.category }}&page=1">{{ category.category }}</a></p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <button class="user-actions_button button-red"><a href="/" style="color: white;">Сбросить</a></button>
     </div>
-    <button class="filter-button user-actions_button filter-button-min button-green">
+    <!-- <button class="filter-button user-actions_button filter-button-min button-green">
         <img src="{% static 'img/up_arrow.png' %}" class="filter-icon">
     </button>
     <button class="filter-button user-actions_button filter-button-min button-red">
         <img src="{% static 'img/down_arrow.png' %}" class="filter-icon">
-    </button>
+    </button> -->
 </div>
 <div class="items">
     {% for keychain in keychains %}
@@ -88,4 +115,3 @@
     {% endfor %}
 </div>
 </html>
-<script src="{% static 'filter.js' %}"></script>
