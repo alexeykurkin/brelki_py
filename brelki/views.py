@@ -12,6 +12,7 @@ from django.core.paginator import Paginator
 from os import remove
 from django.utils.datastructures import MultiValueDictKeyError
 from django.conf import settings
+from http import cookies
 
 def index(request):
     

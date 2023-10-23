@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <title>{{ keychain.title }}</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/cart.js' %}"></script>
 </head>
 <body>
 
@@ -12,7 +14,7 @@
 <div class="keychain-container">
     <div class="keychain-content">
         <div class="keychain-title-image">
-            <h1>{{ keychain.title }}</h1>
+            <h1 id="keychain-title-value">{{ keychain.title }}</h1>
             <img src="{{ keychain.img }}" height="512px" id="keychain_image">
         </div>
         <div class="keychain-description-block">
@@ -43,10 +45,9 @@
                 <img src="{% static 'img/price.png' %}" width="25px" height="25px">
             </div>
             <div class="keychain-price-block">
-                <p class="keychain-price">{{ keychain.price }} ₽</p>
+                <p class="keychain-price" id="keychain-price-value">{{ keychain.price }}</p><p class="keychain-price"> ₽</p>
             </div>
-
-
+            <button class="cart-button">Добавить в корзину</button>
         </div>
     </div>
     <h1 class="comments-section-title" id="comments">Комментарии</h1>

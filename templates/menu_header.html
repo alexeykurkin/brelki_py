@@ -48,6 +48,10 @@
                         <a href="history"><span>история</span></a>
                     </button>
                 </div>
+                <div class="cart-block">
+                    <p class="cart-title">Товары в корзине: </p>
+                    <button onclick="localStorage.cart = JSON.stringify({}); $('#cart-list').remove()">Очистить корзину</button>
+                </div>
                     <div class="user-actions_buttons">
                         <button class="user-actions_button logout-button" content="logout">
                             <a href="logout"><span>выйти</span></a>
