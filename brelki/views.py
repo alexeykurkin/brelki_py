@@ -212,6 +212,14 @@ def keychain(request):
         user_cart = cart[str(logged_user_id)]
     else:
         user_cart = []
+        
+    hide_minus_cart = True
+    if user_cart:
+        for kc in user_cart:
+            if str(kc['id']) == keychain_id:
+                hide_minus_cart = False
+                break
+            hide_minus_cart = True
 
     context = {"keychain": Keychain.objects.get(id=keychain_id),
                "user": User.objects.all(),
@@ -222,6 +230,7 @@ def keychain(request):
                     'logged_user_id': logged_user_id,
                     'logged_user_img': logged_user_img},
                 "cart": user_cart,
+                "hide_minus_cart": hide_minus_cart,
                 "search_form": SearchForm()
                }
     
@@ -267,7 +276,22 @@ def keychain(request):
                 })
 
         elif request.POST['action'] == 'minus':
-            pass
+            with open(str(BASE_DIR)+"/brelki/cart.json", 'r') as f:
+                cart = json.load(f)
+
+            for kc in cart[str(logged_user_id)]:
+                if int(keychain_id) == kc['id']:
+                    if kc['count'] == 1:
+                        cart[str(logged_user_id)].remove(kc)
+                    else:
+                        kc['count'] -= 1
+                        break
+
+            with open(str(BASE_DIR)+"/brelki/cart.json", 'w') as f:
+                json.dump(cart, f)
+            
+            return JsonResponse({'response': 'success'})
+            
 
         elif request.POST['action'] == 'delete':
             with open(str(BASE_DIR)+"/brelki/cart.json", 'r') as f:

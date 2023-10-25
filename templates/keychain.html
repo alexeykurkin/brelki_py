@@ -53,12 +53,12 @@
             <div class="add-cart-block">
                 <form method="post" name="add-cart" id="add-cart-form">
                     {% csrf_token %}
-                    <input id='cart-submit' type='submit' name='submit' value='Добавить в корзину'>
+                    <input id='cart-submit-plus' type='submit' name='submit' value='Добавить в корзину'>
                     <!-- <button type="submit" name="action" value="min">min</button> -->
                 </form>
                 <form method="post" name="substract-cart" id="substract-cart-form">
                     {% csrf_token %}
-                    <input id='cart-submit' type='submit' name='submit' value='minus'>
+                    <input id='cart-submit-minus' type='submit' name='submit' value='Удалить из корзины' {% if hide_minus_cart %} hidden {% endif %}>
                     <!-- <button type="submit" name="action" value="min">min</button> -->
                 </form>
             </div>

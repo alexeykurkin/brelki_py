@@ -29,7 +29,8 @@ $(function() {
                         <h3 id="${response.id}">${response.title}</h3>
                         <h2>1</h2>
                     </div>
-                    `)
+                    `);
+                    $('#cart-submit-minus').show();
                 }
 
             },
@@ -51,9 +52,22 @@ $(function() {
             },
             dataType: 'json',
             success: function(response) {
-                console.log('action: ', response);
+                const urlParams = new URLSearchParams(window.location.search);
+                keychainId = urlParams.get('id');
+                $('.cart-item').each(function() {
+                    if ($(this).children('h3').attr('id') == keychainId) {
+                        keychainCount = parseInt($(this).children('h3').next().text());
+                        if ($(this).children('h3').next().text() == '1') {
+                            $(this).remove()
+                            $('#cart-submit-minus').hide();
+                        } else {
+                            $(this).children('h3').next().text(keychainCount - 1);
+                        }
+                    } 
+                });
             },
             error: function(response) {
+                console.log(13228);
                 console.log('error: ', response)
             }
         });
