@@ -2,11 +2,13 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" content="width=device-width, initial-scale=1">
     <title>{{ keychain.title }}</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
-    <script src="{% static 'js/cart.js' %}"></script>
+    <!-- <script src="{% static 'js/cart.js' %}"></script> -->
+    <script src="{% static 'js/resize.js' %}"></script>
+    <script src="{% static 'js/cart_json.js' %}"></script>
 </head>
 <body>
 
@@ -47,14 +49,29 @@
             <div class="keychain-price-block">
                 <p class="keychain-price" id="keychain-price-value">{{ keychain.price }}</p><p class="keychain-price"> ₽</p>
             </div>
-            <button class="cart-button">Добавить в корзину</button>
+            {% if logged_user.logged_user_id %}
+            <div class="add-cart-block">
+                <form method="post" name="add-cart" id="add-cart-form">
+                    {% csrf_token %}
+                    <input id='cart-submit' type='submit' name='submit' value='Добавить в корзину'>
+                    <!-- <button type="submit" name="action" value="min">min</button> -->
+                </form>
+                <form method="post" name="substract-cart" id="substract-cart-form">
+                    {% csrf_token %}
+                    <input id='cart-submit' type='submit' name='submit' value='minus'>
+                    <!-- <button type="submit" name="action" value="min">min</button> -->
+                </form>
+            </div>
+            {% endif %}
+
+            <!-- <button class="cart-button">Добавить в корзину</button> -->
         </div>
     </div>
     <h1 class="comments-section-title" id="comments">Комментарии</h1>
     {% if logged_user.logged_user_id %}
     <div class="comment-block-container">
         <div class="create-comment-section">
-            <form method="POST" enctype="multipart/form-data">
+            <form method="POST" enctype="multipart/form-data" name="comment-form">
                 <div class="comment-block">
                     <div class="commenting-user">
                         <img src="{{ logged_user.logged_user_img }}" width="50px" height="50px" class="user-avatar">

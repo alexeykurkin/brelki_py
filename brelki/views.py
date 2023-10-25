@@ -12,10 +12,10 @@ from django.core.paginator import Paginator
 from os import remove
 from django.utils.datastructures import MultiValueDictKeyError
 from django.conf import settings
-from http import cookies
+from django.http import JsonResponse
+import json
 
 def index(request):
-    
     try:
         logged_user_id = request.session['logged_user_id']
         logged_user_login = User.objects.get(id=logged_user_id).login
@@ -61,6 +61,15 @@ def index(request):
         current_page = request.GET['page']
     except KeyError:
         return redirect(f'/?page=1&filter={filter_option}')
+    
+    from .settings import BASE_DIR
+    with open(str(BASE_DIR)+"/brelki/cart.json", 'r') as f:
+        cart = json.loads(f.read())
+
+    if str(logged_user_id) in cart:
+        user_cart = cart[str(logged_user_id)]
+    else:
+        user_cart = []
 
     keychains = paginator.get_page(current_page)
 
@@ -72,12 +81,26 @@ def index(request):
                    {'logged_user_login': logged_user_login,
                     'logged_user_id': logged_user_id,
                     'logged_user_img': logged_user_img},
-               "search_form": SearchForm()}
+               "search_form": SearchForm(),
+               'cart': user_cart}
 
     if request.GET:
         search_content = SearchForm(request.GET)
         if search_content.is_valid():
             return redirect('/search?search_input=' + request.GET['search_input'])
+        
+    if request.method == 'POST':    
+        if request.POST['action'] == 'delete':
+                with open(str(BASE_DIR)+"/brelki/cart.json", 'r') as f:
+                    ucart = json.load(f)
+                
+                cart[str(logged_user_id)] = []
+
+                with open(str(BASE_DIR)+"/brelki/cart.json", 'w') as f:
+                    cart = json.dump(cart, f)
+                
+                return JsonResponse({'response': 'success'})
+    
     HttpResponse(render(request, 'menu_header.html', context))
     return HttpResponse(render(request, 'index.html', context))
 
@@ -137,6 +160,7 @@ def logout(request):
 
 
 def keychain(request):
+
     try:
         logged_user_id = request.session['logged_user_id']
         logged_user_login = User.objects.get(id=logged_user_id).login
@@ -179,6 +203,15 @@ def keychain(request):
         Keychain.objects.get(id=keychain_id)
     except ObjectDoesNotExist:
         return HttpResponse('Брелка с таким id не существует', status=404)
+    
+    from .settings import BASE_DIR
+    with open(str(BASE_DIR)+"/brelki/cart.json", 'r') as f:
+        cart = json.loads(f.read())
+
+    if str(logged_user_id) in cart:
+        user_cart = cart[str(logged_user_id)]
+    else:
+        user_cart = []
 
     context = {"keychain": Keychain.objects.get(id=keychain_id),
                "user": User.objects.all(),
@@ -188,9 +221,10 @@ def keychain(request):
                    {'logged_user_login': logged_user_login,
                     'logged_user_id': logged_user_id,
                     'logged_user_img': logged_user_img},
-               "search_form": SearchForm()
+                "cart": user_cart,
+                "search_form": SearchForm()
                }
-
+    
     if logged_user_id != 0 and logged_user_id != '':
         context['logged_user'] = {'logged_user_login': logged_user_login,
                                   'logged_user_id': logged_user_id,
@@ -199,6 +233,53 @@ def keychain(request):
     # Создание комментария
 
     if request.method == 'POST':
+
+        if request.POST['action'] == 'plus':
+            with open(str(BASE_DIR)+"/brelki/cart.json", 'r') as f:
+                cart = json.load(f)
+
+            if str(logged_user_id) not in cart:
+                cart[str(logged_user_id)] = []
+
+            new_keychain = True
+            for kc in cart[str(logged_user_id)]:
+                if int(keychain_id) == kc['id']:
+                    kc['count'] += 1
+                    new_keychain = False
+                    break
+
+            if new_keychain:
+                cart[str(logged_user_id)].append({
+                        "id": int(keychain_id), 
+                        "title": str(Keychain.objects.get(id=keychain_id).title), 
+                        "count": 1, 
+                        "price": Keychain.objects.get(id=keychain_id).price, 
+                        "img": str(Keychain.objects.get(id=keychain_id).img)
+                    })
+
+            with open(str(BASE_DIR)+"/brelki/cart.json", 'w') as f:
+                json.dump(cart, f)
+
+            return JsonResponse({
+                    'id': keychain_id, 
+                    'title': Keychain.objects.get(id=keychain_id).title,
+                    'img': str(Keychain.objects.get(id=keychain_id).img)
+                })
+
+        elif request.POST['action'] == 'minus':
+            pass
+
+        elif request.POST['action'] == 'delete':
+            with open(str(BASE_DIR)+"/brelki/cart.json", 'r') as f:
+                ucart = json.load(f)
+            
+            cart[str(logged_user_id)] = []
+
+            with open(str(BASE_DIR)+"/brelki/cart.json", 'w') as f:
+                cart = json.dump(cart, f)
+            
+            return JsonResponse({'response': 'success'})
+
         form_content = CreateCommentForm(request.POST)
         if form_content.is_valid():
 
