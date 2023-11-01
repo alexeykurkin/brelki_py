@@ -1,0 +1,688 @@
+<mxfile host="app.diagrams.net" modified="2023-11-01T10:14:42.733Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.76" etag="zByvrKELAmHlX_Vn3qy4" version="22.0.8" type="google">
+  <diagram name="Страница — 1" id="zoK1ZEoiCNXdcVSACQqk">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-2" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="60" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-3" value="ТЕСТ_1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-4" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="100" y="40" width="60" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-5" value="Высокий" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="100" y="40" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-6" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="160" y="40" width="80" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-8" value="Требования к проекту" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="160" y="40" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-9" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="240" y="40" width="160" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-10" value="&lt;b&gt;Разработка требований к проекту&lt;/b&gt;&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Приготовления: получить и открыть файл с описанием требований&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;1. Изучить имеющиеся требования к проекту&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2. Добиться атомарности (при необходимости разбить часть требований на более мелкие и подробные)&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;3. Разделить требования на модули&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;4. Добиться чётких формулировок описания работы программы&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;5. Исключить субъективность и неоднозначность&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;6. Ещё раз изучить требования целиком и убедиться в их корректности&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="240" y="40" width="160" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-11" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="400" y="40" width="130" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-12" value="Появляется чёткий и исчерпывающий список требований, структурированный по модулям&amp;nbsp;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="400" y="40" width="130" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-13" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="40" y="440" width="60" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-14" value="ТЕСТ_2" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="440" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-15" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="100" y="440" width="60" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-16" value="Высокий" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="100" y="440" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-17" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="160" y="440" width="80" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-18" value="Функционал готового приложения" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="160" y="440" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-19" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="240" y="440" width="80" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-20" value="Регистрация" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="242.5" y="440" width="75" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-21" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="320" y="440" width="170" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-22" value="&lt;b&gt;Создание учётной записи на сайте для нового пользователя&lt;/b&gt;&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Приготовления: сгенерировать уникальные логин и пароль, адрес электронной почты, номер телефона&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;1. Ввести адрес электронной почты в поле &quot;Почта&quot;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2. Ввести логин в поле &quot;Логин&quot;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;3. Ввести пароль в поле &quot;Пароль&quot;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;4. Ввести номер телефона в поле &quot;Телефон&quot;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;5. Нажать на кнопку &quot;Выберите файл&quot;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;6. Нажать на требуемую картинку&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;7. Нажать на кнопку &quot;Подтвердить&quot;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="320" y="440" width="170" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-23" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="490" y="440" width="170" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-24" value="При вводе всех корректных данных открывается главная страница сайта, а запись о новом пользователе заносится в базу данных&lt;br&gt;При вводе некорректной почты под ней появляется предупреждение красным шрифтом&lt;br&gt;При вводе некорректного логина под ним появляется предупреждение красным шрифтом&lt;br&gt;При вводе некорректного телефона под ним появляется предупреждение красным шрифтом&lt;br&gt;При вводе некорректного пароля под ним появляется предупреждение красным шрифтом&lt;br&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="490" y="440" width="170" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-25" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="40" y="800" width="60" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-26" value="ТЕСТ_3" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="800" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-27" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="100" y="800" width="60" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-28" value="Высокий" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="100" y="800" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-29" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="160" y="800" width="70" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-30" value="Функционал готового приложения" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="165" y="800" width="60" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-31" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="230" y="800" width="80" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-32" value="Авторизация" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="240" y="800" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-33" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="310" y="800" width="150" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-34" value="&lt;b&gt;Вход в учётную запись пользователя&lt;/b&gt;&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Приготовления: логин и пароль&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;1. Ввести логин в поле&amp;nbsp;&quot;Логин&quot;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2. Ввести пароль в поле&amp;nbsp;&quot;Пароль&quot;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;3. Нажать на кнопку&amp;nbsp;&quot;Подтвердить&quot;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="310" y="800" width="150" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-35" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="460" y="800" width="150" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-36" value="При вводе корректного логина и пароля открывается главная страница сайта, а в верхнем правом углу отображается логин пользователя, его аватар, кнопки&amp;nbsp;&quot;История&quot;,&amp;nbsp;&quot;Выйти &quot; и&amp;nbsp;&quot;Создать брелок&quot;&lt;br&gt;При вводе некорректного логина и/или пароля, снизу отображается предупреждение красным шрифтом&amp;nbsp;&quot;Неверный логин или пароль&quot;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="460" y="800" width="150" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-37" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1160" width="60" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-38" value="ТЕСТ_4" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1160" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-39" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="100" y="1160" width="60" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-40" value="Средний" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="100" y="1160" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-41" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="160" y="1160" width="90" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-42" value="Функционал готового приложения" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="160" y="1169" width="90" height="31" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-43" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="250" y="1160" width="100" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-44" value="История просмотров" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="250" y="1169" width="90" height="11" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-45" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="350" y="1160" width="140" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-46" value="&lt;b&gt;Просмотр истории просмотров зарегистрированного пользователя&lt;/b&gt;&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Приготовления: войти в учётную запись&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;1. Открыть 2-5 карточек брелков.&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2. Нажать на кнопку&amp;nbsp;&quot;История&quot;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="355" y="1169" width="130" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-47" value="" style="rounded=0;whiteSpace=wrap;html=1;rotation=90;" vertex="1" parent="1">
+          <mxGeometry x="380" y="1270" width="340" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-48" value="Открывается страница с карточками брелков, которые были просмотрены пользователем.. При просмотре брелка неоднократно, карточка всё равно отображается только один раз" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="490" y="1160" width="120" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-49" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1560" width="60" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-50" value="ТЕСТ_5" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1560" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-51" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="100" y="1560" width="60" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-56" value="Высокий" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="100" y="1560" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-57" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="160" y="1560" width="80" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-58" value="Функционал готового приложения" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="165" y="1560" width="72.5" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-59" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="240" y="1560" width="90" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-60" value="Карточка брелка" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="240" y="1560" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-61" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="330" y="1560" width="150" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-62" value="&lt;b&gt;Создание брелка зарегистрированным пользователем&lt;/b&gt;&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Приготовления: подготовить фото брелка в галерее устройства&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;1. Нажать на кнопку&amp;nbsp;&quot;Создать брелок&quot;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2. В открывшемся поле ввести Название брелка в поле&amp;nbsp;&quot;Название&quot;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;3. Ввести описание брелка в поле&amp;nbsp;&quot;Описание&quot;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;4. Ввести число в поле&amp;nbsp;&quot;Цена&quot;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;5. Нажать на кнопку&amp;nbsp;&quot;Выберите файл&quot;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;6. Нажать на картинку, выбранную для брелка&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;7. Нажать на кнопку&amp;nbsp;&quot;Подтвердить&quot;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="330" y="1560" width="150" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-63" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="480" y="1560" width="180" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-65" value="При вводе корректных данных открывается главная страница, где можно найти созданный брелок&lt;br&gt;При вводе некорректного названия под ним появляется предупреждение красным шрифтом&lt;br&gt;При вводе некорректного описания под ним появляется предупреждение красным шрифтом&lt;br&gt;При вводе некорректной цены под ней появляется предупреждение красным шрифтом&lt;br&gt;При загрузке некорректной картинки под ней появляется предупреждение красным шрифтом&amp;nbsp;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="480" y="1560" width="170" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-66" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1920" width="60" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-67" value="ТЕСТ_6" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1920" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-68" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="100" y="1920" width="60" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-69" value="Высокий" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="100" y="1920" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-70" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="160" y="1920" width="80" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-71" value="Функционал готового приложения" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="165" y="1920" width="70" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-72" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="240" y="1920" width="90" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-74" value="Поиск по сайту" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="240" y="1920" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-75" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="330" y="1920" width="100" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-76" value="&lt;b&gt;Выполнение поиска по пользователям и брелкам на сайте&lt;/b&gt;&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Приготовления: открыть главную страницу сайта&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;1. Ввести текст для поиска в поле ввода вверху страницы&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2. Нажать кнопку с лупой&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="335" y="1920" width="90" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-77" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="430" y="1920" width="140" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="gTIkAAEAtNEKd8u8p-RR-79" value="Открывается страница со списком результатов (названия брелков или имена пользователей, в тексте которых присутствует введённое сочетание символов)&lt;br&gt;Сначала выводится список брелков, а потом - список пользователей&lt;br&gt;В случае, если совпадений нет, выводится надпись&amp;nbsp;&quot;Таких брелков нету&quot; и/или&amp;nbsp;&quot;Таких пользователей нету&quot;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="430" y="1920" width="140" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="06oCWVFLLAgWHDLYKKzr-1" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="40" y="2270" width="60" height="370" as="geometry" />
+        </mxCell>
+        <mxCell id="06oCWVFLLAgWHDLYKKzr-2" value="ТЕСТ_7" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="2270" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="06oCWVFLLAgWHDLYKKzr-3" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="100" y="2270" width="60" height="370" as="geometry" />
+        </mxCell>
+        <mxCell id="06oCWVFLLAgWHDLYKKzr-4" value="Средний" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="100" y="2270" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="06oCWVFLLAgWHDLYKKzr-5" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="160" y="2270" width="80" height="370" as="geometry" />
+        </mxCell>
+        <mxCell id="06oCWVFLLAgWHDLYKKzr-6" value="Функционал готового приложения" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="160" y="2270" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="06oCWVFLLAgWHDLYKKzr-7" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="240" y="2270" width="90" height="370" as="geometry" />
+        </mxCell>
+        <mxCell id="06oCWVFLLAgWHDLYKKzr-8" value="Сообщения" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="240" y="2270" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="06oCWVFLLAgWHDLYKKzr-9" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="330" y="2270" width="110" height="370" as="geometry" />
+        </mxCell>
+        <mxCell id="06oCWVFLLAgWHDLYKKzr-10" value="&lt;b&gt;Отправка сообщения пользователю на почту&lt;/b&gt;&lt;br&gt;Приготовления: зарегистрировать&amp;nbsp; аккаунт, зайти в карточку брелка&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;1. Нажать кнопку &quot;Отправить сообщение&quot;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2. Ввести текст сообщения в открывшемся окне&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;3. Нажать кнопку &quot;Отправить&quot;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="335" y="2270" width="105" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="06oCWVFLLAgWHDLYKKzr-11" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="440" y="2270" width="110" height="370" as="geometry" />
+        </mxCell>
+        <mxCell id="06oCWVFLLAgWHDLYKKzr-12" value="Открывается обратно карточка брелка&lt;br&gt;На указанную в профиле создателя данного брелка почту приходит сообщение с текстом, введённым пользователем" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="440" y="2270" width="100" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-1" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="40" y="2680" width="60" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-2" value="ТЕСТ_8" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="2680" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-3" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="100" y="2680" width="60" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-4" value="Средний" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="100" y="2680" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-5" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="160" y="2680" width="80" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-6" value="Функционал готового приложения" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="160" y="2680" width="80" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-7" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="240" y="2680" width="80" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-8" value="Комментарии" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="240" y="2680" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-9" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="320" y="2680" width="120" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-10" value="&lt;b&gt;Комментирование брелка пользователя&lt;/b&gt;&lt;br&gt;Приготовления: войти в свою учётную запись, Найти чужой брелок&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;1. Ввести текст в поле для комментария&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2. Нажать кнопку &quot;Комментировать&quot;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="325" y="2680" width="110" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-11" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="440" y="2680" width="110" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-12" value="В карточке брелка внизу появляется комментарий с указанием имени пользователя, который его оставил" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="440" y="2680" width="110" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-13" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="40" y="3000" width="60" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-14" value="ТЕСТ_9" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="3000" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-15" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="100" y="3000" width="60" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-16" value="Средний" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="100" y="3000" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-17" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="160" y="3000" width="80" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-19" value="Функционал готового приложения" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="160" y="3000" width="80" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-20" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="240" y="3000" width="80" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-21" value="Комментарии" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="240" y="3000" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-22" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="320" y="3000" width="120" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-23" value="&lt;b&gt;Редактирование готового комментария&lt;/b&gt;&lt;br&gt;Приготовления: написать комментарий&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;1. Нажать на иконку с голубым карандашом возле имени пользователя в карточке комментарий&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2. Ввести в поле новый текст комментария&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;3. Нажать кнопку &quot;Изменить&quot;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="325" y="3000" width="110" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-24" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="440" y="3000" width="90" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-25" value="В тексте комментария появляются изменения, введённые пользователем при последнем изменении" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="440" y="3000" width="90" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-26" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="40" y="3320" width="60" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-27" value="ТЕСТ_10" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="3320" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-28" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="100" y="3320" width="60" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-29" value="Средний" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="100" y="3320" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-30" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="160" y="3320" width="80" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-31" value="Функционал готового приложения" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="160" y="3320" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-32" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="240" y="3320" width="80" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-33" value="Комментарии" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="240" y="3320" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-34" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="320" y="3320" width="120" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-35" value="&lt;b&gt;Удаление комментария&lt;/b&gt;&lt;br&gt;Приготовления: написать комментарий&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;1. Нажать на иконку красного крестика рядом с именем пользователя в карточке комментария&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="325" y="3320" width="110" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-36" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="440" y="3320" width="80" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-37" value="Удалённый комментарий исчезает из карточки брелка" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="440" y="3320" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-38" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="40" y="3600" width="60" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-39" value="ТЕСТ_11" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="3600" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-40" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="100" y="3600" width="60" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-41" value="Средний" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="100" y="3600" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-42" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="160" y="3600" width="80" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-43" value="Функционал готового приложения" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="160" y="3600" width="80" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-44" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="240" y="3600" width="80" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-45" value="Учётная запись пользователя" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="240" y="3600" width="80" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-46" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="320" y="3600" width="120" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-47" value="&lt;b&gt;Редактирование персональной информации&lt;/b&gt;&lt;br&gt;Приготовления: войти в учётную запись&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;1. Нажать на кнопку &quot;Изменить информацию пользователя&quot;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2. Изменить почту и/или логин и/или пароль и/или номер телефона и/или изображение для аватарки&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;3. Нажать кнопку &quot;Подтвердить&quot;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="325" y="3600" width="105" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-48" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="440" y="3600" width="110" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-49" value="В случае ввода корректных данных информация в профиле пользователя обновляется&lt;br&gt;В случае ввода некорректных данных под строкой с некорректными данными появляется красный текст с предупреждением и кнопка &quot;Подтвердить&quot; не срабатывает" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="440" y="3605" width="110" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-50" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="40" y="3920" width="60" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-51" value="ТЕСТ_12" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="3920" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-52" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="100" y="3920" width="60" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-53" value="Средний" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="100" y="3920" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-54" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="160" y="3920" width="80" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-55" value="Функционал готового приложения" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="160" y="3920" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-56" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="240" y="3920" width="80" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-57" value="Карточка брелка" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="240" y="3920" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-58" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="320" y="3920" width="110" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-59" value="&lt;b&gt;Изменение информации о брелке&lt;/b&gt;&lt;br&gt;Приготовления: войти в учётную запись и создать брелок&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;1. На странице пользователя в карточке брелка нажать на голубую иконку с карандашом&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2. Ввести новые данные&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;3. Нажать кнопку &quot;Изменить&quot;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="325" y="3920" width="105" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-60" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="430" y="3920" width="90" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-61" value="В карточке брелка появляется обновлённая информация" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="430" y="3920" width="90" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-62" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="40" y="4240" width="60" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-63" value="ТЕСТ_13" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="4240" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-64" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="100" y="4240" width="60" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-65" value="Средний" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="100" y="4240" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-66" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="160" y="4240" width="80" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-67" value="Функционал готового приложения" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="160" y="4240" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-68" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="240" y="4240" width="80" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-69" value="Карточка брелка" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="240" y="4240" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-70" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="320" y="4240" width="130" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-71" value="&lt;b&gt;Удаление брелка&lt;/b&gt;&lt;br&gt;Приготовления: войти в учётную запись и создать брелок&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;1. На странице пользователя в карточке брелка нажать на красную иконку с белым крестиком&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="325" y="4247.5" width="120" height="155" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-72" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="450" y="4240" width="80" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-73" value="Карточка брелка исчезает с сайта" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="450" y="4240" width="80" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-74" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="40" y="4440" width="60" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-75" value="ТЕСТ_14" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="4440" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-76" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="100" y="4440" width="60" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-77" value="Высокий" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="100" y="4440" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-78" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="160" y="4440" width="110" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-79" value="Разрабатываемый функционал" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="160" y="4440" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-80" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="270" y="4440" width="80" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-81" value="Фильтрация" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="270" y="4440" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-82" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="350" y="4440" width="140" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-83" value="&lt;b&gt;Отбор результатов с помощью фильтров&lt;/b&gt;&lt;br&gt;Приготовления: не требуются&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;1. Выбрать вариант фильтрации по цене (возрастание/убывание), или выбрать категорию из списка предложенных, или вариант фильтрации по цене (возрастание/убывание)&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="362" y="4440" width="116" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-84" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="490" y="4440" width="190" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-85" value="При фильтрации по популярности по возрастанию брелки сортируются от низкой популярности до высокой&lt;br&gt;При фильтрации по популярности по убыванию брелки сортируются от высокой популярности к низкой&lt;br&gt;При фильтрации по цене по возрастанию брелки сортируются от низкой цены до высокой&lt;br&gt;При фильтрации по цене по убыванию брелки сортируются от высокой цены к низкой&lt;br&gt;При выборе категории отображаются только брелки из данной категории" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="490" y="4440" width="180" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-86" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="40" y="4760" width="60" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-87" value="ТЕСТ_15" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="4760" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-88" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="100" y="4760" width="60" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-89" value="Высокий" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="100" y="4760" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-90" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="160" y="4760" width="110" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-91" value="Разрабатываемый функционал" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="160" y="4760" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-92" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="270" y="4760" width="60" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-93" value="Корзина" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="275" y="4760" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-94" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="330" y="4760" width="140" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-95" value="&lt;b&gt;Наполнение и просмотр корзины на сайте&lt;/b&gt;&lt;br&gt;Приготовления: войти в учётную запись&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;1. Зайти в карточку брелка&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2. Нажать на кнопку &quot;Добавить в корзину&quot;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="335" y="4760" width="130" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-96" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="470" y="4760" width="130" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-97" value="В меню на главной странице отображается список карточек брелков, добавленных пользователем в корзину&lt;br&gt;В карточке брелка появляется кнопка &quot;Удалить из корзины&quot;&lt;br&gt;(в перспективе - отображается функционал для оформления заказа)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="478" y="4760" width="120" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-98" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="40" y="5040" width="60" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-99" value="Тест_16" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="5040" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-100" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="100" y="5040" width="60" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-101" value="Высокий" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="100" y="5040" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-102" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="160" y="5040" width="110" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-103" value="Разрабатываемый функционал" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="160" y="5040" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-104" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="270" y="5040" width="70" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-105" value="Избранное" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="270" y="5040" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-106" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="340" y="5040" width="130" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-107" value="&lt;b&gt;Добавление в избранное и просмотр&lt;/b&gt;&lt;br&gt;Приготовления: войти в учётную запись&lt;br&gt;&lt;div style=&quot;border-color: var(--border-color); text-align: left;&quot;&gt;1. Зайти в карточку брелка&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color); text-align: left;&quot;&gt;&lt;span style=&quot;border-color: var(--border-color); background-color: initial;&quot;&gt;2. Нажать на кнопку &quot;Добавить в избранное&quot;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color); text-align: left;&quot;&gt;&lt;span style=&quot;border-color: var(--border-color); background-color: initial;&quot;&gt;3. Нажать на кнопку &quot;Избранное&quot; на главной странице сайта&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="345" y="5045" width="115" height="215" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-108" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="470" y="5040" width="90" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-109" value="Отображается список карточек брелков, добавленных пользователем в избранное&lt;br&gt;В карточке брелка появляется кнопка &quot;Удалить из избранного&quot;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="470" y="5040" width="90" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-110" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="40" y="5320" width="60" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-111" value="ТЕСТ_17" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="5320" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-112" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="100" y="5320" width="60" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-113" value="Высокий" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="100" y="5320" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-114" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="160" y="5320" width="110" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-115" value="Разрабатываемый функционал" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="160" y="5320" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-116" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="270" y="5320" width="60" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-117" value="Корзина" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="270" y="5320" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-118" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="330" y="5320" width="150" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-119" value="&lt;b&gt;Удаление брелка из корзины&lt;/b&gt;&lt;br&gt;Приготовления: Войти в учётную запись, добавить брелок в корзину&lt;br&gt;1. Зайти в карточку брелка и нажать кнопку &quot;Удалить из корзины&quot;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="330" y="5320" width="140" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-120" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="480" y="5320" width="70" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-121" value="Брелок исчезает из корзины" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="480" y="5320" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-122" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="40" y="5520" width="60" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-123" value="ТЕСТ_18" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="5520" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-124" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="100" y="5520" width="60" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-125" value="Высокий" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="100" y="5520" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-126" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="160" y="5520" width="110" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-127" value="Разрабатываемый функционал" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="160" y="5520" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-128" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="270" y="5520" width="60" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-129" value="Корзина" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=0;" vertex="1" parent="1">
+          <mxGeometry x="270" y="5520" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-130" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="330" y="5520" width="150" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-132" value="&lt;b&gt;Очистка корзины&lt;/b&gt;&lt;br&gt;Приготовления: Войти в учётную запись, добавить брелок в корзину&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;1. Нажать на кнопку &quot;Очистить корзину&quot;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="335" y="5520" width="140" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-133" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="480" y="5520" width="70" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-134" value="Из корзины исчезают все брелки" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="480" y="5520" width="70" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-135" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="40" y="5680" width="60" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-136" value="ТЕСТ_19" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="5680" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-137" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="100" y="5680" width="60" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-138" value="Высокий" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="100" y="5680" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-139" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="160" y="5680" width="110" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-140" value="Разрабатываемый функционал" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="160" y="5680" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-141" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="270" y="5680" width="70" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-142" value="Избранное" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="270" y="5680" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-143" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="340" y="5680" width="140" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-144" value="&lt;b&gt;Удаление из избранного&lt;/b&gt;&lt;br&gt;Приготовления: войти в учётную запись и добавить брелок в избранное&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;1. Нажать на кнопку &quot;Удалить и избранного&quot;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="345" y="5680" width="125" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-145" value="" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="480" y="5680" width="70" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="_-AqetAfFKM4a2Xl6hpj-146" value="Брелок исчезает из Избранного" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="480" y="5680" width="70" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
