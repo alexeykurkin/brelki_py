@@ -50,17 +50,30 @@
                 <p class="keychain-price" id="keychain-price-value">{{ keychain.price }}</p><p class="keychain-price"> ₽</p>
             </div>
             {% if logged_user.logged_user_id %}
-            <div class="add-cart-block">
-                <form method="post" name="add-cart" id="add-cart-form">
-                    {% csrf_token %}
-                    <input id='cart-submit-plus' type='submit' name='submit' value='Добавить в корзину'>
-                    <!-- <button type="submit" name="action" value="min">min</button> -->
-                </form>
-                <form method="post" name="substract-cart" id="substract-cart-form">
-                    {% csrf_token %}
-                    <input id='cart-submit-minus' type='submit' name='submit' value='Удалить из корзины' {% if hide_minus_cart %} hidden {% endif %}>
-                    <!-- <button type="submit" name="action" value="min">min</button> -->
-                </form>
+            <h2 style="margin-top: 10px; margin-bottom: 0;">Корзина</h2>
+            <div class="add-substract-cart-block">
+                <div class="add-cart-block">
+                    <form method="post" name="add-cart" id="add-cart-form">
+                        {% csrf_token %}
+                        
+                        <button id='cart-submit-add' class="user-actions_button button-green add-cart-button" type='submit' name='submit' {% if cart_info.hide_add_cart %} hidden {% endif %}>
+                            <span>Добавить в корзину</span>
+                            <img src="{% static 'img/add_cart.png' %}" width="25px" height="25px">
+                        </button>
+                        <input id='cart-submit-plus' class="cart-item-action button-green" type='submit' name="submit" value='+' {% if not cart_info.hide_add_cart %} hidden {% endif %}>
+                        <!-- <button type="submit" name="action" value="min">min</button> -->
+                    </form>
+                </div>
+                <div class="cart-item-count-block" {% if not cart_info.cart_item_count %} hidden {% endif %}>
+                    <h2 class="cart-item-count">{{ cart_info.cart_item_count }}</h2>
+                </div>
+                <div class="substract-cart-block">
+                    <form method="post" name="substract-cart" id="substract-cart-form">
+                        {% csrf_token %}
+                        <input id='cart-submit-minus' class="cart-item-action button-red" type='submit' name='submit' value='-' {% if not cart_info.cart or cart_info.hide_minus_cart %} hidden {% endif %}>
+                        <!-- <button type="submit" name="action" value="min">min</button> -->
+                    </form>
+                </div>
             </div>
             {% endif %}
 

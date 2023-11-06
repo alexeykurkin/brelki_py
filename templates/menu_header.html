@@ -44,12 +44,6 @@
                 <img src="{{ logged_user.logged_user_img }}"
                      class="img_unselectable user-avatar"
                      id="user-avatar">
-                <div class="history-block">
-                    <button class="user-actions_button history-button">
-                        <img src="{% static 'img/history.png' %}" width="25px" height="25px">
-                        <a href="history"><span>история</span></a>
-                    </button>
-                </div>
                 <div class="user-actions_buttons">
                     <button class="user-actions_button logout-button" content="logout">
                         <a href="logout"><span>выйти</span></a>
@@ -59,23 +53,31 @@
                         <a href="create_keychain"><span>cоздать брелок</span></a>
                         <img src="{% static 'img/add.png' %}" width="25px" height="25px">
                     </button>
+                    <button class="user-actions_button history-button">
+                        <img src="{% static 'img/history.png' %}" width="25px" height="25px">
+                        <a href="history"><span>история</span></a>
+                    </button>
                 </div>
-                <div>
-                    <div class="cart-block">
+                <div class="cart">
+                    <button id="toggle_cart_button" class="user-actions_button history-button">Корзина ({{ cart_info.user_cart_len }})</button>
+                    <div class="cart-block" hidden>
                         <div class="cart-content">
-                            <h2 class="cart-title">Товары в корзине: </h2>
+                            <h3 class="cart-title">Товары в корзине: </h3>
+                            <h3 class="no-cart-items-title" {% if cart_info.cart %} hidden {% endif %}>Нет товаров</h3> 
                             <div id="cart-list">
-                                {% for cart_item in cart %}
+                                {% for cart_item in cart_info.cart %}
+                                <a href="/keychain?id={{cart_item.id}}">
                                     <div class="cart-item">
                                         <img src="{{ cart_item.img }}" width="25px" height="25px">
                                         <h3 id="{{cart_item.id}}">{{cart_item.title}}</h3>
-                                        <h2>{{cart_item.count}}</h2>
+                                        <h2>{{ cart_item.count }}</h2>
                                     </div>
+                                </a>
                                 {% endfor %}
                             </div>
                             <form method="post" name="delete-cart" id="delete-cart-form">
                                 {% csrf_token %}
-                                <input id='cart-submit' type='submit' name='submit' value='Очистить корзину'>
+                                <input id='cart-clear' class="user-actions_button red-button clear-cart-button" type='submit' name='submit' value='Очистить корзину' {% if not cart_info.cart %} hidden {% endif %}>
                                 <!-- <button type="submit" name="action" value="min">min</button> -->
                             </form>
                         </div>

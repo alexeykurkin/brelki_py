@@ -16,12 +16,10 @@ a span {
 }
 .menu {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   flex-direction: row;
-  position: relative;
   margin: auto;
-  width: 100%;
   padding: 20px 0 20px;
   border-color: black;
   border-radius: 10px;
@@ -36,10 +34,6 @@ a span {
   align-items: center;
   margin-right: 25px;
   gap: 25px;
-}
-
-.user-menu h3 {
-  color: black;
 }
 
 .logout-button > img,
@@ -517,7 +511,7 @@ a span {
 .textarea-input {
   font-family: "Inter Medium", sans-serif;
   font-size: 20px;
-  width: 1000px;
+  width: 95%;
   height: 100px;
   border-radius: 25px;
   padding: 15px;
@@ -559,6 +553,7 @@ button {
 }
 
 input[id=search_input] {
+  width: 200px;
   font-family: "Inter Medium", sans-serif;
   font-size: 18px;
   background-color: #f0f0f2;
@@ -568,7 +563,6 @@ input[id=search_input] {
   padding-left: 15px;
   margin-right: 5px;
   padding-right: 69px;
-  width: 300px;
 }
 
 input[id=search_input]:focus {
@@ -1002,6 +996,92 @@ p[id^='h3'] {
   fill: #0077FF;
 }
 
-.slider {
-    background-color: white;
+.cart-block {
+  position: absolute;
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 25px;
+  gap: 15px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 7px 0 rgba(0, 0, 0, .04);
+  z-index: 1;
+}
+
+.cart-item {
+  width: max-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  background-color: #f0f0f2;
+  border-radius: 15px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.cart-item h3, .cart-item h2 {
+  margin: 0;
+}
+
+.cart-items-count, .cart-items-sum {
+  padding: 2px;
+  margin: 5px 0;
+  background-color: #fff;
+}
+
+.menu-min {
+  flex-direction: column;
+  gap: 30px;
+}
+
+.img-min {
+  width: 95%;
+  height: 95%;
+}
+
+.filter-min {
+  flex-direction: column;
+}
+
+.red-button {
+  background-color: #dd5353;
+}
+
+.clear-cart-button {
+  cursor: pointer;
+  padding: 5px;
+  height: auto;
+  font-size: 15px;
+}
+
+.no-cart-items-title {
+  color: #dd5353;
+  margin: 0;
+}
+
+.add-substract-cart-block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.cart-item-action {
+  cursor: pointer;
+  border: none;
+  color: #fff;
+  font-size: 25px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.cart-item-count {
+  margin: 0;
+}
+
+.add-cart-button {
+  padding: 0 15px;
 }
