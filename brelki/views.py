@@ -15,6 +15,7 @@ from django.conf import settings
 from django.http import JsonResponse
 import json
 
+
 def index(request):
     try:
         logged_user_id = request.session['logged_user_id']
@@ -27,12 +28,12 @@ def index(request):
 
     try:
         filter_option = request.GET['filter']
-        
+
         if filter_option == 'price_asc':
             keychains_list = Keychain.objects.all().order_by('price')
         elif filter_option == 'price_desc':
             keychains_list = Keychain.objects.all().order_by('-price')
-                
+
         if 'popularity' in filter_option:
             keychains_list = Keychain.objects.all()
             keychains_popularity = request.session['user_views']
@@ -42,14 +43,14 @@ def index(request):
                 else:
                     keychain.popularity = 0
             import operator
-            if filter_option == 'popularity_asc':          
-                keychains_list = sorted(keychains_list, key=operator.attrgetter('popularity'))  
+            if filter_option == 'popularity_asc':
+                keychains_list = sorted(keychains_list, key=operator.attrgetter('popularity'))
             else:
                 keychains_list = sorted(keychains_list, key=operator.attrgetter('popularity'), reverse=True)
 
         if 'category' in filter_option:
-            keychains_list = Keychain.objects.all().filter(category=filter_option[filter_option.find('_')+1:])
-            
+            keychains_list = Keychain.objects.all().filter(category=filter_option[filter_option.find('_') + 1:])
+
         if filter_option == '':
             keychains_list = Keychain.objects.all()
     except:
@@ -61,9 +62,9 @@ def index(request):
         current_page = request.GET['page']
     except KeyError:
         return redirect(f'/?page=1&filter={filter_option}')
-    
+
     from .settings import BASE_DIR
-    with open(str(BASE_DIR)+"/brelki/cart.json", 'r') as f:
+    with open(str(BASE_DIR) + "/brelki/cart.json", 'r') as f:
         cart = json.loads(f.read())
 
     if str(logged_user_id) in cart:
@@ -74,9 +75,11 @@ def index(request):
     keychains = paginator.get_page(current_page)
 
     user_cart_len = 0
+    cart_sum = 0
+
     for kc in user_cart:
         user_cart_len += kc['count']
-        
+        cart_sum += kc['count'] * kc['price']
 
     context = {'keychains': keychains,
                'categories': Category.objects.all(),
@@ -88,28 +91,29 @@ def index(request):
                     'logged_user_img': logged_user_img},
                "search_form": SearchForm(),
                'cart_info': {
-                'cart': user_cart,
-                'user_cart_len': user_cart_len   
+                   'cart': user_cart,
+                   'user_cart_len': user_cart_len,
+                   'cart_sum': cart_sum
                }
-            }
+               }
 
     if request.GET:
         search_content = SearchForm(request.GET)
         if search_content.is_valid():
             return redirect('/search?search_input=' + request.GET['search_input'])
-        
-    if request.method == 'POST':    
-        if request.POST['action'] == 'delete':
-                with open(str(BASE_DIR)+"/brelki/cart.json", 'r') as f:
-                    ucart = json.load(f)
-                
-                cart[str(logged_user_id)] = []
 
-                with open(str(BASE_DIR)+"/brelki/cart.json", 'w') as f:
-                    cart = json.dump(cart, f)
-                
-                return JsonResponse({'response': 'success'})
-    
+    if request.method == 'POST':
+        if request.POST['action'] == 'delete':
+            with open(str(BASE_DIR) + "/brelki/cart.json", 'r') as f:
+                ucart = json.load(f)
+
+            cart[str(logged_user_id)] = []
+
+            with open(str(BASE_DIR) + "/brelki/cart.json", 'w') as f:
+                cart = json.dump(cart, f)
+
+            return JsonResponse({'response': 'success'})
+
     HttpResponse(render(request, 'menu_header.html', context))
     return HttpResponse(render(request, 'index.html', context))
 
@@ -169,7 +173,6 @@ def logout(request):
 
 
 def keychain(request):
-
     try:
         logged_user_id = request.session['logged_user_id']
         logged_user_login = User.objects.get(id=logged_user_id).login
@@ -186,7 +189,7 @@ def keychain(request):
         request.session['user_views']
     except:
         request.session['user_views'] = {}
-           
+
     if logged_user_id:
         keychain_views_dict = request.session['user_views']
         if keychain_id in keychain_views_dict:
@@ -212,27 +215,30 @@ def keychain(request):
         Keychain.objects.get(id=keychain_id)
     except ObjectDoesNotExist:
         return HttpResponse('Брелка с таким id не существует', status=404)
-    
+
     from .settings import BASE_DIR
-    with open(str(BASE_DIR)+"/brelki/cart.json", 'r') as f:
+    with open(str(BASE_DIR) + "/brelki/cart.json", 'r') as f:
         cart = json.loads(f.read())
 
     if str(logged_user_id) in cart:
         user_cart = cart[str(logged_user_id)]
 
         user_cart_len = 0
+
         for kc in user_cart:
             user_cart_len += kc['count']
 
     else:
         user_cart = []
         user_cart_len = 0
-        
+
     hide_minus_cart = True
     hide_add_cart = False
+    cart_sum = 0
 
     if user_cart:
         for kc in user_cart:
+            cart_sum += kc['count'] * kc['price']
             if str(kc['id']) == keychain_id:
                 hide_minus_cart = False
                 hide_add_cart = True
@@ -242,6 +248,7 @@ def keychain(request):
             cart_item_count = 0
     else:
         cart_item_count = 0
+        cart_sum = 0
 
     context = {"keychain": Keychain.objects.get(id=keychain_id),
                "user": User.objects.all(),
@@ -251,16 +258,17 @@ def keychain(request):
                    {'logged_user_login': logged_user_login,
                     'logged_user_id': logged_user_id,
                     'logged_user_img': logged_user_img},
-                'cart_info': {
-                    "cart": user_cart,
-                    "user_cart_len": user_cart_len,
-                    "hide_minus_cart": hide_minus_cart,
-                    "hide_add_cart": hide_add_cart,
-                    "cart_item_count": cart_item_count
-                },
-                "search_form": SearchForm()
+               'cart_info': {
+                   "cart": user_cart,
+                   "user_cart_len": user_cart_len,
+                   "hide_minus_cart": hide_minus_cart,
+                   "hide_add_cart": hide_add_cart,
+                   "cart_item_count": cart_item_count,
+                   "cart_sum": cart_sum
+               },
+               "search_form": SearchForm()
                }
-    
+
     if logged_user_id != 0 and logged_user_id != '':
         context['logged_user'] = {'logged_user_login': logged_user_login,
                                   'logged_user_id': logged_user_id,
@@ -274,14 +282,18 @@ def keychain(request):
 
             if request.POST['action'] == 'plus':
 
-                with open(str(BASE_DIR)+"/brelki/cart.json", 'r') as f:
+                with open(str(BASE_DIR) + "/brelki/cart.json", 'r') as f:
                     cart = json.load(f)
 
                 if str(logged_user_id) not in cart:
                     cart[str(logged_user_id)] = []
 
                 new_keychain = True
+
                 for kc in cart[str(logged_user_id)]:
+                    # расчёт суммы брелков в корзине
+
+
                     if int(keychain_id) == kc['id']:
                         kc['count'] += 1
                         new_keychain = False
@@ -289,31 +301,35 @@ def keychain(request):
 
                 if new_keychain:
                     cart[str(logged_user_id)].append({
-                            "id": int(keychain_id), 
-                            "title": str(Keychain.objects.get(id=keychain_id).title), 
-                            "count": 1, 
-                            "price": Keychain.objects.get(id=keychain_id).price, 
-                            "img": str(Keychain.objects.get(id=keychain_id).img)
-                        })
-
-                with open(str(BASE_DIR)+"/brelki/cart.json", 'w') as f:
-                    json.dump(cart, f)
-                
-                user_cart_len = 0
-                for kc in cart[str(logged_user_id)]:
-                    user_cart_len += kc['count']
-
-                return JsonResponse({
-                        'id': keychain_id, 
-                        'title': Keychain.objects.get(id=keychain_id).title,
-                        'img': str(Keychain.objects.get(id=keychain_id).img),
-                        'cart_action': 'add',
-                        'user_cart_len': user_cart_len,
-                        'cart_item_count': cart_item_count
+                        "id": int(keychain_id),
+                        "title": str(Keychain.objects.get(id=keychain_id).title),
+                        "count": 1,
+                        "price": Keychain.objects.get(id=keychain_id).price,
+                        "img": str(Keychain.objects.get(id=keychain_id).img)
                     })
 
+                with open(str(BASE_DIR) + "/brelki/cart.json", 'w') as f:
+                    json.dump(cart, f)
+
+                user_cart_len = 0
+                cart_sum = 0
+
+                for kc in cart[str(logged_user_id)]:
+                    user_cart_len += kc['count']
+                    cart_sum += kc['count'] * kc['price']
+
+                return JsonResponse({
+                    'id': keychain_id,
+                    'title': Keychain.objects.get(id=keychain_id).title,
+                    'img': str(Keychain.objects.get(id=keychain_id).img),
+                    'cart_action': 'add',
+                    'user_cart_len': user_cart_len,
+                    'cart_item_count': cart_item_count,
+                    'cart_sum': cart_sum
+                })
+
             elif request.POST['action'] == 'minus':
-                with open(str(BASE_DIR)+"/brelki/cart.json", 'r') as f:
+                with open(str(BASE_DIR) + "/brelki/cart.json", 'r') as f:
                     cart = json.load(f)
 
                 for kc in cart[str(logged_user_id)]:
@@ -324,31 +340,35 @@ def keychain(request):
                             kc['count'] -= 1
                             break
 
-                with open(str(BASE_DIR)+"/brelki/cart.json", 'w') as f:
+                with open(str(BASE_DIR) + "/brelki/cart.json", 'w') as f:
                     json.dump(cart, f)
 
                 user_cart_len = 0
+                cart_sum = 0
+
                 for kc in cart[str(logged_user_id)]:
                     user_cart_len += kc['count']
-                
-                return JsonResponse({'response': 'success', 
-                                    'cart_action': 'substract',
-                                    'user_cart_len': user_cart_len,
-                                    'cart_item_count': cart_item_count
-                                    })
-                
+                    cart_sum += kc['count'] * kc['price']
+
+                return JsonResponse({'response': 'success',
+                                     'cart_action': 'substract',
+                                     'user_cart_len': user_cart_len,
+                                     'cart_item_count': cart_item_count,
+                                     'cart_sum': cart_sum
+                                     })
+
             elif request.POST['action'] == 'delete':
-                with open(str(BASE_DIR)+"/brelki/cart.json", 'r') as f:
+                with open(str(BASE_DIR) + "/brelki/cart.json", 'r') as f:
                     ucart = json.load(f)
-                
+
                 cart[str(logged_user_id)] = []
 
-                with open(str(BASE_DIR)+"/brelki/cart.json", 'w') as f:
+                with open(str(BASE_DIR) + "/brelki/cart.json", 'w') as f:
                     cart = json.dump(cart, f)
-                
+
                 return JsonResponse({'response': 'success',
                                      'cart_action': 'clear'})
-            
+
         else:
             form_content = CreateCommentForm(request.POST)
             if form_content.is_valid():
@@ -553,9 +573,9 @@ def edit_user(request):
                 # Проверка того, что пользователь не указал чужой логин или почту, а именно свои
 
                 foreign_login_used = (User.objects.filter(login=request.POST['login']).exists()) and (
-                            request.POST['login'] != logged_user_login)
+                        request.POST['login'] != logged_user_login)
                 foreign_email_used = (User.objects.filter(email=request.POST['email']).exists()) and (
-                            request.POST['email'] != logged_user_email)
+                        request.POST['email'] != logged_user_email)
 
                 if foreign_login_used:
                     form_content.add_error('login', 'Запрещено использовать чужие данные')

@@ -75,6 +75,8 @@
                                 </a>
                                 {% endfor %}
                             </div>
+                            <h3 {% if not cart_info.cart %} hidden {% endif %} class="cart-sum-title">Сумма к оплате: <span class="cart-sum text-green">{{cart_info.cart_sum}}</span><span> ₽</span></h3>
+                            <br>
                             <form method="post" name="delete-cart" id="delete-cart-form">
                                 {% csrf_token %}
                                 <input id='cart-clear' class="user-actions_button red-button clear-cart-button" type='submit' name='submit' value='Очистить корзину' {% if not cart_info.cart %} hidden {% endif %}>

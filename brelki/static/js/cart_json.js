@@ -22,6 +22,8 @@ $(function() {
             },
             dataType: 'json',
             success: function(response) {
+                $('.cart-sum-title').show();
+                $('.cart-sum').text(parseInt(response.cart_sum))
 
                 $('.cart-item-count').text(parseInt(response.cart_item_count + 1));
 
@@ -83,6 +85,7 @@ $(function() {
             },
             dataType: 'json',
             success: function(response) {
+                $('.cart-sum').text(parseInt(response.cart_sum))
 
                 if (response.user_cart_len == 0) {
                     cartClearButton.hide();
@@ -91,6 +94,7 @@ $(function() {
                     $('#cart-submit-plus').hide();
                     $('.cart-item-count-block').hide();
                     $('.no-cart-items-title').show();
+                    $('.cart-sum-title').hide();
                 }
 
                 $('#toggle_cart_button').html(`Корзина (${response.user_cart_len})`);
@@ -114,6 +118,7 @@ $(function() {
                             $('#cart-submit-plus').hide();
                             $('#cart-submit-add').show();
                             $('.cart-item-count-block').hide();
+                            $('.cart-sum-title').hide();
                         } else {
                             $(this).children('h3').next().text(keychainCount - 1);
                             $('.cart-item-count').text(parseInt(response.cart_item_count - 1));
@@ -141,6 +146,7 @@ $(function() {
             success: function(response) {
                 $('#toggle_cart_button').html('Корзина (0)');
                 $('.no-cart-items-title').show();
+                $('.cart-sum-title').hide();
                 $('.cart-item').each(function() {
                     $(this).remove();
                     $('#cart-submit-minus').hide();
