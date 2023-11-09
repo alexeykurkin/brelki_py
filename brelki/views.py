@@ -506,9 +506,13 @@ def delete_keychain(request):
     logged_user_id = request.session['logged_user_id']
     deleted_keychain = Keychain.objects.get(id=request.GET['keychain_id'])
     if request.method == 'POST':
-        deleted_keychain_image = deleted_keychain.img
-        deleted_keychain.delete()
-        remove(deleted_keychain_image.path)
+        try:
+            deleted_keychain_image = deleted_keychain.img
+            deleted_keychain.delete()
+            remove(deleted_keychain_image.path)
+        except:
+            pass
+            
         return redirect('/user_info?user_id=' + str(request.session['logged_user_id']))
     else:
         return HttpResponse(render(request, 'delete_keychain.html',
