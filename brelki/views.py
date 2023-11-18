@@ -254,7 +254,6 @@ def keychain(request):
     # Получение рейтинга брелка
     try:
         keychain_rating = list(Rating.objects.filter(keychain_id=keychain_id).values_list('rating', flat=True))
-        keychain_user_rating = Rating.objects.get(user_id=logged_user_id, keychain_id=keychain_id).rating
         import statistics
         keychain_rating_float = round(statistics.mean(keychain_rating), 2)
         keychain_rating_count = len(keychain_rating)
@@ -262,6 +261,11 @@ def keychain(request):
         keychain_rating_float = 0
         keychain_user_rating = 0
         keychain_rating_count = 0
+
+    try:
+        keychain_user_rating = Rating.objects.get(user_id=logged_user_id, keychain_id=keychain_id).rating
+    except:
+        keychain_user_rating = 0
 
     context = {"keychain": Keychain.objects.get(id=keychain_id),
                "user": User.objects.all(),

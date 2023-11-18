@@ -1094,10 +1094,28 @@ p[id^='h3'] {
 .rating-block {
   display: flex;
   flex-direction: column;
-  padding: 15px 0;
+  padding: 12px 0;
   gap: 7px;
 }
 
 .rating-block p {
   margin: 0;
+}
+
+.star-checked {
+  color: orange;
+}
+
+#rating-form > button {
+  font-size: 25px;
+  padding: 2px 7px;
+  padding-left: 0px;
+  border: none;
+  background: none;
+}
+
+.user-rate-block {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
 }

@@ -5,6 +5,7 @@
     <meta charset="UTF-8" content="width=device-width, initial-scale=1">
     <title>{{ keychain.title }}</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
     <!-- <script src="{% static 'js/cart.js' %}"></script> -->
     <script src="{% static 'js/resize.js' %}"></script>
@@ -77,20 +78,19 @@
             </div>
             <h2 class="rating-block-title">Рейтинг товара</h2>
             <div class="rating-block">
+                <form method="post" id="rating-form" name="rating-form" action="keychain?id={{keychain.id}}">
+                    {% csrf_token %}
+                    <button title="1" class="fa fa-star {% if rating.keychain_rating_float >= 1 %} star-checked {% endif %}" type="submit" name="rating" value="1"></button>
+                    <button title="2" class="fa fa-star {% if rating.keychain_rating_float >= 2 %} star-checked {% endif %}" type="submit" name="rating" value="2"></button>
+                    <button title="3" class="fa fa-star {% if rating.keychain_rating_float >= 3 %} star-checked {% endif %}" type="submit" name="rating" value="3"></button>
+                    <button title="4" class="fa fa-star {% if rating.keychain_rating_float >= 4 %} star-checked {% endif %}" type="submit" name="rating" value="4"></button>
+                    <button title="5" class="fa fa-star {% if rating.keychain_rating_float >= 5 %} star-checked {% endif %}" type="submit" name="rating" value="5"></button>
+                </form>
                 <div class="user-rate-block">
                     {% if rating.keychain_user_rating %} 
                         <h3>Ваша оценка: <span class="text-blue">{{rating.keychain_user_rating}}</span></h3> 
                     {% endif %}
-                </div>
-                <form method="post" id="rating-form" name="rating-form" action="keychain?id={{keychain.id}}">
-                    {% csrf_token %}
-                    <button type="submit" name="rating" value="1">1</button>
-                    <button type="submit" name="rating" value="2">2</button>
-                    <button type="submit" name="rating" value="3">3</button>
-                    <button type="submit" name="rating" value="4">4</button>
-                    <button type="submit" name="rating" value="5">5</button>
-                </form>
-                <div class="keychain-rating-block">
+
                     {% if rating.keychain_rating_float %}
                         <h3>Общая оценка: <span class="text-blue">{{rating.keychain_rating_float}}</span></h3>
                         <p>Всего оценок: {{rating.keychain_rating_count}}</p>
