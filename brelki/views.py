@@ -1,6 +1,6 @@
 from ssl import SSLSession
-from django.shortcuts import render, HttpResponse
-from brelki.models import Category, Keychain, User, Comment
+from django.shortcuts import render, HttpResponse, HttpResponseRedirect
+from brelki.models import Category, Keychain, User, Comment, Rating
 from .forms import RegistrationForm, AuthForm, CreateKeychainForm, CreateCommentForm, EditCommentForm, SearchForm, \
     EditKeychainForm, SendEmailForm, EditUserForm
 from django.shortcuts import redirect
@@ -173,6 +173,7 @@ def logout(request):
 
 
 def keychain(request):
+
     try:
         logged_user_id = request.session['logged_user_id']
         logged_user_login = User.objects.get(id=logged_user_id).login
@@ -250,6 +251,18 @@ def keychain(request):
         cart_item_count = 0
         cart_sum = 0
 
+    # Получение рейтинга брелка
+    try:
+        keychain_rating = list(Rating.objects.filter(keychain_id=keychain_id).values_list('rating', flat=True))
+        keychain_user_rating = Rating.objects.get(user_id=logged_user_id, keychain_id=keychain_id).rating
+        import statistics
+        keychain_rating_float = round(statistics.mean(keychain_rating), 2)
+        keychain_rating_count = len(keychain_rating)
+    except ObjectDoesNotExist:
+        keychain_rating_float = 0
+        keychain_user_rating = 0
+        keychain_rating_count = 0
+
     context = {"keychain": Keychain.objects.get(id=keychain_id),
                "user": User.objects.all(),
                "comments": Comment.objects.order_by('-create_date').filter(keychain_id=keychain_id),
@@ -266,6 +279,12 @@ def keychain(request):
                    "cart_item_count": cart_item_count,
                    "cart_sum": cart_sum
                },
+               "rating": {
+                    "keychain_rating_float": keychain_rating_float,
+                    "keychain_user_rating": keychain_user_rating,
+                    "keychain_rating_count": keychain_rating_count
+               },
+
                "search_form": SearchForm()
                }
 
@@ -368,6 +387,22 @@ def keychain(request):
 
                 return JsonResponse({'response': 'success',
                                      'cart_action': 'clear'})
+        
+        elif 'rating' in request.POST:
+
+            try:
+                current_rate = Rating.objects.get(user_id=logged_user_id, keychain_id=keychain_id)
+                current_rate.rating = request.POST['rating']
+                current_rate.save()
+            except:
+                new_rate = Rating(
+                    user_id=logged_user_id,
+                    keychain_id=keychain_id,
+                    rating=request.POST['rating']
+                )
+                new_rate.save()
+
+            return HttpResponseRedirect("keychain?id=" + keychain_id + '#keychain-content')
 
         else:
             form_content = CreateCommentForm(request.POST)

@@ -1,7 +1,7 @@
 from django.contrib.auth.hashers import check_password
 from django.core.exceptions import ValidationError
 from django.db import models
-
+from django.db.models.constraints import UniqueConstraint
 
 def validate_phone(value):
     if len(value) == 12 and value[0] == '+' and value[1:].isdigit():
@@ -69,3 +69,13 @@ class Comment(models.Model):
         db_table = 'comments'
         
 
+class Rating(models.Model):
+    id = models.IntegerField(primary_key=True)
+    user = models.ForeignKey(User, db_column='user_id', on_delete=models.CASCADE)
+    keychain = models.ForeignKey(Keychain, db_column='keychain_id', on_delete=models.CASCADE)
+    rating = models.IntegerField(default=0, db_column='rating')
+    UniqueConstraint(fields=(user, keychain), name='unique_rating')
+
+    class Meta:
+        db_table = 'rating'
+    

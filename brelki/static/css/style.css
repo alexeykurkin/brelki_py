@@ -316,7 +316,7 @@ a span {
   word-break: break-word;
 }
 
-.keychain-description-block p:not(.keychain-price) {
+.keychain-description-block p:not(.keychain-price) p:not(.keychain-rating){
   font-size: 20px;
 }
 
@@ -1084,4 +1084,20 @@ p[id^='h3'] {
 
 .add-cart-button {
   padding: 0 15px;
+}
+
+.rating-block-title {
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+
+.rating-block {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 0;
+  gap: 7px;
+}
+
+.rating-block p {
+  margin: 0;
 }

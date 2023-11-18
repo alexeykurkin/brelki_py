@@ -14,7 +14,7 @@
 
 {% include 'menu_header.html' %}
 <div class="keychain-container">
-    <div class="keychain-content">
+    <div class="keychain-content" id="keychain-content">
         <div class="keychain-title-image">
             <h1 id="keychain-title-value">{{ keychain.title }}</h1>
             <img src="{{ keychain.img }}" height="512px" id="keychain_image">
@@ -74,6 +74,31 @@
                         <!-- <button type="submit" name="action" value="min">min</button> -->
                     </form>
                 </div>
+            </div>
+            <h2 class="rating-block-title">Рейтинг товара</h2>
+            <div class="rating-block">
+                <div class="user-rate-block">
+                    {% if rating.keychain_user_rating %} 
+                        <h3>Ваша оценка: <span class="text-blue">{{rating.keychain_user_rating}}</span></h3> 
+                    {% endif %}
+                </div>
+                <form method="post" id="rating-form" name="rating-form" action="keychain?id={{keychain.id}}">
+                    {% csrf_token %}
+                    <button type="submit" name="rating" value="1">1</button>
+                    <button type="submit" name="rating" value="2">2</button>
+                    <button type="submit" name="rating" value="3">3</button>
+                    <button type="submit" name="rating" value="4">4</button>
+                    <button type="submit" name="rating" value="5">5</button>
+                </form>
+                <div class="keychain-rating-block">
+                    {% if rating.keychain_rating_float %}
+                        <h3>Общая оценка: <span class="text-blue">{{rating.keychain_rating_float}}</span></h3>
+                        <p>Всего оценок: {{rating.keychain_rating_count}}</p>
+                    {% else %}
+                        <h3 class="text-green">Сделайте первую оценку</p>
+                    {% endif %}
+                </div>
+
             </div>
             {% endif %}
 
