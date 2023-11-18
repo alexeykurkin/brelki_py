@@ -257,7 +257,7 @@ def keychain(request):
         import statistics
         keychain_rating_float = round(statistics.mean(keychain_rating), 2)
         keychain_rating_count = len(keychain_rating)
-    except ObjectDoesNotExist:
+    except:
         keychain_rating_float = 0
         keychain_user_rating = 0
         keychain_rating_count = 0
@@ -545,13 +545,16 @@ def delete_keychain(request):
     logged_user_id = request.session['logged_user_id']
     deleted_keychain = Keychain.objects.get(id=request.GET['keychain_id'])
     if request.method == 'POST':
+        keychain_history = request.session['history']
+        keychain_history.remove(str(deleted_keychain.id))
+        request.session['history'] = keychain_history
         try:
             deleted_keychain_image = deleted_keychain.img
             deleted_keychain.delete()
             remove(deleted_keychain_image.path)
         except:
             pass
-            
+
         return redirect('/user_info?user_id=' + str(request.session['logged_user_id']))
     else:
         return HttpResponse(render(request, 'delete_keychain.html',
@@ -561,7 +564,6 @@ def delete_keychain(request):
 
 def history(request):
     history_list = request.session['history']
-
     history_keychains = []
     for history_keychain_id in history_list:
         history_keychains.append(Keychain.objects.get(id=history_keychain_id))
