@@ -9,7 +9,6 @@
     <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
     <!-- <script src="{% static 'js/cart.js' %}"></script> -->
     <script src="{% static 'js/resize.js' %}"></script>
-    <script src="{% static 'js/cart_json.js' %}"></script>
 </head>
 <body>
 
@@ -80,25 +79,32 @@
             <div class="rating-block">
                 <form method="post" id="rating-form" name="rating-form" action="keychain?id={{keychain.id}}">
                     {% csrf_token %}
-                    <button title="1" class="fa fa-star {% if rating.keychain_rating_float >= 1 %} star-checked {% endif %}" type="submit" name="rating" value="1"></button>
-                    <button title="2" class="fa fa-star {% if rating.keychain_rating_float >= 2 %} star-checked {% endif %}" type="submit" name="rating" value="2"></button>
-                    <button title="3" class="fa fa-star {% if rating.keychain_rating_float >= 3 %} star-checked {% endif %}" type="submit" name="rating" value="3"></button>
-                    <button title="4" class="fa fa-star {% if rating.keychain_rating_float >= 4 %} star-checked {% endif %}" type="submit" name="rating" value="4"></button>
-                    <button title="5" class="fa fa-star {% if rating.keychain_rating_float >= 5 %} star-checked {% endif %}" type="submit" name="rating" value="5"></button>
+                    <div class="rating-form-items">
+                        <button title="1" class="fa fa-star {% if rating.keychain_rating_float >= 1 %} star-checked {% endif %}" type="submit" name="rating" value="1"></button>
+                        <button title="2" class="fa fa-star {% if rating.keychain_rating_float >= 2 %} star-checked {% endif %}" type="submit" name="rating" value="2"></button>
+                        <button title="3" class="fa fa-star {% if rating.keychain_rating_float >= 3 %} star-checked {% endif %}" type="submit" name="rating" value="3"></button>
+                        <button title="4" class="fa fa-star {% if rating.keychain_rating_float >= 4 %} star-checked {% endif %}" type="submit" name="rating" value="4"></button>
+                        <button title="5" class="fa fa-star {% if rating.keychain_rating_float >= 5 %} star-checked {% endif %}" type="submit" name="rating" value="5"></button>
+                    </div>
+
+                    <div class="rating-info-block">
+                        {% if rating.keychain_user_rating %}
+                        <div class="user-rate-block">
+                            <h3>Ваша оценка: <span class="text-blue">{{rating.keychain_user_rating}}</span></h3> 
+                            <button title="Очистить оценку" class="user-actions_button clear-rating-button button-red" type="submit" name="rating" value="clear-rating">
+                                Очистить
+                            </button>
+                        </div>
+                        {% endif %}
+
+                        {% if rating.keychain_rating_float %}
+                            <h3>Общая оценка: <span class="text-blue">{{rating.keychain_rating_float}}</span></h3>
+                            <p>Всего оценок: {{rating.keychain_rating_count}}</p>
+                        {% else %}
+                            <h3 class="text-green">Сделайте первую оценку</p>
+                        {% endif %}
+                    </div>
                 </form>
-                <div class="user-rate-block">
-                    {% if rating.keychain_user_rating %} 
-                        <h3>Ваша оценка: <span class="text-blue">{{rating.keychain_user_rating}}</span></h3> 
-                    {% endif %}
-
-                    {% if rating.keychain_rating_float %}
-                        <h3>Общая оценка: <span class="text-blue">{{rating.keychain_rating_float}}</span></h3>
-                        <p>Всего оценок: {{rating.keychain_rating_count}}</p>
-                    {% else %}
-                        <h3 class="text-green">Сделайте первую оценку</p>
-                    {% endif %}
-                </div>
-
             </div>
             {% endif %}
 

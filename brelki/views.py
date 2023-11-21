@@ -14,9 +14,9 @@ from django.utils.datastructures import MultiValueDictKeyError
 from django.conf import settings
 from django.http import JsonResponse
 import json
+from .settings import BASE_DIR
 
-
-def index(request):
+def get_logged_user(request):
     try:
         logged_user_id = request.session['logged_user_id']
         logged_user_login = User.objects.get(id=logged_user_id).login
@@ -26,15 +26,75 @@ def index(request):
         logged_user_id = ''
         logged_user_img = ''
 
-    try:
-        filter_option = request.GET['filter']
+    return logged_user_id, logged_user_login, logged_user_img
 
+def get_cart():
+    with open(str(BASE_DIR) + "/brelki/cart.json", 'r') as f:
+        cart = json.loads(f.read())
+    return cart
+
+def update_cart(cart):
+    with open(str(BASE_DIR) + "/brelki/cart.json", 'w') as f:
+        json.dump(cart, f)
+
+def get_user_cart(logged_user_id):
+    cart = get_cart()
+    if str(logged_user_id) in cart:
+        user_cart = cart[str(logged_user_id)]
+    else:
+        user_cart = []
+
+    user_cart_len = 0
+    cart_sum = 0
+
+    for kc in user_cart:
+        user_cart_len += kc['count']
+        cart_sum += kc['count'] * kc['price']
+    
+    user_cart_info = {'user_cart': user_cart, 'user_cart_len': user_cart_len, 'cart_sum': cart_sum}
+
+    return user_cart_info
+
+def keychain_cart_info(logged_user_id, keychain_id):
+    cart_info = get_user_cart(logged_user_id)
+    user_cart = cart_info['user_cart']
+    user_cart_len = cart_info['user_cart_len']
+    cart_sum = cart_info['cart_sum']
+
+    hide_minus_cart = True
+    hide_add_cart = False
+
+    if user_cart:
+        for kc in user_cart:
+            if str(kc['id']) == keychain_id:
+                hide_minus_cart = False
+                hide_add_cart = True
+                cart_item_count = kc['count']
+                break
+            hide_minus_cart = True
+            cart_item_count = 0
+    else:
+        cart_item_count = 0
+        cart_sum = 0
+    
+    keychain_cart_info = {'user_cart': user_cart,
+                            'hide_minus_cart': hide_minus_cart, 
+                            'hide_add_cart': hide_add_cart, 
+                            'user_cart_len': user_cart_len,
+                            'cart_item_count': cart_item_count,
+                            'cart_sum': cart_sum}
+
+    return keychain_cart_info
+
+def index(request):
+
+    def filter_keychains(filter_option):
         if filter_option == 'price_asc':
             keychains_list = Keychain.objects.all().order_by('price')
         elif filter_option == 'price_desc':
             keychains_list = Keychain.objects.all().order_by('-price')
 
-        if 'popularity' in filter_option:
+        elif 'popularity' in filter_option:
             keychains_list = Keychain.objects.all()
             keychains_popularity = request.session['user_views']
             for keychain in keychains_list:
@@ -48,14 +108,38 @@ def index(request):
             else:
                 keychains_list = sorted(keychains_list, key=operator.attrgetter('popularity'), reverse=True)
 
-        if 'category' in filter_option:
+        elif 'category' in filter_option:
             keychains_list = Keychain.objects.all().filter(category=filter_option[filter_option.find('_') + 1:])
+        
+        elif 'rating' in filter_option:
+            get_rating = filter_option[filter_option.find('_')+1:]
+            int_get_rating = int(get_rating)
 
-        if filter_option == '':
+            if int_get_rating in (range(1, 6)):
+                from django.db.models import Avg
+                keychains_list = Keychain.objects.all().annotate(kc_rating=Avg('rating__rating')).filter(kc_rating__gte=int_get_rating, kc_rating__lt=int_get_rating+1)
+            elif int_get_rating == 0:
+                keychains_list = Keychain.objects.exclude(id__in=list(Rating.objects.values_list('keychain_id', flat=True)))
+            else:
+                keychains_list = Keychain.objects.all()
+
+        else:
             keychains_list = Keychain.objects.all()
+
+        return keychains_list
+
+    logged_user_id, logged_user_login, logged_user_img = get_logged_user(request)
+
+    try:
+        filter_option = request.GET['filter']
+        if filter_option == '':
+            raise NameError('Filter option is not defined')
     except:
         filter_option = ''
         keychains_list = Keychain.objects.all()
+
+    # Фильтрация брелков
+    keychains_list = filter_keychains(filter_option=filter_option)
 
     paginator = Paginator(keychains_list, per_page=6)
     try:
@@ -63,23 +147,9 @@ def index(request):
     except KeyError:
         return redirect(f'/?page=1&filter={filter_option}')
 
-    from .settings import BASE_DIR
-    with open(str(BASE_DIR) + "/brelki/cart.json", 'r') as f:
-        cart = json.loads(f.read())
-
-    if str(logged_user_id) in cart:
-        user_cart = cart[str(logged_user_id)]
-    else:
-        user_cart = []
-
     keychains = paginator.get_page(current_page)
 
-    user_cart_len = 0
-    cart_sum = 0
-
-    for kc in user_cart:
-        user_cart_len += kc['count']
-        cart_sum += kc['count'] * kc['price']
+    cart_info = get_user_cart(logged_user_id)
 
     context = {'keychains': keychains,
                'categories': Category.objects.all(),
@@ -91,9 +161,9 @@ def index(request):
                     'logged_user_img': logged_user_img},
                "search_form": SearchForm(),
                'cart_info': {
-                   'cart': user_cart,
-                   'user_cart_len': user_cart_len,
-                   'cart_sum': cart_sum
+                   'cart': cart_info['user_cart'],
+                   'user_cart_len': cart_info['user_cart_len'],
+                   'cart_sum': cart_info['cart_sum']
                }
                }
 
@@ -174,82 +244,67 @@ def logout(request):
 
 def keychain(request):
 
-    try:
-        logged_user_id = request.session['logged_user_id']
-        logged_user_login = User.objects.get(id=logged_user_id).login
-        logged_user_img = User.objects.get(id=logged_user_id).user_img
+    def update_keychain_views(logged_user_id):
+        try:
+            request.session['user_views']
+        except:
+            request.session['user_views'] = {}
 
-    except:
-        logged_user_id = ''
-        logged_user_login = ''
-        logged_user_img = ''
-
-    keychain_id = request.GET['id']
-
-    try:
-        request.session['user_views']
-    except:
-        request.session['user_views'] = {}
-
-    if logged_user_id:
-        keychain_views_dict = request.session['user_views']
-        if keychain_id in keychain_views_dict:
-            if logged_user_id not in keychain_views_dict[keychain_id]:
-                keychain_views_dict[keychain_id].append(logged_user_id)
+        if logged_user_id:
+            keychain_views_dict = request.session['user_views']
+            if keychain_id in keychain_views_dict:
+                if logged_user_id not in keychain_views_dict[keychain_id]:
+                    keychain_views_dict[keychain_id].append(logged_user_id)
+                else:
+                    pass
             else:
-                pass
+                keychain_views_dict[keychain_id] = []
+                keychain_views_dict[keychain_id].append(logged_user_id)
+
         else:
-            keychain_views_dict[keychain_id] = []
-            keychain_views_dict[keychain_id].append(logged_user_id)
-        request.session['user_views'] = keychain_views_dict
+            keychain_views_dict = {}
+        
+        return keychain_views_dict
+    
+    def update_keychain_history(logged_user_id):
+        try:
+            history_list = request.session['history']
+            if keychain_id not in history_list and logged_user_id:
+                history_list.append(keychain_id)
+        except KeyError:
+            request.session['history'] = []
 
-    request.session['keychain_id'] = keychain_id
-
-    try:
-        history_list = request.session['history']
-        if keychain_id not in history_list and logged_user_id:
-            history_list.append(keychain_id)
-    except KeyError:
-        request.session['history'] = []
+    logged_user_id, logged_user_login, logged_user_img = get_logged_user(request)
+    keychain_id = request.GET['id']
 
     try:
         Keychain.objects.get(id=keychain_id)
     except ObjectDoesNotExist:
         return HttpResponse('Брелка с таким id не существует', status=404)
 
-    from .settings import BASE_DIR
-    with open(str(BASE_DIR) + "/brelki/cart.json", 'r') as f:
-        cart = json.loads(f.read())
+    request.session['user_views'] = update_keychain_views(logged_user_id)
+    request.session['keychain_id'] = keychain_id
 
-    if str(logged_user_id) in cart:
-        user_cart = cart[str(logged_user_id)]
+    update_keychain_history(logged_user_id)
+    update_keychain_views(logged_user_id)
 
-        user_cart_len = 0
+    # from .settings import BASE_DIR
+    # with open(str(BASE_DIR) + "/brelki/cart.json", 'r') as f:
+    #     cart = json.loads(f.read())
 
-        for kc in user_cart:
-            user_cart_len += kc['count']
+    # if str(logged_user_id) in cart:
+    #     user_cart = cart[str(logged_user_id)]
 
-    else:
-        user_cart = []
-        user_cart_len = 0
+    #     user_cart_len = 0
 
-    hide_minus_cart = True
-    hide_add_cart = False
-    cart_sum = 0
+    #     for kc in user_cart:
+    #         user_cart_len += kc['count']
 
-    if user_cart:
-        for kc in user_cart:
-            cart_sum += kc['count'] * kc['price']
-            if str(kc['id']) == keychain_id:
-                hide_minus_cart = False
-                hide_add_cart = True
-                cart_item_count = kc['count']
-                break
-            hide_minus_cart = True
-            cart_item_count = 0
-    else:
-        cart_item_count = 0
-        cart_sum = 0
+    # else:
+    #     user_cart = []
+    #     user_cart_len = 0
+
+    keychain_cart_state = keychain_cart_info(logged_user_id, keychain_id)
 
     # Получение рейтинга брелка
     try:
@@ -276,12 +331,12 @@ def keychain(request):
                     'logged_user_id': logged_user_id,
                     'logged_user_img': logged_user_img},
                'cart_info': {
-                   "cart": user_cart,
-                   "user_cart_len": user_cart_len,
-                   "hide_minus_cart": hide_minus_cart,
-                   "hide_add_cart": hide_add_cart,
-                   "cart_item_count": cart_item_count,
-                   "cart_sum": cart_sum
+                   "cart": keychain_cart_state['user_cart'],
+                   "user_cart_len": keychain_cart_state['user_cart_len'],
+                   "hide_minus_cart": keychain_cart_state['hide_minus_cart'],
+                   "hide_add_cart": keychain_cart_state['hide_add_cart'],
+                   "cart_item_count": keychain_cart_state['cart_item_count'],
+                   "cart_sum": keychain_cart_state['cart_sum']
                },
                "rating": {
                     "keychain_rating_float": keychain_rating_float,
@@ -304,19 +359,14 @@ def keychain(request):
         if 'action' in request.POST:
 
             if request.POST['action'] == 'plus':
-
-                with open(str(BASE_DIR) + "/brelki/cart.json", 'r') as f:
-                    cart = json.load(f)
-
+                
+                cart = get_cart()
                 if str(logged_user_id) not in cart:
                     cart[str(logged_user_id)] = []
 
                 new_keychain = True
-
                 for kc in cart[str(logged_user_id)]:
                     # расчёт суммы брелков в корзине
-
-
                     if int(keychain_id) == kc['id']:
                         kc['count'] += 1
                         new_keychain = False
@@ -331,29 +381,22 @@ def keychain(request):
                         "img": str(Keychain.objects.get(id=keychain_id).img)
                     })
 
-                with open(str(BASE_DIR) + "/brelki/cart.json", 'w') as f:
-                    json.dump(cart, f)
+                update_cart(cart)
 
-                user_cart_len = 0
-                cart_sum = 0
-
-                for kc in cart[str(logged_user_id)]:
-                    user_cart_len += kc['count']
-                    cart_sum += kc['count'] * kc['price']
+                user_cart = keychain_cart_info(logged_user_id, keychain_id)
 
                 return JsonResponse({
                     'id': keychain_id,
                     'title': Keychain.objects.get(id=keychain_id).title,
                     'img': str(Keychain.objects.get(id=keychain_id).img),
                     'cart_action': 'add',
-                    'user_cart_len': user_cart_len,
-                    'cart_item_count': cart_item_count,
-                    'cart_sum': cart_sum
+                    'user_cart_len': user_cart['user_cart_len'],
+                    'cart_item_count': user_cart['cart_item_count'],
+                    'cart_sum': user_cart['cart_sum']
                 })
 
             elif request.POST['action'] == 'minus':
-                with open(str(BASE_DIR) + "/brelki/cart.json", 'r') as f:
-                    cart = json.load(f)
+                cart = get_cart()
 
                 for kc in cart[str(logged_user_id)]:
                     if int(keychain_id) == kc['id']:
@@ -363,48 +406,46 @@ def keychain(request):
                             kc['count'] -= 1
                             break
 
-                with open(str(BASE_DIR) + "/brelki/cart.json", 'w') as f:
-                    json.dump(cart, f)
+                update_cart(cart)
 
-                user_cart_len = 0
-                cart_sum = 0
-
-                for kc in cart[str(logged_user_id)]:
-                    user_cart_len += kc['count']
-                    cart_sum += kc['count'] * kc['price']
+                user_cart = keychain_cart_info(logged_user_id, keychain_id)
 
                 return JsonResponse({'response': 'success',
                                      'cart_action': 'substract',
-                                     'user_cart_len': user_cart_len,
-                                     'cart_item_count': cart_item_count,
-                                     'cart_sum': cart_sum
+                                     'user_cart_len': user_cart['user_cart_len'],
+                                     'cart_item_count': user_cart['cart_item_count'],
+                                     'cart_sum': user_cart['cart_sum']
                                      })
 
             elif request.POST['action'] == 'delete':
-                with open(str(BASE_DIR) + "/brelki/cart.json", 'r') as f:
-                    ucart = json.load(f)
+                cart = get_cart()
 
                 cart[str(logged_user_id)] = []
 
-                with open(str(BASE_DIR) + "/brelki/cart.json", 'w') as f:
-                    cart = json.dump(cart, f)
+                update_cart(cart)
 
                 return JsonResponse({'response': 'success',
                                      'cart_action': 'clear'})
         
         elif 'rating' in request.POST:
 
-            try:
-                current_rate = Rating.objects.get(user_id=logged_user_id, keychain_id=keychain_id)
-                current_rate.rating = request.POST['rating']
-                current_rate.save()
-            except:
-                new_rate = Rating(
-                    user_id=logged_user_id,
-                    keychain_id=keychain_id,
-                    rating=request.POST['rating']
-                )
-                new_rate.save()
+            if request.POST['rating'] == 'clear-rating':
+                delete_rate = Rating.objects.get(user_id=logged_user_id, keychain_id=keychain_id)
+                delete_rate.delete()
+
+            elif int(request.POST['rating']) in range(1, 6):
+
+                try:
+                    current_rate = Rating.objects.get(user_id=logged_user_id, keychain_id=keychain_id)
+                    current_rate.rating = request.POST['rating']
+                    current_rate.save()
+                except:
+                    new_rate = Rating(
+                        user_id=logged_user_id,
+                        keychain_id=keychain_id,
+                        rating=request.POST['rating']
+                    )
+                    new_rate.save()
 
             return HttpResponseRedirect("keychain?id=" + keychain_id + '#keychain-content')
 
@@ -484,14 +525,8 @@ def search(request):
 
 
 def user_info(request):
-    try:
-        logged_user_id = request.session['logged_user_id']
-        logged_user_login = User.objects.get(id=logged_user_id).login
-        logged_user_img = User.objects.get(id=logged_user_id).user_img
-    except:
-        logged_user_login = ''
-        logged_user_id = ''
-        logged_user_img = ''
+    logged_user_id, logged_user_login, logged_user_img = get_logged_user(request)
+    cart_info = get_user_cart(logged_user_id)
 
     context = {"logged_user": {"logged_user_login": logged_user_login,
                                "logged_user_img": logged_user_img,
@@ -499,7 +534,12 @@ def user_info(request):
                "personal_space_user_id": int(request.GET['user_id']),
                "user": User.objects.get(id=int(request.GET['user_id'])),
                "keychains": Keychain.objects.all(),
-               "search_form": SearchForm()
+               "search_form": SearchForm(),
+                'cart_info': {
+                   'cart': cart_info['user_cart'],
+                   'user_cart_len': cart_info['user_cart_len'],
+                   'cart_sum': cart_info['cart_sum']
+               }
                }
 
     try:
@@ -546,7 +586,9 @@ def delete_keychain(request):
     deleted_keychain = Keychain.objects.get(id=request.GET['keychain_id'])
     if request.method == 'POST':
         keychain_history = request.session['history']
-        keychain_history.remove(str(deleted_keychain.id))
+        if str(deleted_keychain.id) in keychain_history:
+            keychain_history.remove(str(deleted_keychain.id))
+            
         request.session['history'] = keychain_history
         try:
             deleted_keychain_image = deleted_keychain.img

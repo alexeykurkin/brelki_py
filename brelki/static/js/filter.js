@@ -1,62 +1,44 @@
 $(function() {
-    priceOptions = $('.price-options div').hide();
-    popularityOptions = $('.popularity-options div').hide();
-    categoryOptions = $('.category-options div').hide();
 
-    arrowPrice = $('#price-arrow');
-    arrowPopularity = $('#popularity-arrow');
-    arrowCategory = $('#category-arrow');
+    // Массивы с элементами опций фильтрации: блок, стрелка и название опции
+    filterOptionsBlocks = [$('.price-options div'), $('.popularity-options div'), $('.category-options div'), $('.rating-options div')];
+    filterArrows = [$('#price-arrow'), $('#popularity-arrow'), $('#category-arrow'), $('#rating-arrow')];
+    filterTitles = [$('#h3-price'), $('#h3-popularity'), $('#h3-category'), $('#h3-rating')];
 
-    optionTitlePrice = $('#h3-price');
-    optionTitlePopularity = $('#h3-popularity');
-    optionTitleCategory= $('#h3-category');
+    // По умолчанию - скрыть все блоки опций фильтра
+    filterOptionsBlocks.map((filterOptionBlock) => filterOptionBlock.hide());
 
-    $('#h3-price').click(function() {
-        priceOptions.slideToggle();
-
-        if (arrowPrice.hasClass('rotated')) {
-            arrowPrice.removeClass('rotated');
-        } else if (!arrowPrice.hasClass('rotated')) {
-            arrowPrice.addClass('rotated');
+    // Функция по скрытию или раскрытию стрелок
+    function toggleArrow(toggledArrow) {
+        for (const arrow of filterArrows) {
+            if (arrow == toggledArrow) {
+                if (toggledArrow.hasClass('rotated')) {
+                    toggledArrow.removeClass('rotated');
+                } else {
+                    toggledArrow.addClass('rotated');
+                }
+            } else {
+                arrow.removeClass('rotated');
+            }
         }
+    }
 
-        if (popularityOptions.is(':visible')) {
-            popularityOptions.slideUp(300);
-        } 
-        if (categoryOptions.is(':visible')) {
-            categoryOptions.slideUp(300);
+    // Функция по скрытию или раскрытию блоков опций фильтра
+    function toggleFilterOptionBlock(toggledFilterBlock, toggledArrow) {
+        toggleArrow(toggledArrow);
+
+        for (const filterOptionBlock of filterOptionsBlocks) {
+            if (filterOptionBlock != toggledFilterBlock) {
+                filterOptionBlock.slideUp(300);
+            }
         }
-    });
-    $('#h3-popularity').click(function() {
-        popularityOptions.slideToggle();
+        
+        toggledFilterBlock.slideToggle();
+    }
 
-        if (arrowPopularity.hasClass('rotated')) {
-            arrowPopularity.removeClass('rotated');
-        } else if (!arrowPopularity.hasClass('rotated')) {
-            arrowPopularity.addClass('rotated');
-        }
+    // Для каждого h3 применить функцию - раскрытия/скрытия соответствующего блока опции
+    for (let i = 0; i < filterTitles.length; i++) {
+        filterTitles[i].on('click', () => toggleFilterOptionBlock(filterOptionsBlocks[i], filterArrows[i]))
+    }
 
-        if (priceOptions.is(':visible')) {
-            priceOptions.slideUp(300);
-        } 
-        if (categoryOptions.is(':visible')) {
-            categoryOptions.slideUp(300);
-        }
-    });
-    $('#h3-category').click(function() {
-
-        if (arrowCategory.hasClass('rotated')) {
-            arrowCategory.removeClass('rotated');
-        } else if (!arrowCategory.hasClass('rotated')) {
-            arrowCategory.addClass('rotated');
-        }
-
-        categoryOptions.slideToggle();
-        if (priceOptions.is(':visible')) {
-            priceOptions.slideUp(300);
-        } 
-        if (popularityOptions.is(':visible')) {
-            popularityOptions.slideUp(300);
-        } 
-    });
 });

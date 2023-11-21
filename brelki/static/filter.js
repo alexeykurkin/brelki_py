@@ -6,57 +6,46 @@ $(function() {
     arrowPrice = $('#price-arrow');
     arrowPopularity = $('#popularity-arrow');
     arrowCategory = $('#category-arrow');
+    arrowRating = $('#rating-arrow');
 
     optionTitlePrice = $('#h3-price');
     optionTitlePopularity = $('#h3-popularity');
     optionTitleCategory= $('#h3-category');
+    optionTitleRating = $('#h3-rating');
 
-    $('#h3-price').click(function() {
-        priceOptions.slideToggle();
+    function handleFilterOptionSlide(div, arrow) {
 
-        if (arrowPrice.hasClass('rotated')) {
-            arrowPrice.removeClass('rotated');
-        } else if (!arrowPrice.hasClass('rotated')) {
-            arrowPrice.addClass('rotated');
+        priceOptions.slideUp(300);
+        popularityOptions.slideUp(300);
+        categoryOptions.slideUp(300);
+
+        if (arrow.hasClass('rotated')) {
+            arrow.removeClass('rotated');
+        } else {
+            arrow.addClass('rotated');
         }
 
-        if (popularityOptions.is(':visible')) {
-            popularityOptions.slideUp(300);
-        } 
-        if (categoryOptions.is(':visible')) {
-            categoryOptions.slideUp(300);
-        }
-    });
-    $('#h3-popularity').click(function() {
-        popularityOptions.slideToggle();
+        div.slideToggle();
+    }
 
-        if (arrowPopularity.hasClass('rotated')) {
-            arrowPopularity.removeClass('rotated');
-        } else if (!arrowPopularity.hasClass('rotated')) {
-            arrowPopularity.addClass('rotated');
-        }
+    $('#h3-price').on('click', handleFilterOptionSlide(priceOptions, arrowPrice));
 
-        if (priceOptions.is(':visible')) {
-            priceOptions.slideUp(300);
-        } 
-        if (categoryOptions.is(':visible')) {
-            categoryOptions.slideUp(300);
-        }
-    });
-    $('#h3-category').click(function() {
+    // $('#h3-price').click(function() {
+    //     priceOptions.slideToggle();
 
-        if (arrowCategory.hasClass('rotated')) {
-            arrowCategory.removeClass('rotated');
-        } else if (!arrowCategory.hasClass('rotated')) {
-            arrowCategory.addClass('rotated');
-        }
+    //     if (arrowPrice.hasClass('rotated')) {
+    //         arrowPrice.removeClass('rotated');
+    //     } else if (!arrowPrice.hasClass('rotated')) {
+    //         arrowPrice.addClass('rotated');
+    //     }
 
-        categoryOptions.slideToggle();
-        if (priceOptions.is(':visible')) {
-            priceOptions.slideUp(300);
-        } 
-        if (popularityOptions.is(':visible')) {
-            popularityOptions.slideUp(300);
-        } 
-    });
+    //     if (popularityOptions.is(':visible')) {
+    //         popularityOptions.slideUp(300);
+    //     } 
+    //     if (categoryOptions.is(':visible')) {
+    //         categoryOptions.slideUp(300);
+    //     }
+    // });
+
+
 });

@@ -3,12 +3,12 @@
 <html lang="ru">
 <head>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="UTF-8">
     <meta charset="UTF-8" content="width=device-width, initial-scale=1">
     <title>Главная</title>
     <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
     <script src="{% static 'js/filter.js' %}"></script>
-    <script src="{% static 'js/cart_json.js' %}"></script>
 </head>
 {% include 'menu_header.html' %}
 <div class="menu filter-block">
@@ -20,7 +20,6 @@
                 <img src="{% static 'img/down_arrow.svg' %}" id="price-arrow" width="35px" height="35px" class="filter-arrow">
             </div>
             <div class="price-options" id="price-options">
-
                 <div>
                     <p><a href="/?filter=price_asc&page=1" class="text-green">
                         по возр.
@@ -68,6 +67,71 @@
                     {% for category in categories %}
                         <p><a href="/?filter=category_{{ category.category }}&page=1">{{ category.category }}</a></p>
                     {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="filter-option filter-rating">
+            <div class="filter-option-title">
+                <h3 id="h3-rating">рейтингу</h3>
+                <img src="{% static 'img/down_arrow.svg' %}" id="rating-arrow" width="35px" height="35px" class="filter-arrow">
+            </div>
+            <div class="rating-options" id="rating-options">
+                <div class="filter-option-items">
+                    <div class="filter-rating-option">
+                        <a href="/?filter=rating_0&page=1" class="a-star">
+                            <span>Без рейтинга</span>
+                        </a>
+                    </div>
+                    <div class="filter-rating-option">
+                        <a href="/?filter=rating_1&page=1" class="a-star">
+                            <span class="fa fa-star star-checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span>1</span>
+                        </a>
+                    </div>
+                    <div class="filter-rating-option">
+                        <a href="/?filter=rating_2&page=1" class="a-star">
+                            <span class="fa fa-star star-checked"></span>
+                            <span class="fa fa-star star-checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span>2</span>
+                        </a>
+                    </div>
+                    <div class="filter-rating-option">
+                        <a href="/?filter=rating_3&page=1" class="a-star">
+                            <span class="fa fa-star star-checked"></span>
+                            <span class="fa fa-star star-checked"></span>
+                            <span class="fa fa-star star-checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span>3</span>
+                        </a>
+                    </div>
+                    <div class="filter-rating-option">
+                        <a href="/?filter=rating_4&page=1" class="a-star">
+                            <span class="fa fa-star star-checked"></span>
+                            <span class="fa fa-star star-checked"></span>
+                            <span class="fa fa-star star-checked"></span>
+                            <span class="fa fa-star star-checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span>4</span>
+                        </a>
+                    </div>
+                    <div class="filter-rating-option">
+                        <a href="/?filter=rating_5&page=1" class="a-star">
+                            <span class="fa fa-star star-checked"></span>
+                            <span class="fa fa-star star-checked"></span>
+                            <span class="fa fa-star star-checked"></span>
+                            <span class="fa fa-star star-checked"></span>
+                            <span class="fa fa-star star-checked"></span>
+                            <span>5</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

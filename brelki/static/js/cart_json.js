@@ -25,7 +25,7 @@ $(function() {
                 $('.cart-sum-title').show();
                 $('.cart-sum').text(parseInt(response.cart_sum))
 
-                $('.cart-item-count').text(parseInt(response.cart_item_count + 1));
+                $('.cart-item-count').text(parseInt(response.cart_item_count));
 
                 $('#toggle_cart_button').html(`Корзина (${response.user_cart_len})`);
                 $('.no-cart-items-title').hide();
@@ -41,8 +41,7 @@ $(function() {
                 $('.cart-item').each(function() {
                     if ($(this).children('h3').attr('id') == keychainId) {
                         itemFound = true;
-                        keychainCount = parseInt($(this).children('h3').next().text());
-                        $(this).children('h3').next().text(keychainCount + 1);
+                        $(this).children('h3').next().text(response.cart_item_count);
                         if (cartBlock.is(':hidden')) {
                             cartBlock.slideToggle();
                         }
@@ -85,7 +84,8 @@ $(function() {
             },
             dataType: 'json',
             success: function(response) {
-                $('.cart-sum').text(parseInt(response.cart_sum))
+                $('.cart-sum').text(parseInt(response.cart_sum));
+                $('.cart-item-count').text(parseInt(response.cart_item_count));
 
                 if (response.user_cart_len == 0) {
                     cartClearButton.hide();
@@ -114,14 +114,8 @@ $(function() {
                         keychainCount = parseInt($(this).children('h3').next().text());
                         if ($(this).children('h3').next().text() == '1') {
                             $(this).remove();
-                            $('#cart-submit-minus').hide();
-                            $('#cart-submit-plus').hide();
-                            $('#cart-submit-add').show();
-                            $('.cart-item-count-block').hide();
-                            $('.cart-sum-title').hide();
                         } else {
                             $(this).children('h3').next().text(keychainCount - 1);
-                            $('.cart-item-count').text(parseInt(response.cart_item_count - 1));
                         }
                     }
                 });
