@@ -9,15 +9,16 @@
 <body>
     {% include 'back_button.html' %}
     <div class="form-content">
+
         <form class="registration-form" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <h1>Авторизация</h1>
             <div class="form-items">
                 <label for="{{ reg_form.login.html_name }}" class="inp">
-                    {{ auth_form.login }}
+                    {{ auth_form.username }}
                     <span class="label">Логин</span>
                     <span class="focus-bg"></span>
-                    {{ auth_form.login.errors }}
+                    {{ auth_form.username.errors }}
                 </label>
                 <label for="password" class="inp">
                     {{ auth_form.password }}

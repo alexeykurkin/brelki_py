@@ -78,8 +78,10 @@ class RegistrationForm(ModelForm):
         fields = ['login', 'email', 'password', 'telephone_number', 'user_img']
 
 
-class AuthForm(ModelForm):
-    login_errors = {
+from django.contrib.auth.forms import AuthenticationForm, UsernameField
+class AuthForm(AuthenticationForm):
+
+    username_errors = {
         'required': 'Введите логин'
     }
 
@@ -87,8 +89,8 @@ class AuthForm(ModelForm):
         'required': 'Введите пароль'
     }
 
-    login = forms.CharField(widget=forms.TextInput(attrs={'placeholder': ' '}),
-                            error_messages=login_errors)
+    username = UsernameField(widget=forms.TextInput(attrs={'placeholder': ' '}),
+                            error_messages=username_errors)
 
     password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': ' '}),
                                error_messages=password_errors)
@@ -96,6 +98,7 @@ class AuthForm(ModelForm):
     class Meta:
         model = models.User
         fields = ['login', 'password']
+
 
 
 class CreateKeychainForm(ModelForm):

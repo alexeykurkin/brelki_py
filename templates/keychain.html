@@ -31,7 +31,7 @@
                     <h3>{{ keychain.user.login }}</h3>
                 </div>
                 </a>
-                    {% if logged_user and logged_user.logged_user_id != keychain.user.id %}
+                    {% if user and user.id != keychain.user.id %}
                         <h2 style="margin: 0">Коммуникация</h2>
                         <a href="/send_email?to={{ keychain.user.id }}">
                             <button class="user-actions_button send-email-button-min" style="margin-right: 45px">
@@ -49,7 +49,7 @@
             <div class="keychain-price-block">
                 <p class="keychain-price" id="keychain-price-value">{{ keychain.price }}</p><p class="keychain-price"> ₽</p>
             </div>
-            {% if logged_user.logged_user_id %}
+            {% if user.is_authenticated %}
             <h2 style="margin-top: 10px; margin-bottom: 0;">Корзина</h2>
             <div class="add-substract-cart-block">
                 <div class="add-cart-block">
@@ -112,14 +112,14 @@
         </div>
     </div>
     <h1 class="comments-section-title" id="comments">Комментарии</h1>
-    {% if logged_user.logged_user_id %}
+    {% if user.is_authenticated %}
     <div class="comment-block-container">
         <div class="create-comment-section">
             <form method="POST" enctype="multipart/form-data" name="comment-form">
                 <div class="comment-block">
                     <div class="commenting-user">
-                        <img src="{{ logged_user.logged_user_img }}" width="50px" height="50px" class="user-avatar">
-                        <h2>{{ logged_user.logged_user_login }}</h2>
+                        <img src="{{ user.user_img }}" width="50px" height="50px" class="user-avatar">
+                        <h2>{{ user.login }}</h2>
                     </div>
                     {% csrf_token %}
                     {{ create_comment_form.content }}
@@ -146,7 +146,7 @@
                         <img src="{{ comment.user.user_img }}" id="user-avatar" class="user-avatar">
                     </a>
                     <h2>{{ comment.user.login }}</h2>
-                    {% if logged_user.logged_user_id == comment.user.id %}
+                    {% if user.id == comment.user.id %}
                     <div class="comment-actions">
                         <a href="delete_comment?comment_id={{ comment.id }}">
                             <img src="{% static 'img/remove.png' %}" width="25px" height="25px" title="Удалить">

@@ -24,7 +24,7 @@ urlpatterns = [
     path('', views.index),
     path('registration', views.registration),
     path('login', views.auth),
-    path('logout', views.logout),
+    path('logout', views.logout_user),
     path('keychain', views.keychain),
     path('create_keychain', views.create_keychain),
     path('delete_comment', views.delete_comment),

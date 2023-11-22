@@ -26,7 +26,7 @@
         </div>
     </form>
     <div class="user-actions">
-        {% if not logged_user.logged_user_id %}
+        {% if not user.is_authenticated %}
         <div class="user-actions_buttons">
             <button class="user-actions_button registration-button">
                 <a href="registration"><span>Зарегистрироваться</span></a>
@@ -39,10 +39,10 @@
         </div>
         {% else %}
             <div class="user-menu">
-                <a href="user_info?user_id={{ logged_user.logged_user_id }}">
-                    <h2>{{ logged_user.logged_user_login }}</h2>
+                <a href="user_info?user_id={{ user.id }}">
+                    <h2>{{ user.login }}</h2>
                 </a>
-                <img src="{{ logged_user.logged_user_img }}"
+                <img src="{{ user.user_img }}"
                      class="img_unselectable user-avatar"
                      id="user-avatar">
                 <div class="user-actions_buttons">

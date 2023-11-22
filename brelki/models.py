@@ -2,6 +2,7 @@ from django.contrib.auth.hashers import check_password
 from django.core.exceptions import ValidationError
 from django.db import models
 from django.db.models.constraints import UniqueConstraint
+from django.contrib.auth.models import AbstractBaseUser
 
 def validate_phone(value):
     if len(value) == 12 and value[0] == '+' and value[1:].isdigit():
@@ -19,16 +20,21 @@ def existing_login(value):
                               params={'value': value})
 
 
-class User(models.Model):
+class User(AbstractBaseUser):
     id = models.IntegerField(primary_key=True)
-    login = models.CharField(max_length=30)
+    login = models.CharField(max_length=30, unique=True)
     email = models.EmailField(max_length=30)
     password = models.CharField(max_length=200)
     reg_date = models.DateTimeField(auto_now=True)
     telephone_number = models.CharField(max_length=12, validators=[validate_phone])
     user_img = models.ImageField(upload_to='brelki/uploaded_images/user_images')
 
-    REQUIRED_FIELDS = ('id', 'login', 'email', 'password', 'reg_date')
+    USERNAME_FIELD = "login"
+    EMAIL_FIELD = 'email'
+    REQUIRED_FIELDS = ('id', 'email', 'password', 'reg_date')
+    
+    from django.contrib.auth.models import UserManager
+    objects = UserManager()
 
     class Meta:
         db_table = 'users'

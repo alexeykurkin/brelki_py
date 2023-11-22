@@ -12,13 +12,13 @@
         <div style="margin-bottom: 20px; margin-top: 20px"> {% include 'back_button.html' %} </div>
         <div class="user-info-block">
             <div class="user-info-block-image">
-                <img src="{{ user.user_img }}" class="user-avatar-max">
+                <img src="{{ personal_space_user.user_img }}" class="user-avatar-max">
             </div>
             <div class="user-info-block-data">
-                <h1>{{ user.login }}</h1>
+                <h1>{{ personal_space_user.login }}</h1>
                 <p class="user-info-reg-date">Дата регистрации: {{ user.reg_date|date:'j E Y в H:i' }}</p>
             </div>
-            {% if logged_user.logged_user_id == personal_space_user_id %}
+            {% if user.id == personal_space_user.id %}
                 <div class="extra-user-info">
                     <h2 style="margin-top: 0">Контактный телефон</h2>
                     <p>{{ user.telephone_number }}</p>
@@ -27,8 +27,8 @@
                 </div>
             {% endif %}
         </div>
-        {% if logged_user.logged_user_id == personal_space_user_id %}
-            <a href="edit_user?edited_user={{ logged_user.logged_user_id }}">
+        {% if user.id == personal_space_user.id %}
+            <a href="edit_user?edited_user={{ user.id }}">
                 <button class="user-actions_button edit-user-info">
                     <span>Изменить информацию пользователя</span>
                     <img src="{% static 'img/edit_user.png' %}" width="25px" height="25px">
@@ -47,7 +47,7 @@
                         </div>
                         <div class="user-info-keychain-data">
                             <h2>{{ keychain.title }}</h2>
-                            {% if logged_user.logged_user_id == personal_space_user_id %}
+                            {% if user.id == personal_space_user.id %}
                                 <div class="user-info-keychain-actions">
                                     <h3>Действия:</h3>
                                     <a href="edit_keychain?keychain_id={{ keychain.id }}">
@@ -73,7 +73,7 @@
                             <div class="comment-content">
                                 <img src="{{ comment.keychain.img }}" height="50px">
                                 <h2>{{ comment.keychain.title }}</h2>
-                                {% if logged_user.id == user.id %}
+                                {% if user.id == personal_space_user_id %}
                                 <div class="comment-actions">
                                     <a href="delete_comment?comment_id={{ comment.id }}">
                                         <img src="{% static 'img/remove.png' %}" width="25px" height="25px" title="Удалить">

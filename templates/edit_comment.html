@@ -13,8 +13,8 @@
             <div class="comment-block">
                 <form method="POST" enctype="multipart/form-data">
                 <div class="commenting-user">
-                    <img src="{{ logged_user.user_img }}" width="50px" height="50px" class="user-avatar" id="user-avatar">
-                    <h2>{{ logged_user.login }}</h2>
+                    <img src="{{ user.user_img }}" width="50px" height="50px" class="user-avatar" id="user-avatar">
+                    <h2>{{ user.login }}</h2>
                 </div>
                 {% csrf_token %}
                 {{ edit_comment_form.content }}
