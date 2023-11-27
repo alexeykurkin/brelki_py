@@ -17,24 +17,26 @@
     <div class="keychain-content" id="keychain-content">
         <div class="keychain-title-image">
             <h1 id="keychain-title-value">{{ keychain.title }}</h1>
-            <img src="{{ keychain.img }}" height="512px" id="keychain_image">
+            <img src="/{{ keychain.img }}" height="512px" id="keychain_image">
         </div>
         <div class="keychain-description-block">
             <h1>Дополнительная информация</h1>
             <h2 style="margin: 0">Описание</h2>
-            <p>{{ keychain.description }}</p>
+            <p style="margin-top: 10px; margin-bottom: 10px;">{{ keychain.description }}</p>
+            <h2 style="margin-bottom: 5px; margin-top: 0;">Категория</h3>
+            <span class="keychain-category-title">{{keychain.category}}</span>
             <div class="keychain-author-info">
-                <h2 style="margin: 0">Автор</h2>
-                <a href="/user_info?user_id={{ keychain.user.id }}">
+                <h2 style="margin: 0; width: 100%;">Автор</h2>
+                <a href="/user_info/{{keychain.user.id}}">
                 <div class="keychain-author-login-img-block">
-                    <img src="{{ keychain.user.user_img }}" class="user-avatar-keychain-author">
+                    <img src="/{{ keychain.user.user_img }}" class="user-avatar-keychain-author">
                     <h3>{{ keychain.user.login }}</h3>
                 </div>
                 </a>
-                    {% if user and user.id != keychain.user.id %}
+                    {% if user.is_authenticated and user.id != keychain.user.id %}
                         <h2 style="margin: 0">Коммуникация</h2>
-                        <a href="/send_email?to={{ keychain.user.id }}">
-                            <button class="user-actions_button send-email-button-min" style="margin-right: 45px">
+                        <a href="/send_email/{{ keychain.user.id }}">
+                            <button class="user-actions_button send-email-button-min" style="margin-right: 45px" title="Отправить сообщение на почту пользователя">
                                 Сообщение на почту
                                 <img src="{% static 'img/email.png' %}" width="25px" height="25px">
                             </button>
@@ -56,11 +58,11 @@
                     <form method="post" name="add-cart" id="add-cart-form">
                         {% csrf_token %}
                         
-                        <button id='cart-submit-add' class="user-actions_button button-green add-cart-button" type='submit' name='submit' {% if cart_info.hide_add_cart %} hidden {% endif %}>
+                        <button id='cart-submit-add' class="user-actions_button button-green add-cart-button" type='submit' name='submit' title="Добавить брелок в корзину" {% if cart_info.hide_add_cart %} hidden {% endif %}>
                             <span>Добавить в корзину</span>
                             <img src="{% static 'img/add_cart.png' %}" width="25px" height="25px">
                         </button>
-                        <input id='cart-submit-plus' class="cart-item-action button-green" type='submit' name="submit" value='+' {% if not cart_info.hide_add_cart %} hidden {% endif %}>
+                        <input id='cart-submit-plus' class="cart-item-action button-green" type='submit' name="submit" title="Добавить количество" value='+' {% if not cart_info.hide_add_cart %} hidden {% endif %}>
                         <!-- <button type="submit" name="action" value="min">min</button> -->
                     </form>
                 </div>
@@ -70,14 +72,14 @@
                 <div class="substract-cart-block">
                     <form method="post" name="substract-cart" id="substract-cart-form">
                         {% csrf_token %}
-                        <input id='cart-submit-minus' class="cart-item-action button-red" type='submit' name='submit' value='-' {% if not cart_info.cart or cart_info.hide_minus_cart %} hidden {% endif %}>
+                        <input id='cart-submit-minus' class="cart-item-action button-red" type='submit' name='submit' title="Убавить количество" value='-' {% if not cart_info.cart or cart_info.hide_minus_cart %} hidden {% endif %}>
                         <!-- <button type="submit" name="action" value="min">min</button> -->
                     </form>
                 </div>
             </div>
             <h2 class="rating-block-title">Рейтинг товара</h2>
             <div class="rating-block">
-                <form method="post" id="rating-form" name="rating-form" action="keychain?id={{keychain.id}}">
+                <form method="post" id="rating-form" name="rating-form" action="/keychain/{{keychain.id}}">
                     {% csrf_token %}
                     <div class="rating-form-items">
                         <button title="1" class="fa fa-star {% if rating.keychain_rating_float >= 1 %} star-checked {% endif %}" type="submit" name="rating" value="1"></button>
@@ -118,7 +120,7 @@
             <form method="POST" enctype="multipart/form-data" name="comment-form">
                 <div class="comment-block">
                     <div class="commenting-user">
-                        <img src="{{ user.user_img }}" width="50px" height="50px" class="user-avatar">
+                        <img src="/{{ user.user_img }}" width="50px" height="50px" class="user-avatar">
                         <h2>{{ user.login }}</h2>
                     </div>
                     {% csrf_token %}
@@ -135,23 +137,23 @@
 
 
         {% else %}
-            <h2 style="color: #dd5353">Войдите в систему, чтобы оставлять комментарии</h2>
+            <h2 class="text-red">Войдите в систему, чтобы оставлять комментарии</h2>
         {% endif %}
 
         <div class="comment-section">
             {% for comment in comments %}
             <div class="comment">
                 <div class="comment-content">
-                    <a href="/user_info?user_id={{ comment.user.id }}">
-                        <img src="{{ comment.user.user_img }}" id="user-avatar" class="user-avatar">
+                    <a href="/user_info/{{ comment.user.id }}">
+                        <img src="/{{ comment.user.user_img }}" id="user-avatar" class="user-avatar user-avatar-comment">
                     </a>
                     <h2>{{ comment.user.login }}</h2>
                     {% if user.id == comment.user.id %}
                     <div class="comment-actions">
-                        <a href="delete_comment?comment_id={{ comment.id }}">
+                        <a href="/keychain/{{keychain.id}}/delete_comment/{{comment.id}}?from=keychain">
                             <img src="{% static 'img/remove.png' %}" width="25px" height="25px" title="Удалить">
                         </a>
-                        <a href="edit_comment?comment_id={{ comment.id }}">
+                        <a href="/keychain/{{keychain.id}}/edit_comment/{{comment.id}}?from=keychain">
                             <img src="{% static 'img/draw.png' %}" width="25px" height="25px" title="Изменить">
                         </a>
                     </div>

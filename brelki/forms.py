@@ -127,7 +127,8 @@ class CreateKeychainForm(ModelForm):
     for value in models.Category.objects.values_list():
         categories.append((str(value[0]), str(value[0])))
 
-    category=forms.ChoiceField(choices=categories)
+    category = forms.ChoiceField(choices=categories)
+    category.widget.attrs.update({'class': 'keychain-category-input'})
    
     description = forms.CharField(widget=forms.Textarea(attrs={'class': 'create-keychain-description'}),
                                   validators=[MinLengthValidator(3, 'Слишком короткое описание'),

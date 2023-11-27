@@ -1,16 +1,16 @@
 $(function() {
 
     // Массивы с элементами опций фильтрации: блок, стрелка и название опции
-    filterOptionsBlocks = [$('.price-options div'), $('.popularity-options div'), $('.category-options div'), $('.rating-options div')];
-    filterArrows = [$('#price-arrow'), $('#popularity-arrow'), $('#category-arrow'), $('#rating-arrow')];
-    filterTitles = [$('#h3-price'), $('#h3-popularity'), $('#h3-category'), $('#h3-rating')];
+    const filterOptionsBlocks = [$('.price-options div'), $('.popularity-options div'), $('.category-options div'), $('.rating-options div')];
+    const filterArrows = [$('#price-arrow'), $('#popularity-arrow'), $('#category-arrow'), $('#rating-arrow')];
+    const filterTitles = [$('#h3-price'), $('#h3-popularity'), $('#h3-category'), $('#h3-rating')];
 
     // По умолчанию - скрыть все блоки опций фильтра
     filterOptionsBlocks.map((filterOptionBlock) => filterOptionBlock.hide());
 
     // Функция по скрытию или раскрытию стрелок
     function toggleArrow(toggledArrow) {
-        for (const arrow of filterArrows) {
+        for (let arrow of filterArrows) {
             if (arrow == toggledArrow) {
                 if (toggledArrow.hasClass('rotated')) {
                     toggledArrow.removeClass('rotated');
@@ -27,7 +27,7 @@ $(function() {
     function toggleFilterOptionBlock(toggledFilterBlock, toggledArrow) {
         toggleArrow(toggledArrow);
 
-        for (const filterOptionBlock of filterOptionsBlocks) {
+        for (let filterOptionBlock of filterOptionsBlocks) {
             if (filterOptionBlock != toggledFilterBlock) {
                 filterOptionBlock.slideUp(300);
             }

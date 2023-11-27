@@ -15,6 +15,7 @@ from decouple import config
 
 AUTH_USER_MODEL = 'brelki.User'
 LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = '/login'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent

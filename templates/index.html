@@ -150,12 +150,12 @@
             {% if keychain.img == '' %}
                 <img src="{% static 'img/not_found.png' %}" width="250" height="250">
             {% else %}
-                <a href="keychain?id={{ keychain.id }}">
-                    <img src="{{ keychain.img }}" height="250" alt="{{ keychain.title }}">
+                <a href="keychain/{{ keychain.id }}">
+                    <img src="/{{ keychain.img }}" height="250" alt="{{ keychain.title }}">
                 </a>
             {% endif %}
             <div class="item_author-info">
-                <img src="{{ keychain.user.user_img }}" width="25" height="25" class="img_unselectable user-avatar-min">
+                <img src="/{{ keychain.user.user_img }}" width="25" height="25" class="img_unselectable user-avatar-min">
                 <p><a href="user_info?user_id={{ keychain.user.id }}">{{ keychain.user.login }}</a></p>
             </div>
         </div>

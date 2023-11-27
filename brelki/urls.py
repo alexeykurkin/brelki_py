@@ -25,15 +25,15 @@ urlpatterns = [
     path('registration', views.registration),
     path('login', views.auth),
     path('logout', views.logout_user),
-    path('keychain', views.keychain),
+    path('keychain/<int:keychain_id>', views.keychain),
     path('create_keychain', views.create_keychain),
-    path('delete_comment', views.delete_comment),
-    path('edit_comment', views.edit_comment),
+    path('keychain/<int:keychain_id>/delete_comment/<int:deleted_comment_id>', views.delete_comment),
+    path('keychain/<int:keychain_id>/edit_comment/<int:edited_comment_id>', views.edit_comment),
     path('search', views.search),
-    path('user_info', views.user_info),
-    path('edit_keychain', views.edit_keychain),
-    path('delete_keychain', views.delete_keychain),
+    path('user_info/<int:user_id>', views.user_info),
+    path('keychain/<int:keychain_id>/edit_keychain', views.edit_keychain),
+    path('keychain/<int:keychain_id>/delete_keychain', views.delete_keychain),
     path('history', views.history),
-    path('send_email', views.send_email),
-    path('edit_user', views.edit_user)
+    path('send_email/<int:send_to>', views.send_email),
+    path('user_info/<int:edited_user_id>/edit_user', views.edit_user)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -35,8 +35,7 @@ $(function() {
                 }
                 cartClearButton.show();
 
-                const urlParams = new URLSearchParams(window.location.search);
-                keychainId = urlParams.get('id');
+                keychainId = response.id;
                 itemFound = false;
                 $('.cart-item').each(function() {
                     if ($(this).children('h3').attr('id') == keychainId) {
@@ -50,9 +49,9 @@ $(function() {
 
                 if (!itemFound) {
                     $('#cart-list').append(`
-                    <a href="/keychain?id=${keychainId}">
+                    <a href="/keychain/${keychainId}">
                         <div class="cart-item">
-                            <img src="${response.img}" width="25px" height="25px">
+                            <img src="/${response.img}" width="25px" height="25px">
                             <h3 id="${response.id}">${response.title}</h3>
                             <h2>1</h2>
                         </div>
@@ -106,16 +105,15 @@ $(function() {
                 }
                 // cartClearButton.show();
 
-                const urlParams = new URLSearchParams(window.location.search);
-                keychainId = urlParams.get('id');
+                keychainId = response.id
 
                 $('.cart-item').each(function() {
                     if ($(this).children('h3').attr('id') == keychainId) {
-                        keychainCount = parseInt($(this).children('h3').next().text());
-                        if ($(this).children('h3').next().text() == '1') {
+                        $(this).children('h3').next().text(response.cart_item_count);
+                        if (response.cart_item_count == 0) {
                             $(this).remove();
                         } else {
-                            $(this).children('h3').next().text(keychainCount - 1);
+                            $(this).children('h3').next().text(response.cart_item_count);
                         }
                     }
                 });

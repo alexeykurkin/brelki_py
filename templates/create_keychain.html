@@ -19,12 +19,11 @@
                     <span class="focus-bg"></span>
                     {{ create_keychain_form.title.errors }}
                 </label>
-                <label for="" class="inp">
-                    {{ create_keychain_form.category }}
-                    <span class="label">Категория</span>
-                    <span class="focus-bg"></span>
-                    {{ create_keychain_form.category.errors }}
-                </label>
+                <span class="label">Категория</span>
+                <br>
+                {{ create_keychain_form.category }}
+                {{ create_keychain_form.category.errors }}
+
                 <p>Описание брелка</p>
                 {{ create_keychain_form.description }}
                 {{ create_keychain_form.description.errors }}

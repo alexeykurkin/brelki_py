@@ -16,6 +16,7 @@ from django.http import JsonResponse
 import json
 from .settings import BASE_DIR
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 
 
 def get_cart():
@@ -23,9 +24,11 @@ def get_cart():
         cart = json.loads(f.read())
     return cart
 
+
 def update_cart(cart):
     with open(str(BASE_DIR) + "/brelki/cart.json", 'w') as f:
         json.dump(cart, f)
+
 
 def get_user_cart(logged_user_id):
     cart = get_cart()
@@ -44,6 +47,7 @@ def get_user_cart(logged_user_id):
     user_cart_info = {'user_cart': user_cart, 'user_cart_len': user_cart_len, 'cart_sum': cart_sum}
 
     return user_cart_info
+
 
 def keychain_cart_info(logged_user_id, keychain_id):
     cart_info = get_user_cart(logged_user_id)
@@ -75,6 +79,7 @@ def keychain_cart_info(logged_user_id, keychain_id):
                             'cart_sum': cart_sum}
 
     return keychain_cart_info
+
 
 def index(request):
 
@@ -201,7 +206,10 @@ def auth(request):
         user = authenticate(login=request.POST['username'], password=request.POST['password'])
         if user is not None:
             login(request, user)
-            return redirect('/')
+            if 'next' in request.GET:
+                return redirect(request.GET['next'])
+            else:
+                return redirect('/')
         else:
             messages.add_message(request, messages.INFO, 'Неверный логин или пароль')
             return HttpResponse(render(request, 'login.html', {'auth_form': form_content}))
@@ -215,7 +223,7 @@ def logout_user(request):
     return redirect('/')
 
 
-def keychain(request):
+def keychain(request, keychain_id):
 
     def update_keychain_views(logged_user_id):
         try:
@@ -248,7 +256,6 @@ def keychain(request):
             request.session['history'] = []
 
     logged_user_id = request.user.id
-    keychain_id = request.GET['id']
 
     try:
         Keychain.objects.get(id=keychain_id)
@@ -256,12 +263,11 @@ def keychain(request):
         return HttpResponse('Брелка с таким id не существует', status=404)
 
     request.session['user_views'] = update_keychain_views(logged_user_id)
-    request.session['keychain_id'] = keychain_id
 
     update_keychain_history(logged_user_id)
     update_keychain_views(logged_user_id)
 
-    keychain_cart_state = keychain_cart_info(logged_user_id, keychain_id)
+    keychain_cart_state = keychain_cart_info(logged_user_id, str(keychain_id))
 
     # Получение рейтинга брелка
     try:
@@ -278,6 +284,7 @@ def keychain(request):
         keychain_user_rating = Rating.objects.get(user_id=logged_user_id, keychain_id=keychain_id).rating
     except:
         keychain_user_rating = 0
+
 
     context = {"keychain": Keychain.objects.get(id=keychain_id),
                "user": User.objects.all(),
@@ -331,7 +338,7 @@ def keychain(request):
 
                 update_cart(cart)
 
-                user_cart = keychain_cart_info(logged_user_id, keychain_id)
+                user_cart = keychain_cart_info(logged_user_id, str(keychain_id))
 
                 return JsonResponse({
                     'id': keychain_id,
@@ -356,9 +363,10 @@ def keychain(request):
 
                 update_cart(cart)
 
-                user_cart = keychain_cart_info(logged_user_id, keychain_id)
+                user_cart = keychain_cart_info(logged_user_id, str(keychain_id))
 
                 return JsonResponse({'response': 'success',
+                                     'id': keychain_id,
                                      'cart_action': 'substract',
                                      'user_cart_len': user_cart['user_cart_len'],
                                      'cart_item_count': user_cart['cart_item_count'],
@@ -395,7 +403,7 @@ def keychain(request):
                     )
                     new_rate.save()
 
-            return HttpResponseRedirect("keychain?id=" + keychain_id + '#keychain-content')
+            return HttpResponseRedirect("/keychain/" + str(keychain_id) + '#keychain_image')
 
         else:
             form_content = CreateCommentForm(request.POST)
@@ -407,7 +415,7 @@ def keychain(request):
                     keychain_id=keychain_id
                 )
                 new_comment.save()
-                return HttpResponseRedirect("keychain?id=" + keychain_id + '#comments')
+                return HttpResponseRedirect("/keychain/" + str(keychain_id) + '#comments')
 
             else:
                 context["create_comment_form"] = form_content
@@ -419,6 +427,7 @@ def keychain(request):
     return HttpResponse(render(request, 'keychain.html', context))
 
 
+@login_required
 def create_keychain(request):
     if request.method == 'POST':
         form_content = CreateKeychainForm(request.POST, request.FILES)
@@ -440,25 +449,66 @@ def create_keychain(request):
         return HttpResponse(render(request, 'create_keychain.html', {'create_keychain_form': create_keychain_form}))
 
 
-def delete_comment(request):
-    Comment.objects.filter(id=request.GET['comment_id']).delete()
-    return redirect('/keychain?id=' + request.session['keychain_id'] + '#comments')
+@login_required
+def delete_comment(request, keychain_id, deleted_comment_id):
+    try:
+        deleted_comment = Comment.objects.get(id=deleted_comment_id)
+    except ObjectDoesNotExist:
+        return HttpResponse('Такого комментария не существует', status=404)
+    
+    try:
+        origin_page = request.GET['from']
+    except MultiValueDictKeyError:
+        origin_page = 'undefined'
+
+    logged_user_id = request.user.id
+
+    if (logged_user_id != deleted_comment.user.id):
+        raise PermissionDenied()
+    
+    comment_user_id = deleted_comment.user.id
+    deleted_comment.delete()
+
+    if origin_page == 'keychain':
+        return redirect('/keychain/' + str(keychain_id) + '#comments')
+    elif origin_page == 'user_info':
+        return redirect('/user_info/' + str(comment_user_id) + '#user_comments')
+    else:
+        return redirect('/')
 
 
-def edit_comment(request):
+@login_required
+def edit_comment(request, keychain_id, edited_comment_id):
     user = User.objects.get(id=request.user.id)
-    comment = Comment.objects.get(id=request.GET['comment_id'])
+
+    try:
+        origin_page = request.GET['from']
+    except MultiValueDictKeyError:
+        origin_page = 'undefined'
+
+    try:
+        comment = Comment.objects.get(id=edited_comment_id)
+    except ObjectDoesNotExist:
+        return HttpResponse('Такого комментария не существует', status=404)
+
     if comment.user.id != user.id:
         raise PermissionDenied()
     
     if request.method == 'POST':
-
         form_content = EditCommentForm(request.POST, initial={'content': comment.content})
         if form_content.is_valid():
-            edited_comment = Comment.objects.get(id=request.GET['comment_id'])
+            edited_comment = comment
+            comment_user_id = comment.user.id
             edited_comment.content = request.POST['content']
             edited_comment.save()
-            return redirect('/keychain?id=' + request.session['keychain_id'] + '#comments')
+
+            if origin_page == 'keychain':
+                return redirect('/keychain/' + str(keychain_id) + '#comments')
+            elif origin_page == 'user_info':
+                return redirect('/user_info/' + str(comment_user_id) + '#user_comments')
+            else:
+                return redirect('/')
+            
         else:
             return HttpResponse(render(request, 'edit_comment.html', {"edit_comment_form": form_content,
                                                                       "user": user}))
@@ -476,12 +526,12 @@ def search(request):
                                                         'search_title': request.GET['search_input']}))
 
 
-def user_info(request):
+def user_info(request, user_id):
     logged_user_id = request.user.id
     cart_info = get_user_cart(logged_user_id)
 
     try:
-        personal_space_user = User.objects.get(id=int(request.GET['user_id']))
+        personal_space_user = User.objects.get(id=user_id)
     except ObjectDoesNotExist:
         return HttpResponse('Такого пользователя не существует', status=404)
 
@@ -499,8 +549,8 @@ def user_info(request):
         }
 
     try:
-        user_keychains = Keychain.objects.filter(user_id=request.GET['user_id'])
-        user_comments = Comment.objects.filter(user_id=request.GET['user_id'])
+        user_keychains = Keychain.objects.filter(user_id=user_id)
+        user_comments = Comment.objects.filter(user_id=user_id)
     except ObjectDoesNotExist:
         user_keychains = {}
         user_comments = {}
@@ -511,8 +561,9 @@ def user_info(request):
     return HttpResponse(render(request, 'user_info.html', context))
 
 
-def edit_keychain(request):
-    edited_keychain = Keychain.objects.get(id=request.GET['keychain_id'])
+@login_required
+def edit_keychain(request, keychain_id):
+    edited_keychain = Keychain.objects.get(id=keychain_id)
     current_keychain_image = edited_keychain.img
     logged_user_id = request.user.id
 
@@ -525,6 +576,7 @@ def edit_keychain(request):
             edited_keychain.title = request.POST['title']
             edited_keychain.description = request.POST['description']
             edited_keychain.price = request.POST['price']
+            edited_keychain.category = request.POST['category']
             try:
                 uploaded_image = request.FILES['img']
                 remove(current_keychain_image.path)
@@ -533,21 +585,21 @@ def edit_keychain(request):
                 pass
 
             edited_keychain.save()
-            return redirect('/user_info?user_id=' + str(logged_user_id))
+            return redirect('/user_info/' + str(logged_user_id))
         else:
             return HttpResponse(render(request, 'edit_keychain.html', {'edit_keychain_form': form_content}))
     else:
-        edit_keychain_form = EditKeychainForm(instance=edited_keychain)
+        edit_keychain_form = EditKeychainForm(instance=edited_keychain, initial={'category': edited_keychain.category})
         return HttpResponse(render(request, 'edit_keychain.html', {'edit_keychain_form': edit_keychain_form}))
 
-
-def delete_keychain(request):
+@login_required
+def delete_keychain(request, keychain_id):
     logged_user_id = request.user.id
-    deleted_keychain = Keychain.objects.get(id=request.GET['keychain_id'])
+    deleted_keychain = Keychain.objects.get(id=keychain_id)
     if request.method == 'POST':
         keychain_history = request.session['history']
         if str(deleted_keychain.id) in keychain_history:
-            keychain_history.remove(str(deleted_keychain.id))
+            keychain_history.remove(deleted_keychain.id)
             
         request.session['history'] = keychain_history
         try:
@@ -557,13 +609,14 @@ def delete_keychain(request):
         except:
             pass
 
-        return redirect('/user_info?user_id=' + str(request.user.id))
+        return redirect('/user_info/' + str(request.user.id))
     else:
         return HttpResponse(render(request, 'delete_keychain.html',
                                    {"keychain": deleted_keychain,
                                     "logged_user_id": logged_user_id}))
 
 
+@login_required
 def history(request):
     try:
         history_list = request.session['history']
@@ -577,8 +630,9 @@ def history(request):
     return HttpResponse(render(request, 'history.html', {'history_keychains': history_keychains}))
 
 
-def send_email(request):
-    receiver = User.objects.get(id=request.GET['to'])
+@login_required
+def send_email(request, send_to):
+    receiver = User.objects.get(id=send_to)
     if request.method == 'POST':
         try:
             logged_user_id = request.user.id
@@ -599,15 +653,16 @@ def send_email(request):
                 recipient_list=[receiver.email],
                 fail_silently=False
             )
-            return redirect('/keychain?id=' + request.session['keychain_id'])
+            return redirect('/keychain/' + request.session['keychain_id'])
     else:
         send_email_form = SendEmailForm(None)
         return HttpResponse(render(request, 'send_email.html', {'send_email_form': send_email_form,
                                                                 'receiver': receiver}))
 
 
-def edit_user(request):
-    edited_user = User.objects.get(id=request.GET['edited_user'])
+@login_required
+def edit_user(request, edited_user_id):
+    edited_user = User.objects.get(id=edited_user_id)
     logged_user_id = request.user.id
 
     logged_user_login = User.objects.get(id=logged_user_id).login
@@ -652,11 +707,12 @@ def edit_user(request):
                     edited_user.password = make_password(request.POST['password'])
 
                 edited_user.save()
+                login(request, edited_user)
                 render(request, 'user_info.html', context={
                     'user': request.user
                 })
 
-                return redirect('/user_info?user_id=' + str(logged_user_id))
+                return redirect('/user_info/' + str(logged_user_id))
             else:
                 return HttpResponse(render(request, 'edit_user.html', {'edit_user_form': form_content}))
 

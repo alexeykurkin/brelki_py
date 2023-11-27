@@ -313,7 +313,7 @@ a span {
 }
 
 .keychain-description-block h2 {
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .keychain-description-block p {
@@ -329,7 +329,7 @@ a span {
   flex-direction: row;
   flex-wrap: wrap;
   width: 210px;
-  gap: 20px;
+  gap: 10px;
   vertical-align: center;
 }
 
@@ -350,10 +350,11 @@ a span {
 
 .keychain-container h1 {
   font-size: 40px;
+  margin-bottom: 15px;
 }
 
 .keychain-price-title {
-  margin-top: 20px;
+  margin-top: 5px;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -361,7 +362,7 @@ a span {
 }
 
 .keychain-price-block {
-  margin-top: 20px;
+  margin-top: 10px;
   background-color: #f0f0f2;
   border-radius: 25px;
   gap: 10px;
@@ -418,6 +419,14 @@ a span {
   vertical-align: middle;
 }
 
+.user-actions_button:hover {
+  filter: brightness(90%);
+}
+
+.user-actions_button:active {
+  transform: scale(95%);
+}
+
 .user-actions_buttons {
   margin-right: 30px;
 }
@@ -458,7 +467,7 @@ a span {
 .comment {
   display: inline-block;
   border-radius: 15px;
-  padding: 20px;
+  padding: 15px;
   border-color: black;
   background-color: #fff;
   box-shadow: 0 2px 7px 0 rgba(0, 0, 0, .04);
@@ -481,14 +490,15 @@ a span {
 }
 
 .comment-text {
-  font-size: 25px;
-  margin-top: 20px;
+  font-size: 20px;
+  margin-top: 10px;
   margin-bottom: 0;
 }
 
 .comment-creation-time {
   color: gray;
   margin-bottom: 0;
+  margin-top: 10px;
 }
 
 .comment-actions {
@@ -713,7 +723,7 @@ input[id=search_input]:focus {
   border-radius: 10px;
   background-color: #fff;
   box-shadow: 0 2px 7px 0 rgba(0, 0, 0, .04);
-  padding: 20px;
+  padding: 15px;
   margin-right: 15px;
   margin-bottom: 15px;
 }
@@ -1070,7 +1080,7 @@ p[id^='h3'] {
   flex-direction: row;
   align-items: center;
   gap: 20px;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .cart-item-action {
@@ -1092,14 +1102,14 @@ p[id^='h3'] {
 }
 
 .rating-block-title {
-  margin-top: 15px;
+  margin-top: 10px;
   margin-bottom: 0;
 }
 
 .rating-block {
   display: flex;
   flex-direction: column;
-  padding: 12px 0;
+  padding: 5px 0;
   gap: 7px;
 }
 
@@ -1134,7 +1144,6 @@ p[id^='h3'] {
 .rating-info-block {
   display: flex;
   flex-direction: column;
-  gap: 7px;
 }
 
 .user-rate-block {
@@ -1145,4 +1154,21 @@ p[id^='h3'] {
 
 .filter-rating-option {
   padding: 0 10px;
+}
+
+.keychain-category-input {
+  font-family: "Inter Medium", sans-serif;
+  font-size: 14px;
+  width: 100%;
+  height: 30px;
+}
+
+.keychain-category-title {
+  margin-bottom: 5px;
+  font-size: 110%;
+}
+
+.user-avatar-comment {
+  width: 50px;
+  height: 50px;
 }
