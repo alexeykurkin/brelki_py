@@ -14,7 +14,7 @@
         <div class="listed-keychains">
         {% if history_keychains %}
             {% for keychain in history_keychains %}
-                <a href="keychain?id={{ keychain.id }}">
+                <a href="keychain/{{ keychain.id }}">
                     <div class="item">
                         {% if keychain.img == '' %}
                             <img src="{% static 'img/not_found.png' %}" class="img_unselectable" width="250" height="250">

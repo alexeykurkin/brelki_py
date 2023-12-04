@@ -18,7 +18,7 @@
         <div class="listed-keychains">
         {% if search_keychains %}
             {% for keychain in search_keychains %}
-                <a href="keychain?id={{ keychain.id }}">
+                <a href="keychain/{{ keychain.id }}">
                     <div class="item">
                         {% if keychain.img == '' %}
                             <img src="{% static 'img/not_found.png' %}" class="img_unselectable" width="250" height="250">
@@ -44,7 +44,7 @@
             <div class="found-users">
                 {% for user in search_users %}
                     <div class="found-user-block">
-                        <a href="user_info?user_id={{ user.id }}"><img src="{{ user.user_img }}" class="user-avatar-large"></a>
+                        <a href="user_info/{{ user.id }}"><img src="{{ user.user_img }}" class="user-avatar-large"></a>
                         <h2>{{ user.login }}</h2>
                     </div>
                 {% endfor %}
